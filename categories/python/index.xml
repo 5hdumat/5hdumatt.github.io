@@ -1,24 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>python on 5hdumat</title>
-    <link>https://5hdumat.github.io/categories/python/</link>
-    <description>Recent content in python on 5hdumat</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 16 May 2021 01:13:38 +0900</lastBuildDate><atom:link href="https://5hdumat.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Python 입문하기</title>
-      <link>https://5hdumat.github.io/posts/python-%EC%9E%85%EB%AC%B8%ED%95%98%EA%B8%B0/</link>
-      <pubDate>Sun, 16 May 2021 01:13:38 +0900</pubDate>
-      
-      <guid>https://5hdumat.github.io/posts/python-%EC%9E%85%EB%AC%B8%ED%95%98%EA%B8%B0/</guid>
-      <description>언어는 파이썬으로 하겠습니다. 근데 이제 알고리즘을 곁들인  C/C++이 아닌 파이썬1 을 선택한 이유
- 초보자도 쉽게 접근할 수 있는 언어, 수많은 자료구조 모듈, 짧은 코드길이, 쉬운 문자열 핸들링, 신경 쓰지 않아도 되는 오버플로우 로 유명한 파이썬은 예전부터 공부해보고 싶었던 언어였다.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>python on 5hdumat</title><link>https://5hdumat.github.io/categories/python/</link><description>Recent content in python on 5hdumat</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 16 May 2021 01:13:38 +0900</lastBuildDate><atom:link href="https://5hdumat.github.io/categories/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Python 입문하기</title><link>https://5hdumat.github.io/posts/python-%EC%9E%85%EB%AC%B8%ED%95%98%EA%B8%B0/</link><pubDate>Sun, 16 May 2021 01:13:38 +0900</pubDate><guid>https://5hdumat.github.io/posts/python-%EC%9E%85%EB%AC%B8%ED%95%98%EA%B8%B0/</guid><description>언어는 파이썬으로 하겠습니다. 근데 이제 알고리즘을 곁들인 C/C++이 아닌 파이썬을 선택한 이유
+초보자도 쉽게 접근할 수 있는 언어, 수많은 자료구조 모듈, 짧은 코드길이, 쉬운 문자열 핸들링, 신경 쓰지 않아도 되는 오버플로우 로 유명한 파이썬은 예전부터 공부해보고 싶었던 언어였다.
+무엇보다도 대다수의 기업들이 코딩 테스트에서 파이썬을 지원하고 있고 알고리즘을 입문한 나에겐 이 언어를 채택하지 않을 이유가 없었다.
+앞으로 파이썬 코드로 짜인 알고리즘 문제 해법을 하나씩 정리해 나갈 예정이다.</description></item><item><title>Python 입문하기</title><link>https://5hdumat.github.io/posts/python-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95/</link><pubDate>Sun, 16 May 2021 01:13:38 +0900</pubDate><guid>https://5hdumat.github.io/posts/python-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95/</guid><description>언어는 파이썬으로 하겠습니다. 근데 이제 알고리즘을 곁들인 C/C++이 아닌 파이썬1 을 선택한 이유
+초보자도 쉽게 접근할 수 있는 언어, 수많은 자료구조 모듈, 짧은 코드길이, 쉬운 문자열 핸들링, 신경 쓰지 않아도 되는 오버플로우 로 유명한 파이썬은 예전부터 공부해보고 싶었던 언어였다.
 무엇보다도 대다수의 기업들이 코딩 테스트에서 파이썬을 지원하고 있고 알고리즘을 입문한 나에겐 이 언어를 채택하지 않을 이유가 없었다.
 앞으로 파이썬 코드로 짜인 알고리즘 문제 해법을 하나씩 정리해 나갈 예정이다.
-  파이썬은 1991년 프로그래머인 귀도 반 로섬이 발표한 고급 프로그래밍 언어로, 플랫폼에 독립적이며 인터프리터식, 객체지향적, 동적 타이핑 대화형 언어이다.</description>
-    </item>
-    
-  </channel>
-</rss>
+파이썬은 1991년 프로그래머인 귀도 반 로섬이 발표한 고급 프로그래밍 언어로, 플랫폼에 독립적이며 인터프리터식, 객체지향적, 동적 타이핑 대화형 언어이다.</description></item></channel></rss>
