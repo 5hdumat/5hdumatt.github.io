@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>IP on 5hdumat</title><link>https://5hdumat.github.io/tags/ip/</link><description>Recent content in IP on 5hdumat</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 31 Jul 2021 18:01:34 +0900</lastBuildDate><atom:link href="https://5hdumat.github.io/tags/ip/index.xml" rel="self" type="application/rss+xml"/><item><title>TCP / UDP</title><link>https://5hdumat.github.io/posts/network/tcp-udp/</link><pubDate>Sat, 31 Jul 2021 18:01:34 +0900</pubDate><guid>https://5hdumat.github.io/posts/network/tcp-udp/</guid><description>TCP ? IP 프로토콜만으론 해결할 수 없는 문제점들이 있었다.
-비연결성 (대상이 서비스 불능임에도 패킷 전송) 비신뢰성 패킷 전달 순서의 문제 이러한 문제점을 보완하고자 나온 프로토콜이 TCP, UDP이다.
+비연결성 (대상이 서비스 불능임에도 패킷 전송) 비신뢰성 패킷 전달 순서의 문제 이러한 문제점을 보완하고자 나온 프로토콜이 TCP, UDP 이다.
 하지만 우리는 인터넷 프로토콜 스택의 계층 구조를 먼저 살펴보아야 한다. 1
 인터넷 프로토콜 스택의 4계층을 단계별로 표현한 예제이다.
 위로갈수록 사용자와 가까운 작업을 아래로 갈수록 기계와 가까운 작업을 담당한다.
