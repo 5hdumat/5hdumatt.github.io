@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>PORT on 5hdumat</title><link>https://5hdumat.github.io/tags/port/</link><description>Recent content in PORT on 5hdumat</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 03 Aug 2021 00:32:52 +0900</lastBuildDate><atom:link href="https://5hdumat.github.io/tags/port/index.xml" rel="self" type="application/rss+xml"/><item><title>PORT</title><link>https://5hdumat.github.io/posts/network/port/</link><pubDate>Tue, 03 Aug 2021 00:32:52 +0900</pubDate><guid>https://5hdumat.github.io/posts/network/port/</guid><description>PORT ? PORT는 배가 도착하는 항구라는 뜻이다.
+포트는 마치 항구와 같다. 패킷이 목적지 IP까지 안전하게 도착하도록 도와준다.
+그게 어떤 애플리케이션이든 말이다.
+예를 들면 아래와 같다.
+한번에 둘 이상 연결해야 한다면? 우리는 PC에서 한 작업만 하지 않는다.
+ZOOM회의를 하면서 몰래 게임을 켜놓고 웹 브라우저로 쇼핑을 한다고 가정해보자.
+가정대로라면 클라이언트가 여러개의 서버와 통신을 해야한다.
+요청한 모든 응답 패킷들이 클라이언트의 각자의 출발지 IP로 뒤죽박죽 전송될 것이다.
+(이건 클라이언트가 서버로 요청을 보낼때도 마찬가지다.)
+게임 패킷인지, 화상통화 패킷인지, 웹 브라우저의 패킷인지 IP 프로토콜만 가지고는 구분할 수 없다.</description></item></channel></rss>

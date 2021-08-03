@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>5hdumat</title><link>https://5hdumat.github.io/</link><description>Recent content on 5hdumat</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 03 Aug 2021 00:32:52 +0900</lastBuildDate><atom:link href="https://5hdumat.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>PORT</title><link>https://5hdumat.github.io/posts/network/port/</link><pubDate>Tue, 03 Aug 2021 00:32:52 +0900</pubDate><guid>https://5hdumat.github.io/posts/network/port/</guid><description>PORT ? PORT는 배가 도착하는 항구라는 뜻이다.
+포트는 마치 항구와 같다. 패킷이 목적지 IP까지 안전하게 도착하도록 도와준다.
+그게 어떤 애플리케이션이든 말이다.
+예를 들면 아래와 같다.
+한번에 둘 이상 연결해야 한다면? 우리는 PC에서 한 작업만 하지 않는다.
+ZOOM회의를 하면서 몰래 게임을 켜놓고 웹 브라우저로 쇼핑을 한다고 가정해보자.
+가정대로라면 클라이언트가 여러개의 서버와 통신을 해야한다.
+요청한 모든 응답 패킷들이 클라이언트의 각자의 출발지 IP로 뒤죽박죽 전송될 것이다.
+(이건 클라이언트가 서버로 요청을 보낼때도 마찬가지다.)
+게임 패킷인지, 화상통화 패킷인지, 웹 브라우저의 패킷인지 IP 프로토콜만 가지고는 구분할 수 없다.</description></item><item><title>TCP / UDP</title><link>https://5hdumat.github.io/posts/network/tcp-udp/</link><pubDate>Sat, 31 Jul 2021 18:01:34 +0900</pubDate><guid>https://5hdumat.github.io/posts/network/tcp-udp/</guid><description>TCP ? IP 프로토콜만으론 해결할 수 없는 문제점들이 있었다.
+비연결성 (대상이 서비스 불능임에도 패킷 전송) 비신뢰성 패킷 전달 순서의 문제 이러한 문제점을 보완하고자 나온 프로토콜이 TCP, UDP 이다.
+하지만 우리는 인터넷 프로토콜 스택의 계층 구조를 먼저 살펴보아야 한다. 1
+인터넷 프로토콜 스택의 4계층을 단계별로 표현한 예제이다.
+위로갈수록 사용자와 가까운 작업을 아래로 갈수록 기계와 가까운 작업을 담당한다.
+각 계층에는 다양한 프로토콜이 있으며, TCP와 IP 프로토콜도 그중 하나이다.
+계층 구조를 살펴보자.</description></item><item><title>IP (인터넷 프로토콜)</title><link>https://5hdumat.github.io/posts/network/internet-protocol/</link><pubDate>Fri, 30 Jul 2021 01:33:25 +0900</pubDate><guid>https://5hdumat.github.io/posts/network/internet-protocol/</guid><description>인터넷상에서 컴퓨터 들은 어떻게 통신할까? 클라이언트와 서버가 책상에 나란히 놓여있다고 가정해보자.
+그리고 클라이언트는 서버에게 Hello, world! 라는 메시지를 보내고자 한다.
+물리적으로 가까운 거리의 PC는 서로 연결된 케이블로 간단히 통신이 가능하다. 1
+이처럼 비교적 좁은 공간에 있는 기기끼리 연결한 네트워크를 우리는 LAN (Local Area Netwrok) 이라고 한다. 2
+하지만 메시지를 보내고자하는 서버가 지구 반대편에 있다면 어떻게 해야 할까?
+우리는 여러 개의 LAN이나 WAN을 연결한 전 세계 규모의 네트워크인 인터넷을 이용해야한다. 3</description></item><item><title>빅오 (big-O)</title><link>https://5hdumat.github.io/posts/datastructure/%EB%B9%85%EC%98%A4/</link><pubDate>Mon, 28 Jun 2021 00:49:00 +0900</pubDate><guid>https://5hdumat.github.io/posts/datastructure/%EB%B9%85%EC%98%A4/</guid><description>시간 복잡도는 왜 필요할까? 알고리즘은 어떤 문제를 해결하기 위한 일련의 과정 입니다.
+알고리즘 문제를 풀다보면 시간초과로 인해 시간복잡도를 생각해야 하는 경우가 자주 생기게되는데 동일한 문제해결 목표를 가진 알고리즘이 존재할 때 가장 시간복잡도가 가장 낮은 알고리즘을 사용 해야 시간초과 오류를 면할 수 있습니다.
+아무리 복잡한 알고리즘이라도 입력의 크기가 작으면 단시간에 끝나버리기 때문에 입력값의 크기가 충분히 클 때 그 효율성이 적나라하게 나타납니다.
+이러한 점근적 실행 시간1을 표기할 때 가장 널리쓰이는 수학적 표기법이 빅오 (big-O)입니다.</description></item><item><title>Python 살펴보기</title><link>https://5hdumat.github.io/posts/python/python-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0/</link><pubDate>Sun, 20 Jun 2021 20:46:38 +0900</pubDate><guid>https://5hdumat.github.io/posts/python/python-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0/</guid><description>Python 문법 인덴트 (Indent) Python의 공식 가이드 PEP 8에 따라 공백 4칸을 원칙으로 합니다.
+강제는 아니며 얼마든지 선택적으로 적용할 수는 있으나, Python 답게 이 기준을 준수하기로 합니다.
+네이밍 컨벤션 (Naming Convention) Python의 네이밍 컨벤션은 자바와 달리 각 단어를 밑줄로 구분하는 Snake Case를 따릅니다.
+함수와 변수명 모두 Snake Case를 지향하고 있으며, Python의 철학에 따라 스네이크 코딩 스타일을 지향하도록 합니다.
+camelCase: int = 1 # Camel Case snake_case: int = 1 # Snake Case 타입 힌트 (Type Hint) Python은 동적 타이핑 언어임에도 타입을 지정할 수 있는 타입 힌트를 지원합니다.</description></item><item><title>Python 입문하기</title><link>https://5hdumat.github.io/posts/python/python-%EC%9E%85%EB%AC%B8%ED%95%98%EA%B8%B0/</link><pubDate>Sun, 16 May 2021 01:13:38 +0900</pubDate><guid>https://5hdumat.github.io/posts/python/python-%EC%9E%85%EB%AC%B8%ED%95%98%EA%B8%B0/</guid><description>언어는 Python으로 하겠습니다. 근데 이제 알고리즘을 곁들인 Python을 선택한 이유 대다수의 코딩 인터뷰에서 Python 지원, 초보자도 쉽게 접근할 수 있는 언어, 수많은 자료구조 모듈, 짧은 코드 길이와 가독성, 쉬운 문자열 핸들링, 임의 정밀도 정수형으로 신경 쓰지 않아도 되는 오버플로는 Python의 대표적인 장점들이다.
+코딩 테스트 플랫폼1 에서 언어별 타임아웃 설정이 C++, Java에 비해 굉장히 타이트하기 때문에 동일한 알고리즘임에도 파이썬으로는 풀리지 않는 (억울한) 일이 심심찮게 발생하고 있지만!
+알고리즘 최적화에 좀 더 많은 고민이 필요하기 때문에 유연한 사고와 학습을 목표로 하는 나에겐 오히려 좋은 점으로 작용하게 될 것 같다.</description></item></channel></rss>
