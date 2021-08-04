@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>HTTP on 5hdumat</title><link>https://5hdumat.github.io/tags/http/</link><description>Recent content in HTTP on 5hdumat</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 04 Aug 2021 23:08:20 +0900</lastBuildDate><atom:link href="https://5hdumat.github.io/tags/http/index.xml" rel="self" type="application/rss+xml"/><item><title>DNS</title><link>https://5hdumat.github.io/posts/network/dns/</link><pubDate>Wed, 04 Aug 2021 23:08:20 +0900</pubDate><guid>https://5hdumat.github.io/posts/network/dns/</guid><description>PORT ? PORT는 배가 도착하는 항구라는 뜻이다.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>HTTP on 5hdumat</title><link>https://5hdumat.github.io/tags/http/</link><description>Recent content in HTTP on 5hdumat</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 04 Aug 2021 23:08:20 +0900</lastBuildDate><atom:link href="https://5hdumat.github.io/tags/http/index.xml" rel="self" type="application/rss+xml"/><item><title>DNS</title><link>https://5hdumat.github.io/posts/network/dns/</link><pubDate>Wed, 04 Aug 2021 23:08:20 +0900</pubDate><guid>https://5hdumat.github.io/posts/network/dns/</guid><description>IP는 기억하기 어렵다 PORT는 배가 도착하는 항구라는 뜻이다.
 포트는 마치 항구와 같다. 패킷이 목적지 IP까지 안전하게 도착하도록 도와준다.
 그게 어떤 애플리케이션이든 말이다.
 예를 들면 아래와 같다.
@@ -6,8 +6,7 @@
 ZOOM회의를 하면서 몰래 게임을 켜놓고 웹 브라우저로 쇼핑을 한다고 가정해보자.
 가정대로라면 클라이언트가 여러개의 서버와 통신을 해야한다.
 요청한 모든 응답 패킷들이 클라이언트의 각자의 출발지 IP로 뒤죽박죽 전송될 것이다.
-(이건 클라이언트가 서버로 요청을 보낼때도 마찬가지다.)
-게임 패킷인지, 화상통화 패킷인지, 웹 브라우저의 패킷인지 IP 프로토콜만 가지고는 구분할 수 없다.</description></item><item><title>PORT</title><link>https://5hdumat.github.io/posts/network/port/</link><pubDate>Tue, 03 Aug 2021 00:32:52 +0900</pubDate><guid>https://5hdumat.github.io/posts/network/port/</guid><description>PORT ? PORT는 배가 도착하는 항구라는 뜻이다.
+(이건 클라이언트가 서버로 요청을 보낼때도 마찬가지다.)</description></item><item><title>PORT</title><link>https://5hdumat.github.io/posts/network/port/</link><pubDate>Tue, 03 Aug 2021 00:32:52 +0900</pubDate><guid>https://5hdumat.github.io/posts/network/port/</guid><description>PORT ? PORT는 배가 도착하는 항구라는 뜻이다.
 포트는 마치 항구와 같다. 패킷이 목적지 IP까지 안전하게 도착하도록 도와준다.
 그게 어떤 애플리케이션이든 말이다.
 예를 들면 아래와 같다.

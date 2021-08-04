@@ -79,7 +79,7 @@
 <h2>DNS</h2>
 </header>
 <section class=entry-content>
-<p>PORT ? PORT는 배가 도착하는 항구라는 뜻이다.
+<p>IP는 기억하기 어렵다 PORT는 배가 도착하는 항구라는 뜻이다.
 포트는 마치 항구와 같다. 패킷이 목적지 IP까지 안전하게 도착하도록 도와준다.
 그게 어떤 애플리케이션이든 말이다.
 예를 들면 아래와 같다.
@@ -87,8 +87,7 @@
 ZOOM회의를 하면서 몰래 게임을 켜놓고 웹 브라우저로 쇼핑을 한다고 가정해보자.
 가정대로라면 클라이언트가 여러개의 서버와 통신을 해야한다.
 요청한 모든 응답 패킷들이 클라이언트의 각자의 출발지 IP로 뒤죽박죽 전송될 것이다.
-(이건 클라이언트가 서버로 요청을 보낼때도 마찬가지다.)
-게임 패킷인지, 화상통화 패킷인지, 웹 브라우저의 패킷인지 IP 프로토콜만 가지고는 구분할 수 없다....</p>
+(이건 클라이언트가 서버로 요청을 보낼때도 마찬가지다.)...</p>
 </section>
 <footer class=entry-footer>August 4, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to DNS" href=https://5hdumat.github.io/posts/network/dns/></a>
@@ -201,7 +200,7 @@ camelCase: int = 1 # Camel Case snake_case: int = 1 # Snake Case 타입 힌트 (
 </a>
 <script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>const src='https://utteranc.es',message={type:'set-theme',theme:'github-light'};document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark')),window.location.pathname.includes('posts')&&utterancToogle(localStorage.getItem('pref-theme'))});function utterancToogle(a){message.theme=a=='light'?'github-light':'photon-dark',document.querySelector('iframe.utterances-frame').contentWindow.postMessage(message,src)}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark')),window.location.pathname.includes('posts')&&utterancToogle(localStorage.getItem('pref-theme'))})</script>
 <footer class=footer>
 <span>&copy; 2021 <a href=https://5hdumat.github.io>5hdumat</a></span>
 <span>
