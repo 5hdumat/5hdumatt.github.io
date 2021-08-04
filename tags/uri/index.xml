@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>URI on 5hdumat</title><link>https://5hdumat.github.io/tags/uri/</link><description>Recent content in URI on 5hdumat</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 05 Aug 2021 01:20:20 +0900</lastBuildDate><atom:link href="https://5hdumat.github.io/tags/uri/index.xml" rel="self" type="application/rss+xml"/><item><title>URI</title><link>https://5hdumat.github.io/posts/network/uri/</link><pubDate>Thu, 05 Aug 2021 01:20:20 +0900</pubDate><guid>https://5hdumat.github.io/posts/network/uri/</guid><description>URI(Uniform Resource Identifier) URI는 리소스를 식별하는 통합된 방법이라는 의미이다.
+사람을 식별할 때는 주민등록번호를 이용하는 것 처럼 리소스가 어디있는지 식별하는 방법을 URI라고 한다.
+Uniform: 리소스 식별하는 통일된 방식 Resource: 리소스, URI로 식별할 수 있는 모든 자원 (제한 X)
+즉, URI로 식별할 수 있는 모든 정보를 리소스라고 한다. Identifier: 다른 항복과 구분하는 데 필요한 정보
+사람을 식별할 때 사용하는 주민등록번호가 사람의 Identifier가 된다. &amp;ldquo;URI는 로케이터(locator), 이름(name) 또는 둘다 추가로 분류될 수 있다.</description></item></channel></rss>

@@ -76,18 +76,35 @@
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
 </figure>
 <header class=entry-header>
+<h2>URI</h2>
+</header>
+<section class=entry-content>
+<p>URI(Uniform Resource Identifier) URI는 리소스를 식별하는 통합된 방법이라는 의미이다.
+사람을 식별할 때는 주민등록번호를 이용하는 것 처럼 리소스가 어디있는지 식별하는 방법을 URI라고 한다.
+Uniform: 리소스 식별하는 통일된 방식 Resource: 리소스, URI로 식별할 수 있는 모든 자원 (제한 X)
+즉, URI로 식별할 수 있는 모든 정보를 리소스라고 한다. Identifier: 다른 항복과 구분하는 데 필요한 정보
+사람을 식별할 때 사용하는 주민등록번호가 사람의 Identifier가 된다. “URI는 로케이터(locator), 이름(name) 또는 둘다 추가로 분류될 수 있다....</p>
+</section>
+<footer class=entry-footer>August 5, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to URI" href=https://5hdumat.github.io/posts/network/uri/></a>
+</article>
+<article class=post-entry>
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
+</figure>
+<header class=entry-header>
 <h2>DNS</h2>
 </header>
 <section class=entry-content>
-<p>IP는 기억하기 어렵다 PORT는 배가 도착하는 항구라는 뜻이다.
-포트는 마치 항구와 같다. 패킷이 목적지 IP까지 안전하게 도착하도록 도와준다.
-그게 어떤 애플리케이션이든 말이다.
-예를 들면 아래와 같다.
-한번에 둘 이상 연결해야 한다면? 우리는 PC에서 한 작업만 하지 않는다.
-ZOOM회의를 하면서 몰래 게임을 켜놓고 웹 브라우저로 쇼핑을 한다고 가정해보자.
-가정대로라면 클라이언트가 여러개의 서버와 통신을 해야한다.
-요청한 모든 응답 패킷들이 클라이언트의 각자의 출발지 IP로 뒤죽박죽 전송될 것이다.
-(이건 클라이언트가 서버로 요청을 보낼때도 마찬가지다.)...</p>
+<p>DNS? 위 예제처럼 IP는 기억하기 어렵다.
+두번째 문제는 IP는 언제든지 변경될 수 있다는 점이다.
+200.200.200.2로 기억해두었던 IP가 200.200.200.3으로 변경되었다면
+외워두었던 IP는 당연히 접근이 불가능할 것이다.
+이를 해결하려면 도메인 네임 시스템(DNS, Domain Name System) 을 사용하면 된다.
+DNS의 특징 DNS는 등록한 도메인 명을 IP 주소로 변환해 준다.
+마치 중간에 전화번호부 서버를 제공해 준다고 생각하자.
+기철이한테 전화를 걸면 기철이의 핸드폰번호로 전화가 걸리는 것 처럼 말이다.
+예제를 통하여 더 자세하게 살펴보자.
+1. DNS 서버에 구매한 도메인을 IP와 매핑하여 등록한다....</p>
 </section>
 <footer class=entry-footer>August 4, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to DNS" href=https://5hdumat.github.io/posts/network/dns/></a>
@@ -120,7 +137,7 @@ ZOOM회의를 하면서 몰래 게임을 켜놓고 웹 브라우저로 쇼핑을
 <h2>TCP / UDP</h2>
 </header>
 <section class=entry-content>
-<p>TCP ? IP 프로토콜만으론 해결할 수 없는 문제점들이 있었다.
+<p>TCP? IP 프로토콜만으론 해결할 수 없는 문제점들이 있었다.
 비연결성 (대상이 서비스 불능임에도 패킷 전송) 비신뢰성 패킷 전달 순서의 문제 이러한 문제점을 보완하고자 나온 프로토콜이 TCP, UDP 이다.
 하지만 우리는 인터넷 프로토콜 스택의 계층 구조를 먼저 살펴보아야 한다. 1
 인터넷 프로토콜 스택의 4계층을 단계별로 표현한 예제이다.
