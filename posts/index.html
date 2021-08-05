@@ -76,6 +76,39 @@
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
 </figure>
 <header class=entry-header>
+<h2>HTTP</h2>
+</header>
+<section class=entry-content>
+<p>지금은 HTTP 시대! HTTP HyperText Transfer Protocol
+HTTP는 문서간의 링크를 통해 연결할 수 있는 HTML을 전송하기 위한 프로토콜로 시작되었다.1
+하지만 현재는 아래와 같이 거의 모든 데이터를 HTTP 프로토콜에 담아 전송한다.
+HTML, TEXT IMAGE, 음성, 영상, 파일 JSON, XML (API) 서버간에 데이터를 주고 받을 때도 대부분 HTTP 사용 즉, 현재는 바야흐로 HTTP의 시대이다.
+HTTP의 역사 HTTP/0.9 1991년: GET 메서드만 지원, HTTP 헤더X HTTP/1.0 1996년: 메서드, 헤더 추가 HTTP/1.1 1997년: 가장 많이 사용, 우리에게 가장 중요한 버전 RFC2068 (1997) -> RFC2616 (1999) -> RFC7230~7235 (2014) HTTP/2 2015년: 성능 개선 HTTP/3 진행중: TCP 대신에 UDP 사용, 성능 개선 HTTP 특징 HTTP의 특징 크게 4가지로 나눠보자면 아래와 같다....</p>
+</section>
+<footer class=entry-footer>August 6, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to HTTP" href=https://5hdumat.github.io/posts/network/http/></a>
+</article>
+<article class=post-entry>
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
+</figure>
+<header class=entry-header>
+<h2>웹 브라우저 요청 흐름</h2>
+</header>
+<section class=entry-content>
+<p>웹 브라우저 요청 흐름 위의 예제와 같은 구글 검색 과정에서 요청의 흐름을 알아보자.
+1. 클라이언트는 구글 서버를 찾아야 하므로 DNS 서버를 조회하여 IP와 PORT 정보를 찾아낸다.
+2. HTTP 요청 메시지를 생성한다. 요청 메시지의 간략한 생김새는 아래와 같다.
+GET /search?q=hello&hl=ko HTTP/1.1
+HOST: www.google.com 3. 생성한 HTTP 요청 메시지는 SOCKET 라이브러리를 통해 TCP/IP 계층에 전달한다.
+이 과정에서 3 Way Handshake를 통해 구글서버와 가상연결 한다....</p>
+</section>
+<footer class=entry-footer>August 6, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to 웹 브라우저 요청 흐름" href=https://5hdumat.github.io/posts/network/web-browser-request/></a>
+</article>
+<article class=post-entry>
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
+</figure>
+<header class=entry-header>
 <h2>URI</h2>
 </header>
 <section class=entry-content>
@@ -154,7 +187,7 @@ ZOOM회의를 하면서 몰래 게임을 켜놓고 웹 브라우저로 쇼핑을
 <h2>IP (인터넷 프로토콜)</h2>
 </header>
 <section class=entry-content>
-<p>인터넷상에서 컴퓨터 들은 어떻게 통신할까? 클라이언트와 서버가 책상에 나란히 놓여있다고 가정해보자.
+<p>인터넷상에서 컴퓨터 enf은 어떻게 통신할까? 클라이언트와 서버가 책상에 나란히 놓여있다고 가정해보자.
 그리고 클라이언트는 서버에게 Hello, world! 라는 메시지를 보내고자 한다.
 물리적으로 가까운 거리의 PC는 서로 연결된 케이블로 간단히 통신이 가능하다. 1
 이처럼 비교적 좁은 공간에 있는 기기끼리 연결한 네트워크를 우리는 LAN (Local Area Netwrok) 이라고 한다. 2
