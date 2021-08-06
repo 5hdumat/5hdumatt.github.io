@@ -6,7 +6,7 @@
 <title>웹 브라우저 요청 흐름 | 5hdumat</title>
 <meta name=keywords content="NETWORK,HTTP,URI,WEB BROWSER">
 <meta name=description content="웹 브라우저 요청 흐름 위 예제와 같이 구글링 할 경우 브라우저 요청의 흐름을 알아보자.
-   1. 클라이언트는 구글 서버를 찾아야 하므로 DNS 서버를 조회하여 IP와 PORT 정보를 찾아낸다.
+  1. 클라이언트는 구글 서버를 찾아야 하므로 DNS 서버를 조회하여 IP와 PORT 정보를 찾아낸다.
   2. HTTP 요청 메시지를 생성한다. 요청 메시지의 간략한 생김새는 아래와 같다.
  GET /search?q=hello&hl=ko HTTP/1.1
 HOST: www.google.com    3. 생성한 HTTP 요청 메시지는 SOCKET 라이브러리를 통해 TCP/IP 계층에 전달한다.
@@ -28,7 +28,7 @@ HOST: www.google.com    3. 생성한 HTTP 요청 메시지는 SOCKET 라이브�
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-05YE8R0TGZ',{anonymize_ip:!1})}</script>
 <meta property="og:title" content="웹 브라우저 요청 흐름">
 <meta property="og:description" content="웹 브라우저 요청 흐름 위 예제와 같이 구글링 할 경우 브라우저 요청의 흐름을 알아보자.
-   1. 클라이언트는 구글 서버를 찾아야 하므로 DNS 서버를 조회하여 IP와 PORT 정보를 찾아낸다.
+  1. 클라이언트는 구글 서버를 찾아야 하므로 DNS 서버를 조회하여 IP와 PORT 정보를 찾아낸다.
   2. HTTP 요청 메시지를 생성한다. 요청 메시지의 간략한 생김새는 아래와 같다.
  GET /search?q=hello&hl=ko HTTP/1.1
 HOST: www.google.com    3. 생성한 HTTP 요청 메시지는 SOCKET 라이브러리를 통해 TCP/IP 계층에 전달한다.
@@ -42,13 +42,13 @@ HOST: www.google.com    3. 생성한 HTTP 요청 메시지는 SOCKET 라이브�
 <meta name=twitter:image content="https://5hdumat.github.io/resources/images/network/http.jpeg">
 <meta name=twitter:title content="웹 브라우저 요청 흐름">
 <meta name=twitter:description content="웹 브라우저 요청 흐름 위 예제와 같이 구글링 할 경우 브라우저 요청의 흐름을 알아보자.
-   1. 클라이언트는 구글 서버를 찾아야 하므로 DNS 서버를 조회하여 IP와 PORT 정보를 찾아낸다.
+  1. 클라이언트는 구글 서버를 찾아야 하므로 DNS 서버를 조회하여 IP와 PORT 정보를 찾아낸다.
   2. HTTP 요청 메시지를 생성한다. 요청 메시지의 간략한 생김새는 아래와 같다.
  GET /search?q=hello&hl=ko HTTP/1.1
 HOST: www.google.com    3. 생성한 HTTP 요청 메시지는 SOCKET 라이브러리를 통해 TCP/IP 계층에 전달한다.
  이 과정에서 3 Way Handshake를 통해 구글서버와 가상연결 한다.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://5hdumat.github.io/posts/"},{"@type":"ListItem","position":3,"name":"웹 브라우저 요청 흐름","item":"https://5hdumat.github.io/posts/network/web-browser-request/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"웹 브라우저 요청 흐름","name":"웹 브라우저 요청 흐름","description":"웹 브라우저 요청 흐름 위 예제와 같이 구글링 할 경우 브라우저 요청의 흐름을 알아보자.\n   1. 클라이언트는 구글 서버를 찾아야 하므로 DNS 서버를 조회하여 IP와 PORT 정보를 찾아낸다.\n  2. HTTP 요청 메시지를 생성한다. 요청 메시지의 간략한 생김새는 아래와 같다.\n GET /search?q=hello\u0026amp;hl=ko HTTP/1.1\nHOST: www.google.com    3. 생성한 HTTP 요청 메시지는 SOCKET 라이브러리를 통해 TCP/IP 계층에 전달한다.\n 이 과정에서 3 Way Handshake를 통해 구글서버와 가상연결 한다.","keywords":["NETWORK","HTTP","URI","WEB BROWSER"],"articleBody":"웹 브라우저 요청 흐름 위 예제와 같이 구글링 할 경우 브라우저 요청의 흐름을 알아보자.\n   1. 클라이언트는 구글 서버를 찾아야 하므로 DNS 서버를 조회하여 IP와 PORT 정보를 찾아낸다.\n  2. HTTP 요청 메시지를 생성한다. 요청 메시지의 간략한 생김새는 아래와 같다.\n GET /search?q=hello\u0026hl=ko HTTP/1.1\nHOST: www.google.com    3. 생성한 HTTP 요청 메시지는 SOCKET 라이브러리를 통해 TCP/IP 계층에 전달한다.\n 이 과정에서 3 Way Handshake를 통해 구글서버와 가상연결 한다.    4. TCP/IP 계층에서 HTTP 메시지를 IP, PORT 정보와 함께 TCP/IP 패킷으로 캡슐화한다.\n 위 요청의 흐름을 그림으로 표현하면 아래와 같다.     5. 패킷은 인터넷 망을 통해 구글 서버로 전송한다.   6. 구글 서버는 전달 받은 TCP/IP 패킷을 반대로 해석한다.  구글 서버는 해석한 메시지를 읽어들여 검색엔진을 통해 데이터를 찾고 응답 메시지를 만들어낸다.\n위 예제와 같이 응답 패킷에 여러 정보를 담아 클라이언트에 똑같이 메시지를 전송한다.\n 7. 웹 브라우저는 구글서버로 부터 전달받은 HTTP 메시지를 해석하고 렌더링 한 후 사용자에게 보여준다.  ","wordCount":"137","inLanguage":"en","image":"https://5hdumat.github.io/resources/images/network/http.jpeg","datePublished":"2021-08-06T00:39:35+09:00","dateModified":"2021-08-06T00:39:35+09:00","author":{"@type":"Person","name":"서민규"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://5hdumat.github.io/posts/network/web-browser-request/"},"publisher":{"@type":"Organization","name":"5hdumat","logo":{"@type":"ImageObject","url":"https://5hdumat.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"웹 브라우저 요청 흐름","name":"웹 브라우저 요청 흐름","description":"웹 브라우저 요청 흐름 위 예제와 같이 구글링 할 경우 브라우저 요청의 흐름을 알아보자.\n  1. 클라이언트는 구글 서버를 찾아야 하므로 DNS 서버를 조회하여 IP와 PORT 정보를 찾아낸다.\n  2. HTTP 요청 메시지를 생성한다. 요청 메시지의 간략한 생김새는 아래와 같다.\n GET /search?q=hello\u0026amp;hl=ko HTTP/1.1\nHOST: www.google.com    3. 생성한 HTTP 요청 메시지는 SOCKET 라이브러리를 통해 TCP/IP 계층에 전달한다.\n 이 과정에서 3 Way Handshake를 통해 구글서버와 가상연결 한다.","keywords":["NETWORK","HTTP","URI","WEB BROWSER"],"articleBody":"웹 브라우저 요청 흐름 위 예제와 같이 구글링 할 경우 브라우저 요청의 흐름을 알아보자.\n  1. 클라이언트는 구글 서버를 찾아야 하므로 DNS 서버를 조회하여 IP와 PORT 정보를 찾아낸다.\n  2. HTTP 요청 메시지를 생성한다. 요청 메시지의 간략한 생김새는 아래와 같다.\n GET /search?q=hello\u0026hl=ko HTTP/1.1\nHOST: www.google.com    3. 생성한 HTTP 요청 메시지는 SOCKET 라이브러리를 통해 TCP/IP 계층에 전달한다.\n 이 과정에서 3 Way Handshake를 통해 구글서버와 가상연결 한다.    4. TCP/IP 계층에서 HTTP 메시지를 IP, PORT 정보와 함께 TCP/IP 패킷으로 캡슐화한다.\n 위 요청의 흐름을 그림으로 표현하면 아래와 같다.     5. 패킷은 인터넷 망을 통해 구글 서버로 전송한다.   6. 구글 서버는 전달 받은 TCP/IP 패킷을 반대로 해석한다.  구글 서버는 해석한 메시지를 읽어들여 검색엔진을 통해 데이터를 찾고 응답 메시지를 만들어낸다.\n위 예제와 같이 응답 패킷에 여러 정보를 담아 클라이언트에 똑같이 메시지를 전송한다.\n 7. 웹 브라우저는 구글서버로 부터 전달받은 HTTP 메시지를 해석하고 렌더링 한 후 사용자에게 보여준다.  ","wordCount":"137","inLanguage":"en","image":"https://5hdumat.github.io/resources/images/network/http.jpeg","datePublished":"2021-08-06T00:39:35+09:00","dateModified":"2021-08-06T00:39:35+09:00","author":{"@type":"Person","name":"서민규"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://5hdumat.github.io/posts/network/web-browser-request/"},"publisher":{"@type":"Organization","name":"5hdumat","logo":{"@type":"ImageObject","url":"https://5hdumat.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -104,7 +104,6 @@ HOST: www.google.com    3. 생성한 HTTP 요청 메시지는 SOCKET 라이브�
 <p><img loading=lazy src=/resources/images/network/internet-network-26.png alt=internet-network-26>
 </p>
 <p>위 예제와 같이 구글링 할 경우 브라우저 요청의 흐름을 알아보자.</p>
-<h1 id=heading><a hidden class=anchor aria-hidden=true href=#heading>#</a></h1>
 <p><img loading=lazy src=/resources/images/network/internet-network-27.png alt=internet-network-27>
 </p>
 <ul>
