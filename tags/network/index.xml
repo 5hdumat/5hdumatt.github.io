@@ -2,8 +2,8 @@
 HTTP는 문서간의 링크를 통해 연결할 수 있는 HTML을 전송하기 위한 프로토콜로 시작되었다.1
 하지만 현재는 아래와 같이 거의 모든 데이터를 HTTP 프로토콜에 담아 전송한다.
 HTML, TEXT IMAGE, 음성, 영상, 파일 JSON, XML (API) 서버간에 데이터를 주고 받을 때도 대부분 HTTP 사용 즉, 현재는 바야흐로 HTTP의 시대이다.
-HTTP의 역사 HTTP/0.9 1991년: GET 메서드만 지원, HTTP 헤더X HTTP/1.0 1996년: 메서드, 헤더 추가 HTTP/1.1 1997년: 가장 많이 사용, 우리에게 가장 중요한 버전 RFC2068 (1997) -&amp;gt; RFC2616 (1999) -&amp;gt; RFC7230~7235 (2014) HTTP/2 2015년: 성능 개선 HTTP/3 진행중: TCP 대신에 UDP 사용, 성능 개선 HTTP 특징 HTTP의 특징 크게 4가지로 나눠보자면 아래와 같다.</description></item><item><title>웹 브라우저 요청 흐름</title><link>https://5hdumat.github.io/posts/network/web-browser-request/</link><pubDate>Fri, 06 Aug 2021 00:39:35 +0900</pubDate><guid>https://5hdumat.github.io/posts/network/web-browser-request/</guid><description>위 예제와 같이 구글링 할 경우 브라우저 요청의 흐름을 알아보자.
-웹 브라우저 요청 흐름 1. 클라이언트는 구글 서버를 찾아야 하므로 DNS 서버를 조회하여 IP와 PORT 정보를 찾아낸다.
+HTTP의 역사 HTTP/0.9 1991년: GET 메서드만 지원, HTTP 헤더X HTTP/1.0 1996년: 메서드, 헤더 추가 HTTP/1.1 1997년: 가장 많이 사용, 우리에게 가장 중요한 버전 RFC2068 (1997) -&amp;gt; RFC2616 (1999) -&amp;gt; RFC7230~7235 (2014) HTTP/2 2015년: 성능 개선 HTTP/3 진행중: TCP 대신에 UDP 사용, 성능 개선 HTTP 특징 HTTP의 특징 크게 4가지로 나눠보자면 아래와 같다.</description></item><item><title>웹 브라우저 요청 흐름</title><link>https://5hdumat.github.io/posts/network/web-browser-request/</link><pubDate>Fri, 06 Aug 2021 00:39:35 +0900</pubDate><guid>https://5hdumat.github.io/posts/network/web-browser-request/</guid><description>웹 브라우저 요청 흐름 위 예제와 같이 구글링 할 경우 브라우저 요청의 흐름을 알아보자.
+1. 클라이언트는 구글 서버를 찾아야 하므로 DNS 서버를 조회하여 IP와 PORT 정보를 찾아낸다.
 2. HTTP 요청 메시지를 생성한다. 요청 메시지의 간략한 생김새는 아래와 같다.
 GET /search?q=hello&amp;amp;hl=ko HTTP/1.1
 HOST: www.google.com 3. 생성한 HTTP 요청 메시지는 SOCKET 라이브러리를 통해 TCP/IP 계층에 전달한다.
