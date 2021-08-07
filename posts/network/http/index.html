@@ -45,7 +45,7 @@ HTTP는 문서간의 링크를 통해 연결할 수 있는 HTML을 전송하기 
  HTML, TEXT IMAGE, 음성, 영상, 파일 JSON, XML (API) 서버간에 데이터를 주고 받을 때도 대부분 HTTP 사용  즉, 현재는 바야흐로 HTTP의 시대이다.
 HTTP의 역사  HTTP/0.9 1991년: GET 메서드만 지원, HTTP 헤더X HTTP/1.0 1996년: 메서드, 헤더 추가 HTTP/1.1 1997년: 가장 많이 사용, 우리에게 가장 중요한 버전 RFC2068 (1997) -> RFC2616 (1999) -> RFC7230~7235 (2014) HTTP/2 2015년: 성능 개선 HTTP/3 진행중: TCP 대신에 UDP 사용, 성능 개선  HTTP 특징 HTTP의 특징 크게 4가지로 나눠보자면 아래와 같다.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://5hdumat.github.io/posts/"},{"@type":"ListItem","position":3,"name":"HTTP","item":"https://5hdumat.github.io/posts/network/http/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"HTTP","name":"HTTP","description":"지금은 HTTP 시대! HTTP HyperText Transfer Protocol\nHTTP는 문서간의 링크를 통해 연결할 수 있는 HTML을 전송하기 위한 프로토콜로 시작되었다.1\n하지만 현재는 아래와 같이 거의 모든 데이터를 HTTP 프로토콜에 담아 전송한다.\n HTML, TEXT IMAGE, 음성, 영상, 파일 JSON, XML (API) 서버간에 데이터를 주고 받을 때도 대부분 HTTP 사용  즉, 현재는 바야흐로 HTTP의 시대이다.\nHTTP의 역사  HTTP/0.9 1991년: GET 메서드만 지원, HTTP 헤더X HTTP/1.0 1996년: 메서드, 헤더 추가 HTTP/1.1 1997년: 가장 많이 사용, 우리에게 가장 중요한 버전 RFC2068 (1997) -\u0026gt; RFC2616 (1999) -\u0026gt; RFC7230~7235 (2014) HTTP/2 2015년: 성능 개선 HTTP/3 진행중: TCP 대신에 UDP 사용, 성능 개선  HTTP 특징 HTTP의 특징 크게 4가지로 나눠보자면 아래와 같다.","keywords":["NETWORK","HTTP"],"articleBody":"지금은 HTTP 시대! HTTP HyperText Transfer Protocol\nHTTP는 문서간의 링크를 통해 연결할 수 있는 HTML을 전송하기 위한 프로토콜로 시작되었다.1\n하지만 현재는 아래와 같이 거의 모든 데이터를 HTTP 프로토콜에 담아 전송한다.\n HTML, TEXT IMAGE, 음성, 영상, 파일 JSON, XML (API) 서버간에 데이터를 주고 받을 때도 대부분 HTTP 사용  즉, 현재는 바야흐로 HTTP의 시대이다.\nHTTP의 역사  HTTP/0.9 1991년: GET 메서드만 지원, HTTP 헤더X HTTP/1.0 1996년: 메서드, 헤더 추가 HTTP/1.1 1997년: 가장 많이 사용, 우리에게 가장 중요한 버전 RFC2068 (1997) - RFC2616 (1999) - RFC7230~7235 (2014) HTTP/2 2015년: 성능 개선 HTTP/3 진행중: TCP 대신에 UDP 사용, 성능 개선  HTTP 특징 HTTP의 특징 크게 4가지로 나눠보자면 아래와 같다.\n 클라이언트 서버 구조 무상태 프로토콜(Stateless), 비연결성 HTTP 메시지 단순함, 확장 가능  하나씩 차례대로 알아보자.\n1. 클라이언트 서버 구조 HTTP의 첫번째 중요한 특징은 클라이언트/서버 구조(CS) 로 되어있다는 점이다.\n위 예제를 해석하자면 아래와 같다.\n Request Response 구조 클라이언트는 서버에 요청을 보내고 응답 대기 서버는 요청에 대한 결과를 만들어서 응답  표면적으로는 굉장히 단순하지만 근간은 그렇지 않다.\n클라이언트와 서버를 개념적으로 분리하면서 양쪽이 독립적으로 진화할 수 있다는 점은 단순한 일이 아니다.\n이 개념이 적용되면서 비즈니스, 데이터 로직은 서버가 UI(화면)/UX(사용성)와 같은 화면구조는 클라이언트가 담당하게 되었다.\n이제 우리는 트래픽이 폭주해도 서버 아키텍쳐와 백엔드 기술을 얼마나 더 고도화하고 진화시킬수 있는지에 대해서만 고민하면 된다.\n2. 무상태 프로토콜(Statelesss) HTTP는 서버가 클라이언트의 상태를 보존하지 않는다.\n이 말을 이해하려면 우리는 상태 유지(Stateful)와 무상태성(Stateless)의 차이를 알아봐야 한다.\n상태 유지 - Stateful 고객: 이 노트북 얼마인가요?\n점원: 100만원 입니다.\n 고객: 2개 구매하겠습니다.\n점원: 200만원 입니다. 신용카드, 현금중에 어떤 걸로 구매하시겠어요?\n 고객: 신용카드로 구매하겠습니다.\n점원: 200만원 결제 완료되었습니다.\n너무나 일상적인 대화다. 하지만 예제를 조금 바꿔 점원이 여러명이라고 가정해보자.\n상태 유지 - Stateful, 점원이 중간에 바뀌면? 고객: 이 노트북 얼마인가요?\n점원A: 100만원 입니다.\n 고객: 2개 구매하겠습니다.\n점원B: ?\n 고객: 신용카드로 구매하겠습니다.\n점원C: ?\n무언가 이상하다. 고객의 요청은 점원이 바뀜에 따라 문맥이 유지되지 않는다.\n이를 다시 정리해보자면 아래의 예제와 같다.\n상태 유지 - Stateful, 정리 고객: 이 노트북 얼마인가요?\n점원: 100만원 입니다. (노트북 상태 유지)\n 고객: 2개 구매하겠습니다.\n점원: 200만원 입니다. 신용카드, 현금중에 어떤 걸로 구매하시겠어요 (노트북, 2개 상태 유지)\n 고객: 신용카드로 구매하겠습니다.\n점원: 200만원 결제 완료되었습니다. (노트북, 2개, 신용카드 상태 유지)\n상태 유지(StateFul)에서 점원이 바뀌게 된다는 건 통신의 관점에선 장애가 발생한다는것과 다름이 없다.\n이제 무상태성(Stateless)은 상태 유지(StateFul)와 어떻게 다른지 알아보자.\n  하이퍼텍스트(Hypertext)는 참조(하이퍼링크)를 통해 독자가 한 문서에서 다른 문서로 즉시 접근할 수 있는 텍스트이다. ↩︎\n   ","wordCount":"371","inLanguage":"en","image":"https://5hdumat.github.io/resources/images/network/http.jpeg","datePublished":"2021-08-06T01:18:31+09:00","dateModified":"2021-08-06T01:18:31+09:00","author":{"@type":"Person","name":"서민규"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://5hdumat.github.io/posts/network/http/"},"publisher":{"@type":"Organization","name":"5hdumat","logo":{"@type":"ImageObject","url":"https://5hdumat.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"HTTP","name":"HTTP","description":"지금은 HTTP 시대! HTTP HyperText Transfer Protocol\nHTTP는 문서간의 링크를 통해 연결할 수 있는 HTML을 전송하기 위한 프로토콜로 시작되었다.1\n하지만 현재는 아래와 같이 거의 모든 데이터를 HTTP 프로토콜에 담아 전송한다.\n HTML, TEXT IMAGE, 음성, 영상, 파일 JSON, XML (API) 서버간에 데이터를 주고 받을 때도 대부분 HTTP 사용  즉, 현재는 바야흐로 HTTP의 시대이다.\nHTTP의 역사  HTTP/0.9 1991년: GET 메서드만 지원, HTTP 헤더X HTTP/1.0 1996년: 메서드, 헤더 추가 HTTP/1.1 1997년: 가장 많이 사용, 우리에게 가장 중요한 버전 RFC2068 (1997) -\u0026gt; RFC2616 (1999) -\u0026gt; RFC7230~7235 (2014) HTTP/2 2015년: 성능 개선 HTTP/3 진행중: TCP 대신에 UDP 사용, 성능 개선  HTTP 특징 HTTP의 특징 크게 4가지로 나눠보자면 아래와 같다.","keywords":["NETWORK","HTTP"],"articleBody":"지금은 HTTP 시대! HTTP HyperText Transfer Protocol\nHTTP는 문서간의 링크를 통해 연결할 수 있는 HTML을 전송하기 위한 프로토콜로 시작되었다.1\n하지만 현재는 아래와 같이 거의 모든 데이터를 HTTP 프로토콜에 담아 전송한다.\n HTML, TEXT IMAGE, 음성, 영상, 파일 JSON, XML (API) 서버간에 데이터를 주고 받을 때도 대부분 HTTP 사용  즉, 현재는 바야흐로 HTTP의 시대이다.\nHTTP의 역사  HTTP/0.9 1991년: GET 메서드만 지원, HTTP 헤더X HTTP/1.0 1996년: 메서드, 헤더 추가 HTTP/1.1 1997년: 가장 많이 사용, 우리에게 가장 중요한 버전 RFC2068 (1997) - RFC2616 (1999) - RFC7230~7235 (2014) HTTP/2 2015년: 성능 개선 HTTP/3 진행중: TCP 대신에 UDP 사용, 성능 개선  HTTP 특징 HTTP의 특징 크게 4가지로 나눠보자면 아래와 같다.\n 클라이언트 서버 구조 무상태 프로토콜(Stateless) 비연결성 HTTP 메시지  하나씩 차례대로 알아보자.\n1. 클라이언트 서버 구조 HTTP의 첫번째 중요한 특징은 클라이언트/서버 구조(CS) 로 되어있다는 점이다.\n위 예제를 해석하자면 아래와 같다.\n Request Response 구조 클라이언트는 서버에 요청을 보내고 응답 대기 서버는 요청에 대한 결과를 만들어서 응답  표면적으로는 굉장히 단순하지만 근간은 그렇지 않다.\n클라이언트와 서버를 개념적으로 분리하면서 양쪽이 독립적으로 진화할 수 있다는 점은 단순한 일이 아니다.\n이 개념이 적용되면서 비즈니스, 데이터 로직은 서버가 UI(화면)/UX(사용성)와 같은 화면구조는 클라이언트가 담당하게 되었다.\n이제 우리는 트래픽이 폭주해도 서버 아키텍쳐와 백엔드 기술을 얼마나 더 고도화하고 진화시킬수 있는지에 대해서만 고민하면 된다.\n2. 무상태 프로토콜(Statelesss) HTTP는 서버가 클라이언트의 상태를 보존하지 않는다.\n이 말을 이해하려면 우리는 상태 유지(Stateful)와 무상태성(Stateless)의 차이를 알아봐야 한다.\n  상태 유지 - Stateful 고객: 이 노트북 얼마인가요?\n점원: 100만원 입니다.\n 고객: 2개 구매하겠습니다.\n점원: 200만원 입니다. 신용카드, 현금중에 어떤 걸로 구매하시겠어요?\n 고객: 신용카드로 구매하겠습니다.\n점원: 200만원 결제 완료되었습니다.\n  너무나 일상적인 대화다. 하지만 예제를 조금 바꿔 점원이 여러명이라고 가정해보자.\n  상태 유지 - Stateful, 점원이 중간에 바뀌면? 고객: 이 노트북 얼마인가요?\n점원A: 100만원 입니다.\n 고객: 2개 구매하겠습니다.\n점원B: ?\n 고객: 신용카드로 구매하겠습니다.\n점원C: ?\n  무언가 이상하다. 고객의 요청은 점원이 바뀜에 따라 문맥이 유지되지 않는다.\n이를 다시 정리해보자면 아래의 예제와 같다.\n  상태 유지 - Stateful, 정리 고객: 이 노트북 얼마인가요?\n점원: 100만원 입니다. (노트북 상태 유지)\n 고객: 2개 구매하겠습니다.\n점원: 200만원 입니다. 신용카드, 현금중에 어떤 걸로 구매하시겠어요 (노트북, 2개 상태 유지)\n 고객: 신용카드로 구매하겠습니다.\n점원: 200만원 결제 완료되었습니다. (노트북, 2개, 신용카드 상태 유지)\n  상태 유지(StateFul)에서 점원이 바뀌게 된다는 건 통신의 관점에선 장애가 발생한다는것과 다름이 없다.\n그럼 무상태성(Stateless)은 뭐가 다른 걸까? 이제 무상태성(Stateless)은 상태 유지(Stateful)와 어떻게 다른지 알아보자.\n무상태 - Stateless 고객: 이 노트북 얼마인가요?\n점원: 100만원 입니다.\n 고객: 노트북 2개 구매하겠습니다.\n점원: 200만원 입니다. 신용카드, 현금중에 어떤 걸로 구매하시겠어요?\n 고객: 노트북 2개를 신용카드로 구매하겠습니다.\n점원: 200만원 결제 완료되었습니다ㄴ.\n  위 예제는 점원이 바뀌더라도 고객의 마지막 말로 모든 행위를 판단할 수 있다.\n무상태성(Stateless) 은 말 그대로 점원이 고객의 상태를 유지하지 않아야 하기 때문이다.\n상태 유지와 무상태의 차이가 느껴지는가?\n상태 유지(Stateful), 무상태(Stateless) 차이  상태유지(Stateful)  중간에 다른 점원으로 바뀌면 안된다.\n(중간에 다른 점원으로 바뀔 때 상태 정보를 다른 점원에게 미리 알려줘야 한다.)    그 이유는 아래와 같다.\n예제처럼 서버1은 클라이언트A의 요청 정보를 지속적으로 유지하고 있어야한다.\n상태 유지의 문제점은 여기서 나타난다.\n서버1이 클라이언트A의 정보를 유지하고 있다보니서버1에 장애가 발생하면\n클라이언트A는 다른 서버에 요청을 처음부터 다시 시도해야한다.\n무상태(Stateless)는 어떤 차이점이 있을까?\n 무상태(Stateless)  갑자기 고객이 증가해도 점원을 대거 투입할 수 있다. 무상태는 응답 서버를 쉽게 바꿀 수 있다.  무한한 서버 증설 가능      무상태은 클라이언트A가 애초에 필요한 데이터를 모두 담아서 서버에 요청한다.\n서버는 클라이언트A의 요청에 따라 응답만 하면된다.\n중간에 서버가 장애나면?\n중계서버가 다른 서버에 요청을 똑같이 요청하면된다.\n클라이언트A의 요청에 필요한 데이터가 모두 담겨있기 때문이다.\n이 방식은 큰 장점이 있는데 수평 확장이 유리하다는 점이다.\n무상태성으로 설계가 되어있으면 트래픽이 많이 발생해도 동일한 장비를 추가 증설하여 트래픽을 감당할 수 있다.\n하지만 무상태(Stateless)도 실무 한계가 있다.\n무상태(Stateless) 실무 한계  모든 것을 무상태로 설계 할 수 있는 건 아니다.  무상태  로그인인이 필요 없는 단순한 서비스 소개 화면   상태 유지  브라우저 쿠키와 세션 상태를 유지해야하는 로그인     상태 유지가 필요한 로그인의 경우 무상태성 적용 불가 무상태를 유지하기 위해 클라이언트가 전송해야 할 데이터가 많아진다. 상태 유지는 최소한만 사용  비연결성(Connectionless) TCP/IP 연결의 경우 기본적으로 연결을 유지한다.\n예를들어 클라이언트가 여러개라고 가정해보자.\n서버는 모든 클라이언트의 요청에 따라 TCP/IP 소켓을 연결하고 유지한다.\n이 방식의 단점은 특정 클라이언트가 놀고있어도 서버는 연결 상태를 유지해야하다보니 서버 자원 소모가 많다는 점이다.\n(클라이언트가 수만개라고 가정한다면 서버는 …)\n연결을 유지하지 않는 모델은?\n이 방식은 TCP/IP 소켓 연결 후 요청을 하고 응답을 받고 볼일을 끝낸 서버는 연결을 종료한다.\n서버 입장에선 연결을 유지할 필요가 없어지므로 최소한의 자원을 유지할 수 있다.\n비 연결성  HTTP는 기본이 연결을 유지하지 않는 모델 일반적으로 초 단위 이하의 빠른 속도로 응답 1시간 동안 수천명이 서비스를 해도 실제 서버에서 동시 처리하는 요청은 수십개 이하로 매우 작음  웹 브라우저에서 연속적으로 검색 버튼을 누르진 않는다.   서버 자원의 가용성을 훨씬 높힐수 있음  비 연결성 방식의 한계와 극복  TCP/IP 연결을 매번 새로 맺어야함 - 3 Way Handshake로 인한 시간 낭비 웹 브라우저로 사이트를 요청하면 HTML 뿐만 아니라 js, image, css 등 수많은 자원을 다운로드한다.  현재는 HTTP 지속 연결(Persistent Comnnections, Keep alive)로 문제 해결    - HTTP 초기 연결\n필요한 정보가 생길때마다 연결을 새로한다. 시간도 오래걸리고 낭비도 심하다.\n- HTTP 지속 연결(Persistent Connections)\n기본적으로 HTTP 지속 연결은 연결을 한 후 요청을 보내고 응답을 받는다.\n그 다음 연결을 유지한 상태에서 필요한 자원을 응답받는다.\n(내부 매커니즘에 따라 다르지만 보통 HTML 문서가 완전히 다운로드될 떄까지 연결을 지속한다.)\n HTTP/2, HTTP/3에서 더 많은 최적화    하이퍼텍스트(Hypertext)는 참조(하이퍼링크)를 통해 독자가 한 문서에서 다른 문서로 즉시 접근할 수 있는 텍스트이다. ↩︎\n   ","wordCount":"822","inLanguage":"en","image":"https://5hdumat.github.io/resources/images/network/http.jpeg","datePublished":"2021-08-06T01:18:31+09:00","dateModified":"2021-08-06T01:18:31+09:00","author":{"@type":"Person","name":"서민규"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://5hdumat.github.io/posts/network/http/"},"publisher":{"@type":"Organization","name":"5hdumat","logo":{"@type":"ImageObject","url":"https://5hdumat.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -97,8 +97,8 @@ HTTP
 </header>
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
 </figure>
-<div class=post-content><h2 id=지금은-http-시대>지금은 HTTP 시대!<a hidden class=anchor aria-hidden=true href=#지금은-http-시대>#</a></h2>
-<h3 id=http>HTTP<a hidden class=anchor aria-hidden=true href=#http>#</a></h3>
+<div class=post-content><h1 id=지금은-http-시대>지금은 HTTP 시대!<a hidden class=anchor aria-hidden=true href=#지금은-http-시대>#</a></h1>
+<h2 id=http>HTTP<a hidden class=anchor aria-hidden=true href=#http>#</a></h2>
 <p><strong>H</strong>yper<strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol</p>
 <p>HTTP는 문서간의 링크를 통해 연결할 수 있는 HTML을 전송하기 위한 프로토콜로 시작되었다.<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup><br>
 하지만 현재는 아래와 같이 <strong>거의 모든 데이터를 HTTP 프로토콜에 담아 전송한다.</strong></p>
@@ -118,16 +118,16 @@ HTTP
 <li>HTTP/2 2015년: 성능 개선</li>
 <li>HTTP/3 진행중: TCP 대신에 UDP 사용, 성능 개선</li>
 </ul>
-<h2 id=http-특징>HTTP 특징<a hidden class=anchor aria-hidden=true href=#http-특징>#</a></h2>
+<h1 id=http-특징>HTTP 특징<a hidden class=anchor aria-hidden=true href=#http-특징>#</a></h1>
 <p>HTTP의 특징 크게 4가지로 나눠보자면 아래와 같다.</p>
 <ul>
 <li><strong>클라이언트 서버 구조</strong></li>
-<li><strong>무상태 프로토콜(Stateless), 비연결성</strong></li>
+<li><strong>무상태 프로토콜(Stateless)</strong></li>
+<li><strong>비연결성</strong></li>
 <li><strong>HTTP 메시지</strong></li>
-<li><strong>단순함, 확장 가능</strong></li>
 </ul>
 <p>하나씩 차례대로 알아보자.</p>
-<h3 id=1-클라이언트-서버-구조>1. 클라이언트 서버 구조<a hidden class=anchor aria-hidden=true href=#1-클라이언트-서버-구조>#</a></h3>
+<h2 id=1-클라이언트-서버-구조>1. 클라이언트 서버 구조<a hidden class=anchor aria-hidden=true href=#1-클라이언트-서버-구조>#</a></h2>
 <p>HTTP의 첫번째 중요한 특징은 <strong>클라이언트/서버 구조(CS)</strong> 로 되어있다는 점이다.</p>
 <p><img loading=lazy src=/resources/images/network/internet-network-33.png alt=internet-network-33>
 </p>
@@ -141,41 +141,179 @@ HTTP
 <p><strong>클라이언트와 서버를 개념적으로 분리하면서 양쪽이 독립적으로 진화할 수 있다는 점은 단순한 일이 아니다.</strong></p>
 <p><strong>이 개념이 적용되면서 비즈니스, 데이터 로직은 서버가 UI(화면)/UX(사용성)와 같은 화면구조는 클라이언트</strong>가 담당하게 되었다.</p>
 <p>이제 우리는 트래픽이 폭주해도 <strong>서버 아키텍쳐와 백엔드 기술을 얼마나 더 고도화하고 진화시킬수 있는지에 대해서만 고민하면 된다.</strong></p>
-<h3 id=2-무상태-프로토콜statelesss>2. 무상태 프로토콜(Statelesss)<a hidden class=anchor aria-hidden=true href=#2-무상태-프로토콜statelesss>#</a></h3>
+<h2 id=2-무상태-프로토콜statelesss>2. 무상태 프로토콜(Statelesss)<a hidden class=anchor aria-hidden=true href=#2-무상태-프로토콜statelesss>#</a></h2>
 <p>HTTP는 서버가 클라이언트의 상태를 보존하지 않는다.<br>
 이 말을 이해하려면 우리는 <strong>상태 유지(Stateful)와 무상태성(Stateless)의 차이</strong>를 알아봐야 한다.</p>
-<h3 id=상태-유지---stateful>상태 유지 - Stateful<a hidden class=anchor aria-hidden=true href=#상태-유지---stateful>#</a></h3>
+<h1 id=heading><a hidden class=anchor aria-hidden=true href=#heading>#</a></h1>
+<h1 id=heading-1><a hidden class=anchor aria-hidden=true href=#heading-1>#</a></h1>
+<h2 id=상태-유지---stateful>상태 유지 - Stateful<a hidden class=anchor aria-hidden=true href=#상태-유지---stateful>#</a></h2>
 <p>고객: 이 <strong>노트북</strong> 얼마인가요?<br>
 점원: 100만원 입니다.</p>
-<h4 id=heading><a hidden class=anchor aria-hidden=true href=#heading>#</a></h4>
-<p>고객: <strong>2개</strong> 구매하겠습니다.<br>
-점원: 200만원 입니다. <strong>신용카드, 현금중</strong>에 어떤 걸로 구매하시겠어요?</p>
-<h4 id=heading-1><a hidden class=anchor aria-hidden=true href=#heading-1>#</a></h4>
-<p>고객: <strong>신용카드로</strong> 구매하겠습니다.<br>
-점원: 200만원 결제 완료되었습니다.</p>
-<p><strong>너무나 일상적인 대화다. 하지만 예제를 조금 바꿔 점원이 여러명이라고 가정해보자.</strong></p>
-<h3 id=상태-유지---stateful-점원이-중간에-바뀌면>상태 유지 - Stateful, 점원이 중간에 바뀌면?<a hidden class=anchor aria-hidden=true href=#상태-유지---stateful-점원이-중간에-바뀌면>#</a></h3>
-<p>고객: 이 <strong>노트북</strong> 얼마인가요?<br>
-점원A: 100만원 입니다.</p>
 <h4 id=heading-2><a hidden class=anchor aria-hidden=true href=#heading-2>#</a></h4>
 <p>고객: <strong>2개</strong> 구매하겠습니다.<br>
-점원B: ?</p>
+점원: 200만원 입니다. <strong>신용카드, 현금중</strong>에 어떤 걸로 구매하시겠어요?</p>
 <h4 id=heading-3><a hidden class=anchor aria-hidden=true href=#heading-3>#</a></h4>
 <p>고객: <strong>신용카드로</strong> 구매하겠습니다.<br>
+점원: 200만원 결제 완료되었습니다.</p>
+<h1 id=heading-4><a hidden class=anchor aria-hidden=true href=#heading-4>#</a></h1>
+<h1 id=heading-5><a hidden class=anchor aria-hidden=true href=#heading-5>#</a></h1>
+<p><strong>너무나 일상적인 대화다. 하지만 예제를 조금 바꿔 점원이 여러명이라고 가정해보자.</strong></p>
+<h1 id=heading-6><a hidden class=anchor aria-hidden=true href=#heading-6>#</a></h1>
+<h1 id=heading-7><a hidden class=anchor aria-hidden=true href=#heading-7>#</a></h1>
+<h2 id=상태-유지---stateful-점원이-중간에-바뀌면>상태 유지 - Stateful, 점원이 중간에 바뀌면?<a hidden class=anchor aria-hidden=true href=#상태-유지---stateful-점원이-중간에-바뀌면>#</a></h2>
+<p>고객: 이 <strong>노트북</strong> 얼마인가요?<br>
+점원A: 100만원 입니다.</p>
+<h4 id=heading-8><a hidden class=anchor aria-hidden=true href=#heading-8>#</a></h4>
+<p>고객: <strong>2개</strong> 구매하겠습니다.<br>
+점원B: ?</p>
+<h4 id=heading-9><a hidden class=anchor aria-hidden=true href=#heading-9>#</a></h4>
+<p>고객: <strong>신용카드로</strong> 구매하겠습니다.<br>
 점원C: ?</p>
+<h1 id=heading-10><a hidden class=anchor aria-hidden=true href=#heading-10>#</a></h1>
+<h1 id=heading-11><a hidden class=anchor aria-hidden=true href=#heading-11>#</a></h1>
 <p><strong>무언가 이상하다. 고객의 요청은 점원이 바뀜에 따라 문맥이 유지되지 않는다.</strong><br>
 <strong>이를 다시 정리해보자면 아래의 예제와 같다.</strong></p>
-<h3 id=상태-유지---stateful-정리>상태 유지 - Stateful, 정리<a hidden class=anchor aria-hidden=true href=#상태-유지---stateful-정리>#</a></h3>
+<h1 id=heading-12><a hidden class=anchor aria-hidden=true href=#heading-12>#</a></h1>
+<h1 id=heading-13><a hidden class=anchor aria-hidden=true href=#heading-13>#</a></h1>
+<h2 id=상태-유지---stateful-정리>상태 유지 - Stateful, 정리<a hidden class=anchor aria-hidden=true href=#상태-유지---stateful-정리>#</a></h2>
 <p>고객: 이 <strong>노트북</strong> 얼마인가요?<br>
 점원: 100만원 입니다. <strong>(노트북 상태 유지)</strong></p>
-<h4 id=heading-4><a hidden class=anchor aria-hidden=true href=#heading-4>#</a></h4>
+<h4 id=heading-14><a hidden class=anchor aria-hidden=true href=#heading-14>#</a></h4>
 <p>고객: <strong>2개</strong> 구매하겠습니다.<br>
 점원: 200만원 입니다. <strong>신용카드, 현금중</strong>에 어떤 걸로 구매하시겠어요 <strong>(노트북, 2개 상태 유지)</strong></p>
-<h4 id=heading-5><a hidden class=anchor aria-hidden=true href=#heading-5>#</a></h4>
+<h4 id=heading-15><a hidden class=anchor aria-hidden=true href=#heading-15>#</a></h4>
 <p>고객: <strong>신용카드로</strong> 구매하겠습니다.<br>
 점원: 200만원 결제 완료되었습니다. <strong>(노트북, 2개, 신용카드 상태 유지)</strong></p>
+<h1 id=heading-16><a hidden class=anchor aria-hidden=true href=#heading-16>#</a></h1>
+<h1 id=heading-17><a hidden class=anchor aria-hidden=true href=#heading-17>#</a></h1>
 <p><strong>상태 유지(StateFul)에서 점원이 바뀌게 된다는 건 통신의 관점에선 장애가 발생한다는것과 다름이 없다.</strong></p>
-<p>이제 무상태성(Stateless)은 상태 유지(StateFul)와 어떻게 다른지 알아보자.</p>
+<h2 id=그럼-무상태성stateless은-뭐가-다른-걸까>그럼 무상태성(Stateless)은 뭐가 다른 걸까?<a hidden class=anchor aria-hidden=true href=#그럼-무상태성stateless은-뭐가-다른-걸까>#</a></h2>
+<p>이제 무상태성(Stateless)은 상태 유지(Stateful)와 어떻게 다른지 알아보자.</p>
+<h2 id=무상태---stateless>무상태 - Stateless<a hidden class=anchor aria-hidden=true href=#무상태---stateless>#</a></h2>
+<p>고객: 이 <strong>노트북</strong> 얼마인가요?<br>
+점원: 100만원 입니다.</p>
+<h4 id=heading-18><a hidden class=anchor aria-hidden=true href=#heading-18>#</a></h4>
+<p>고객: <strong>노트북 2개</strong> 구매하겠습니다.<br>
+점원: 200만원 입니다. <strong>신용카드, 현금중</strong>에 어떤 걸로 구매하시겠어요?</p>
+<h4 id=heading-19><a hidden class=anchor aria-hidden=true href=#heading-19>#</a></h4>
+<p>고객: <strong>노트북 2개를 신용카드로</strong> 구매하겠습니다.<br>
+점원: 200만원 결제 완료되었습니다ㄴ.</p>
+<h1 id=heading-20><a hidden class=anchor aria-hidden=true href=#heading-20>#</a></h1>
+<h1 id=heading-21><a hidden class=anchor aria-hidden=true href=#heading-21>#</a></h1>
+<p>위 예제는 <strong>점원이 바뀌더라도 고객의 마지막 말로 모든 행위를 판단할 수 있다.</strong><br>
+<strong>무상태성(Stateless)</strong> 은 말 그대로 점원이 고객의 상태를 유지하지 않아야 하기 때문이다.</p>
+<p><strong>상태 유지와 무상태의 차이가 느껴지는가?</strong></p>
+<h2 id=상태-유지stateful-무상태stateless-차이>상태 유지(Stateful), 무상태(Stateless) 차이<a hidden class=anchor aria-hidden=true href=#상태-유지stateful-무상태stateless-차이>#</a></h2>
+<ul>
+<li><strong>상태유지(Stateful)</strong>
+<ul>
+<li>중간에 다른 점원으로 바뀌면 안된다.<br>
+(중간에 다른 점원으로 바뀔 때 상태 정보를 다른 점원에게 미리 알려줘야 한다.)</li>
+</ul>
+</li>
+</ul>
+<p>그 이유는 아래와 같다.</p>
+<p><img loading=lazy src=/resources/images/network/internet-network-36.png alt=internet-network-36>
+</p>
+<p>예제처럼 서버1은 클라이언트A의 요청 정보를 지속적으로 유지하고 있어야한다.</p>
+<p><strong>상태 유지의 문제점은 여기서 나타난다.</strong></p>
+<p><img loading=lazy src=/resources/images/network/internet-network-37.png alt=internet-network-37>
+</p>
+<p>서버1이 클라이언트A의 정보를 유지하고 있다보니서버1에 장애가 발생하면<br>
+클라이언트A는 다른 서버에 요청을 처음부터 다시 시도해야한다.</p>
+<p><strong>무상태(Stateless)는 어떤 차이점이 있을까?</strong></p>
+<ul>
+<li><strong>무상태(Stateless)</strong>
+<ul>
+<li>갑자기 고객이 증가해도 점원을 대거 투입할 수 있다.</li>
+<li>무상태는 응답 서버를 쉽게 바꿀 수 있다.
+<ul>
+<li>무한한 서버 증설 가능</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img loading=lazy src=/resources/images/network/internet-network-38.png alt=internet-network-38>
+</p>
+<p>무상태은 클라이언트A가 애초에 필요한 데이터를 모두 담아서 서버에 요청한다.<br>
+서버는 클라이언트A의 요청에 따라 응답만 하면된다.</p>
+<p><strong>중간에 서버가 장애나면?</strong></p>
+<p><img loading=lazy src=/resources/images/network/internet-network-39.png alt=internet-network-39>
+</p>
+<p>중계서버가 다른 서버에 요청을 똑같이 요청하면된다.<br>
+클라이언트A의 요청에 필요한 데이터가 모두 담겨있기 때문이다.</p>
+<p>이 방식은 큰 장점이 있는데 <strong>수평 확장이 유리</strong>하다는 점이다.</p>
+<p><img loading=lazy src=/resources/images/network/internet-network-40.png alt=internet-network-40>
+</p>
+<p>무상태성으로 설계가 되어있으면 트래픽이 많이 발생해도 동일한 장비를 추가 증설하여 트래픽을 감당할 수 있다.</p>
+<p>하지만 <strong>무상태(Stateless)도 실무 한계</strong>가 있다.</p>
+<h3 id=무상태stateless-실무-한계>무상태(Stateless) 실무 한계<a hidden class=anchor aria-hidden=true href=#무상태stateless-실무-한계>#</a></h3>
+<ul>
+<li><strong>모든 것을 무상태로 설계 할 수 있는 건 아니다.</strong>
+<ul>
+<li><strong>무상태</strong>
+<ul>
+<li><strong>로그인인이 필요 없는 단순한 서비스 소개 화면</strong></li>
+</ul>
+</li>
+<li><strong>상태 유지</strong>
+<ul>
+<li><strong>브라우저 쿠키와 세션 상태를 유지해야하는 로그인</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>상태 유지가 필요한 로그인의 경우 무상태성 적용 불가</strong></li>
+<li><strong>무상태를 유지하기 위해 클라이언트가 전송해야 할 데이터가 많아진다.</strong></li>
+<li><strong>상태 유지는 최소한만 사용</strong></li>
+</ul>
+<h2 id=비연결성connectionless>비연결성(Connectionless)<a hidden class=anchor aria-hidden=true href=#비연결성connectionless>#</a></h2>
+<p>TCP/IP 연결의 경우 기본적으로 연결을 유지한다.<br>
+예를들어 클라이언트가 여러개라고 가정해보자.</p>
+<p><img loading=lazy src=/resources/images/network/internet-network-41.png alt=internet-network-41>
+</p>
+<p>서버는 모든 클라이언트의 요청에 따라 TCP/IP 소켓을 연결하고 유지한다.</p>
+<p>이 방식의 단점은 특정 클라이언트가 놀고있어도 서버는 연결 상태를 유지해야하다보니 서버 자원 소모가 많다는 점이다.<br>
+(클라이언트가 수만개라고 가정한다면 서버는 &mldr;)</p>
+<p><strong>연결을 유지하지 않는 모델은?</strong></p>
+<p><img loading=lazy src=/resources/images/network/internet-network-42.png alt=internet-network-42>
+</p>
+<p>이 방식은 TCP/IP 소켓 연결 후 요청을 하고 응답을 받고 볼일을 끝낸 서버는 연결을 종료한다.<br>
+서버 입장에선 연결을 유지할 필요가 없어지므로 <strong>최소한의 자원을 유지</strong>할 수 있다.</p>
+<h3 id=비-연결성>비 연결성<a hidden class=anchor aria-hidden=true href=#비-연결성>#</a></h3>
+<ul>
+<li><strong>HTTP는 기본이 연결을 유지하지 않는 모델</strong></li>
+<li><strong>일반적으로 초 단위 이하의 빠른 속도로 응답</strong></li>
+<li><strong>1시간 동안 수천명이 서비스를 해도 실제 서버에서 동시 처리하는 요청은 수십개 이하로 매우 작음</strong>
+<ul>
+<li><strong>웹 브라우저에서 연속적으로 검색 버튼을 누르진 않는다.</strong></li>
+</ul>
+</li>
+<li><strong>서버 자원의 가용성을 훨씬 높힐수 있음</strong></li>
+</ul>
+<h3 id=비-연결성-방식의-한계와-극복>비 연결성 방식의 한계와 극복<a hidden class=anchor aria-hidden=true href=#비-연결성-방식의-한계와-극복>#</a></h3>
+<ul>
+<li><strong>TCP/IP 연결을 매번 새로 맺어야함 - 3 Way Handshake로 인한 시간 낭비</strong></li>
+<li><strong>웹 브라우저로 사이트를 요청하면 HTML 뿐만 아니라 js, image, css 등 수많은 자원을 다운로드한다.</strong>
+<ul>
+<li><strong>현재는 HTTP 지속 연결(Persistent Comnnections, Keep alive)로 문제 해결</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>- HTTP 초기 연결</strong><br>
+<img loading=lazy src=/resources/images/network/internet-network-43.png alt=internet-network-43>
+</p>
+<p>필요한 정보가 생길때마다 연결을 새로한다. 시간도 오래걸리고 낭비도 심하다.</p>
+<p><strong>- HTTP 지속 연결(Persistent Connections)</strong><br>
+<img loading=lazy src=/resources/images/network/internet-network-43.png alt=internet-network-43>
+</p>
+<p>기본적으로 HTTP 지속 연결은 연결을 한 후 요청을 보내고 응답을 받는다.<br>
+그 다음 연결을 유지한 상태에서 필요한 자원을 응답받는다.<br>
+(내부 매커니즘에 따라 다르지만 보통 HTML 문서가 완전히 다운로드될 떄까지 연결을 지속한다.)</p>
+<ul>
+<li><strong>HTTP/2, HTTP/3에서 더 많은 최적화</strong></li>
+</ul>
 <section class=footnotes role=doc-endnotes>
 <hr>
 <ol>
