@@ -6,7 +6,7 @@
 <title>HTTP API 설계 | 5hdumat</title>
 <meta name=keywords content="Network,Http,Http API">
 <meta name=description content="API URI 고민 회원 정보 관리 API를 요구사항대로 만든다고 가정해보자.
-요구사항  회원 목록 조회 회원 조회 회원 등록 회원 수정 회원 삭제  URL 설계가 끝난 후 경로가 나왔다.
+요구사항  회원 목록 조회 회원 조회 회원 등록 회원 수정 회원 삭제  URI 설계가 끝난 후 경로가 나왔다.
  회원 목록 조회 /read-member-list 회원 조회 /read-member-by-id 회원 등록 /create-member 회원 수정 /update-member 회원 삭제 /delete-member  뭔가 그럴듯하다. 실제 현업에서도 위와 같은 설계가 많이 이루어진다.
 하지만 이것은 좋은 URI 설계일까?
 우리는 위와 같이 설계된 URI가 좋은 설계인지에 대해서는 다시한번 고민해 봐야 한다.">
@@ -27,7 +27,7 @@
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-05YE8R0TGZ',{anonymize_ip:!1})}</script>
 <meta property="og:title" content="HTTP API 설계">
 <meta property="og:description" content="API URI 고민 회원 정보 관리 API를 요구사항대로 만든다고 가정해보자.
-요구사항  회원 목록 조회 회원 조회 회원 등록 회원 수정 회원 삭제  URL 설계가 끝난 후 경로가 나왔다.
+요구사항  회원 목록 조회 회원 조회 회원 등록 회원 수정 회원 삭제  URI 설계가 끝난 후 경로가 나왔다.
  회원 목록 조회 /read-member-list 회원 조회 /read-member-by-id 회원 등록 /create-member 회원 수정 /update-member 회원 삭제 /delete-member  뭔가 그럴듯하다. 실제 현업에서도 위와 같은 설계가 많이 이루어진다.
 하지만 이것은 좋은 URI 설계일까?
 우리는 위와 같이 설계된 URI가 좋은 설계인지에 대해서는 다시한번 고민해 봐야 한다.">
@@ -40,12 +40,12 @@
 <meta name=twitter:image content="https://5hdumat.github.io/resources/images/network/http.jpeg">
 <meta name=twitter:title content="HTTP API 설계">
 <meta name=twitter:description content="API URI 고민 회원 정보 관리 API를 요구사항대로 만든다고 가정해보자.
-요구사항  회원 목록 조회 회원 조회 회원 등록 회원 수정 회원 삭제  URL 설계가 끝난 후 경로가 나왔다.
+요구사항  회원 목록 조회 회원 조회 회원 등록 회원 수정 회원 삭제  URI 설계가 끝난 후 경로가 나왔다.
  회원 목록 조회 /read-member-list 회원 조회 /read-member-by-id 회원 등록 /create-member 회원 수정 /update-member 회원 삭제 /delete-member  뭔가 그럴듯하다. 실제 현업에서도 위와 같은 설계가 많이 이루어진다.
 하지만 이것은 좋은 URI 설계일까?
 우리는 위와 같이 설계된 URI가 좋은 설계인지에 대해서는 다시한번 고민해 봐야 한다.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://5hdumat.github.io/posts/"},{"@type":"ListItem","position":3,"name":"HTTP API 설계","item":"https://5hdumat.github.io/posts/network/http-api/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"HTTP API 설계","name":"HTTP API 설계","description":"API URI 고민 회원 정보 관리 API를 요구사항대로 만든다고 가정해보자.\n요구사항  회원 목록 조회 회원 조회 회원 등록 회원 수정 회원 삭제  URL 설계가 끝난 후 경로가 나왔다.\n 회원 목록 조회 /read-member-list 회원 조회 /read-member-by-id 회원 등록 /create-member 회원 수정 /update-member 회원 삭제 /delete-member  뭔가 그럴듯하다. 실제 현업에서도 위와 같은 설계가 많이 이루어진다.\n하지만 이것은 좋은 URI 설계일까?\n우리는 위와 같이 설계된 URI가 좋은 설계인지에 대해서는 다시한번 고민해 봐야 한다.","keywords":["Network","Http","Http API"],"articleBody":"API URI 고민 회원 정보 관리 API를 요구사항대로 만든다고 가정해보자.\n요구사항  회원 목록 조회 회원 조회 회원 등록 회원 수정 회원 삭제  URL 설계가 끝난 후 경로가 나왔다.\n 회원 목록 조회 /read-member-list 회원 조회 /read-member-by-id 회원 등록 /create-member 회원 수정 /update-member 회원 삭제 /delete-member  뭔가 그럴듯하다. 실제 현업에서도 위와 같은 설계가 많이 이루어진다.\n하지만 이것은 좋은 URI 설계일까?\n우리는 위와 같이 설계된 URI가 좋은 설계인지에 대해서는 다시한번 고민해 봐야 한다.\n결론부터 말하자면 위와 같은 URI 설계는 좋지 않은 설계이다.\nURI 설계의 기준은 어떤 행위가 아닌 리소스를 기준으로 이루어져야 하기 때문이다.\n리소스가 의미하는게 뭘까? 위 예제처럼 회원을 등록하고 수정하고 조회하는건 리소스가 아니다.\n스타크래프트로 예를 들면 미네랄을 캐는 행위가 아닌 미네랄이 리소스인 것이다.\n즉, 회원이라는 개념 자체가 리소스다.\n리소스를 어떻게 식별하는게 좋을까? 식별하는 방법은 아래와 같다.\n1. 회원을 등록하고 수정하고 조회하는 것을 모두 배제한다.\n2. 회원이라는 리소스만 식별한다.\n3. 회원 리소스를 URI에 매핑한다. - URI는 리소스만 식별\n위 내용을 토대로 URI를 다시 설계한것을 살펴보자.\n 회원 목록 조회 /members 회원 조회 /members/{id} 회원 등록 /members/{id} 회원 수정 /members/{id} 회원 삭제 /members/{id}\n참고: URI는 계층 구조상 상위를 컬렉션으로 보고 복수단어 사용 권장 (member - members)  URI는 계층형 구조로 설계해야 하므로 /members 밑에 회원의 id를 넣었다.\n하지만 여기서 또 문제가 발생한다.\n 회원 목록 조회 /members 회원 조회 /members/{id} - 어떻게 구분하지? 회원 등록 /members/{id} - 어떻게 구분하지? 회원 수정 /members/{id} - 어떻게 구분하지? 회원 삭제 /members/{id} - 어떻게 구분하지?  회원의 조회, 등록, 수정, 삭제와 같은 행위는 구분이 안된다.\n리소스(회원)와 리소스를 대상으로 하는 행위(조회, 등록, 삭제, 변경)는 분리했지만 행위(메서드)는 구분하지 않았기 때문이다.\n이 문제를 해결하기 위한게 HTTP 메서드이다.\n다음 포스트에서 알아보자.\n","wordCount":"255","inLanguage":"en","image":"https://5hdumat.github.io/resources/images/network/http.jpeg","datePublished":"2021-08-07T11:11:16+09:00","dateModified":"2021-08-07T11:11:16+09:00","author":{"@type":"Person","name":"서민규"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://5hdumat.github.io/posts/network/http-api/"},"publisher":{"@type":"Organization","name":"5hdumat","logo":{"@type":"ImageObject","url":"https://5hdumat.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"HTTP API 설계","name":"HTTP API 설계","description":"API URI 고민 회원 정보 관리 API를 요구사항대로 만든다고 가정해보자.\n요구사항  회원 목록 조회 회원 조회 회원 등록 회원 수정 회원 삭제  URI 설계가 끝난 후 경로가 나왔다.\n 회원 목록 조회 /read-member-list 회원 조회 /read-member-by-id 회원 등록 /create-member 회원 수정 /update-member 회원 삭제 /delete-member  뭔가 그럴듯하다. 실제 현업에서도 위와 같은 설계가 많이 이루어진다.\n하지만 이것은 좋은 URI 설계일까?\n우리는 위와 같이 설계된 URI가 좋은 설계인지에 대해서는 다시한번 고민해 봐야 한다.","keywords":["Network","Http","Http API"],"articleBody":"API URI 고민 회원 정보 관리 API를 요구사항대로 만든다고 가정해보자.\n요구사항  회원 목록 조회 회원 조회 회원 등록 회원 수정 회원 삭제  URI 설계가 끝난 후 경로가 나왔다.\n 회원 목록 조회 /read-member-list 회원 조회 /read-member-by-id 회원 등록 /create-member 회원 수정 /update-member 회원 삭제 /delete-member  뭔가 그럴듯하다. 실제 현업에서도 위와 같은 설계가 많이 이루어진다.\n하지만 이것은 좋은 URI 설계일까?\n우리는 위와 같이 설계된 URI가 좋은 설계인지에 대해서는 다시한번 고민해 봐야 한다.\n결론부터 말하자면 위와 같은 URI 설계는 좋지 않은 설계이다.\nURI 설계의 기준은 어떤 행위가 아닌 리소스를 기준으로 이루어져야 하기 때문이다.\n리소스가 의미하는게 뭘까? 위 예제처럼 회원을 등록하고 수정하고 조회하는건 리소스가 아니다.\n스타크래프트로 예를 들면 미네랄을 캐는 행위가 아닌 미네랄이 리소스인 것이다.\n즉, 회원이라는 개념 자체가 리소스다.\n리소스를 어떻게 식별하는게 좋을까? 식별하는 방법은 아래와 같다.\n1. 회원을 등록하고 수정하고 조회하는 것을 모두 배제한다.\n2. 회원이라는 리소스만 식별한다.\n3. 회원 리소스를 URI에 매핑한다. - URI는 리소스만 식별\n위 내용을 토대로 URI를 다시 설계한것을 살펴보자.\n 회원 목록 조회 /members 회원 조회 /members/{id} 회원 등록 /members/{id} 회원 수정 /members/{id} 회원 삭제 /members/{id}\n참고: URI는 계층 구조상 상위를 컬렉션으로 보고 복수단어 사용 권장 (member - members)  URI는 계층형 구조로 설계해야 하므로 /members 밑에 회원의 id를 넣었다.\n하지만 여기서 또 문제가 발생한다.\n 회원 목록 조회 /members 회원 조회 /members/{id} - 어떻게 구분하지? 회원 등록 /members/{id} - 어떻게 구분하지? 회원 수정 /members/{id} - 어떻게 구분하지? 회원 삭제 /members/{id} - 어떻게 구분하지?  회원의 조회, 등록, 수정, 삭제와 같은 행위는 구분이 안된다.\n리소스(회원)와 리소스를 대상으로 하는 행위(조회, 등록, 삭제, 변경)는 분리했지만 행위(메서드)는 구분하지 않았기 때문이다.\n이 문제를 해결하기 위한게 HTTP 메서드이다.\n다음 포스트에서 알아보자.\n","wordCount":"255","inLanguage":"en","image":"https://5hdumat.github.io/resources/images/network/http.jpeg","datePublished":"2021-08-07T11:11:16+09:00","dateModified":"2021-08-07T11:11:16+09:00","author":{"@type":"Person","name":"서민규"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://5hdumat.github.io/posts/network/http-api/"},"publisher":{"@type":"Organization","name":"5hdumat","logo":{"@type":"ImageObject","url":"https://5hdumat.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -107,7 +107,7 @@ HTTP API 설계
 <li>회원 수정</li>
 <li>회원 삭제</li>
 </ul>
-<p>URL 설계가 끝난 후 경로가 나왔다.</p>
+<p>URI 설계가 끝난 후 경로가 나왔다.</p>
 <ul>
 <li>회원 목록 조회 /read-member-list</li>
 <li>회원 조회 /read-member-by-id</li>
