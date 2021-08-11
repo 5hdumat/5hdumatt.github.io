@@ -54,7 +54,7 @@ GET 메서드도 메시지 바디를 통해 데이터를 전달할 수 있지만
   리소스 조회 예제
    GET 메서드와 함께 /members/100 경로(path)의 리소스를 서버에 요청한다.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://5hdumat.github.io/posts/"},{"@type":"ListItem","position":3,"name":"HTTP 메서드","item":"https://5hdumat.github.io/posts/network/http-method/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"HTTP 메서드","name":"HTTP 메서드","description":"HTTP 주요 메서드 종류 HTTP 메서드는 클라이언트가 서버에 요청을 할 때 서버로부터 기대하는 행동이다.\n주로 많이 사용하는 HTTP 메서드는 아래와 같다.\nGET GET은 이름 그대로 리소스를 조회하기 위한 메서드이다.\n서버에 전달하고 싶은 데이터는 query(쿼리 파라미터, 쿼리 스트링)를 통해서 전달한다.\nGET 메서드도 메시지 바디를 통해 데이터를 전달할 수 있지만, 지원하지 않는 서버들이 많아 권장하지 않는다.\n리소스 조회 과정을 살펴보자.\n  리소스 조회 예제\n   GET 메서드와 함께 /members/100 경로(path)의 리소스를 서버에 요청한다.","keywords":["Network","Http","Http Method"],"articleBody":"HTTP 주요 메서드 종류 HTTP 메서드는 클라이언트가 서버에 요청을 할 때 서버로부터 기대하는 행동이다.\n주로 많이 사용하는 HTTP 메서드는 아래와 같다.\nGET GET은 이름 그대로 리소스를 조회하기 위한 메서드이다.\n서버에 전달하고 싶은 데이터는 query(쿼리 파라미터, 쿼리 스트링)를 통해서 전달한다.\nGET 메서드도 메시지 바디를 통해 데이터를 전달할 수 있지만, 지원하지 않는 서버들이 많아 권장하지 않는다.\n리소스 조회 과정을 살펴보자.\n  리소스 조회 예제\n   GET 메서드와 함께 /members/100 경로(path)의 리소스를 서버에 요청한다.\n    메시지를 전달받은 서버는 DBMS에서 요청받은 조건의 데이터를 조회한다.    특정 형태(예제는 JSON)의 데이터로 파싱 후 응답 메시지를 만들어 클라이언트에 전달한다.\n    클라이언트는 서버로부터 메시지를 전달받는다.    사용자가 보는 화면에 렌더링된다.      POST POST는 클라이언트에서 서버로 요청을 보낼 때 서버로부터 요청 데이터를 처리해달라는 의미이다.\n서버는 메시지 바디를 통해 들어온 데이터를 처리하는 모든 기능을 수행한다.\n(주로 신규 리소스 등록, 프로세스 처리 등에 사용된다.)\n여기서 주의할 점은 서버와 클라이언트는 서로 요청/응답에 대한 약속이 되어있어야 한다는 것이다.\n신규 리소스 등록 처리 과정을 살펴보자.\n  신규 리소스 등록 예제\n   클라이언트는 POST 방식으로 서버의 /members 경로에 메시지 바디를 전달한다.\n(예제는 신규 리소스 등록에 대한 약속이 되어있음을 전제로 한다.)\n    POST 방식으로 데이터를 전달받은 서버는 100번이라는 신규 리소스 식별자를 생성한다.\n    서버는 생성된 신규 리소스에 대한 정보를 클라이언트에 전송한다.\n   응답 메시지에 포함된 데이터  응답 상태(201 created, 200도 무관)  201 상태값일 경우 보통 Location이라는 자원 생성 경로를 포함한다.   등록된 리소스 데이터        POST에서 요청 데이터를 어떻게 처리한다는 뜻일까? 사실 POST는 의미가 굉장히 많다.\nPOST가 실제로 어떻게 사용되고 있는지 예시를 살펴보자.\n HTML 양식에 입력된 데이터를 서버측 데이터 처리 프로세스에 제공  HTML FORM에 입력한 정보로 회원 가입, 주문 등의 행위를 할 때 사용   게시판, 뉴스 그룹, 메일링 리스트, 블로그 또는 유사한 기사 그룹에 메시지 게시  게시판 글쓰기, 댓글 달기 등   서버가 아직 실별하지 않은 새 리소스 생성  신규 주문 생성   기존 자원에 데이터 추가  문서 내용 수정 및 추가    이 예시의 핵심은 (위 예제의 /members와 같은) 리소스 URI에 POST 요청을 전달받은 서버가\n요청 데이터를 어떻게 처리할지 리소스마다 스스로 정해야 한다.\n즉, POST 리소스 처리 방식에 대한 정해진 방법은 없다.\nPOST 정리  1. 새 리소스 생성(등록)  서버가 아직 식별하지 않는 새 리소스 생성   2. 요청 데이터 처리 (굉장히 중요한 부분이다.)  단순히 데이터를 생성하거나, 변경하는 것을 넘어 프로세스를 처리해야 하는 경우에도 사용된다.  예) 주문 - 결제완료 - 배달시작 - 배달완료\n단순히 값 변경을 넘어 프로세스 상태가 지속적으로 변경되는 단계에서도 POST가 쓰인다.   POST의 결과로 새로운 리소스가 생성되지 않을 수도 있다.  예) POST /orders/{orderId}/start-delivery  이전 포스트에서 URI 설계는 분명 리소스를 기준으로 해야한다고 했지만 실무에선 리소스만으로 모든 URI를 설계할 순 없다.\n리소스 만으로 설계된 URI는 굉장히 이상적인 케이스이다.\n예제의 /start-delivery와 같이 어떤 행위(동사)를 포함하는 URI를 컨트롤 URI라고 한다.       3. 다른 메서드로 처리하기 애매한 경우  예) JSON으로 조회 데이터를 넘겨야 하는데, GET 메서드를 사용하기 어려운 경우  이런 경우 조회이지만 메시지 바디에 조회용 데이터를 포함하여 POST로 요청해야한다.      POST는 마치 만능인 것 같다. 맞다. POST는 만능이다.\n하지만 우리는 위에서 조회할 때 GET을 사용해야 한다고 배웠다.\n그 이유는 GET은 조회 데이터가 캐싱되기 때문이다. POST는 캐싱이 어렵다.\nPOST 데이터 조회는 정말 어쩔 수 없을때만 사용하자.\n","wordCount":"466","inLanguage":"en","image":"https://5hdumat.github.io/resources/images/network/http.jpeg","datePublished":"2021-08-11T00:41:50+09:00","dateModified":"2021-08-11T00:41:50+09:00","author":{"@type":"Person","name":"서민규"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://5hdumat.github.io/posts/network/http-method/"},"publisher":{"@type":"Organization","name":"5hdumat","logo":{"@type":"ImageObject","url":"https://5hdumat.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"HTTP 메서드","name":"HTTP 메서드","description":"HTTP 주요 메서드 종류 HTTP 메서드는 클라이언트가 서버에 요청을 할 때 서버로부터 기대하는 행동이다.\n주로 많이 사용하는 HTTP 메서드는 아래와 같다.\nGET GET은 이름 그대로 리소스를 조회하기 위한 메서드이다.\n서버에 전달하고 싶은 데이터는 query(쿼리 파라미터, 쿼리 스트링)를 통해서 전달한다.\nGET 메서드도 메시지 바디를 통해 데이터를 전달할 수 있지만, 지원하지 않는 서버들이 많아 권장하지 않는다.\n리소스 조회 과정을 살펴보자.\n  리소스 조회 예제\n   GET 메서드와 함께 /members/100 경로(path)의 리소스를 서버에 요청한다.","keywords":["Network","Http","Http Method"],"articleBody":"HTTP 주요 메서드 종류 HTTP 메서드는 클라이언트가 서버에 요청을 할 때 서버로부터 기대하는 행동이다.\n주로 많이 사용하는 HTTP 메서드는 아래와 같다.\nGET GET은 이름 그대로 리소스를 조회하기 위한 메서드이다.\n서버에 전달하고 싶은 데이터는 query(쿼리 파라미터, 쿼리 스트링)를 통해서 전달한다.\nGET 메서드도 메시지 바디를 통해 데이터를 전달할 수 있지만, 지원하지 않는 서버들이 많아 권장하지 않는다.\n리소스 조회 과정을 살펴보자.\n  리소스 조회 예제\n   GET 메서드와 함께 /members/100 경로(path)의 리소스를 서버에 요청한다.\n    메시지를 전달받은 서버는 DBMS에서 요청받은 조건의 데이터를 조회한다.    특정 형태(예제는 JSON)의 데이터로 파싱 후 응답 메시지를 만들어 클라이언트에 전달한다.\n    클라이언트는 서버로부터 메시지를 전달받는다.    사용자가 보는 화면에 렌더링된다.      POST POST는 클라이언트에서 서버로 요청을 보낼 때 서버로부터 요청 데이터를 처리해달라는 의미이다.\n서버는 메시지 바디를 통해 들어온 데이터를 처리하는 모든 기능을 수행한다.\n(주로 신규 리소스 등록, 프로세스 처리 등에 사용된다.)\n여기서 주의할 점은 서버와 클라이언트는 서로 요청/응답에 대한 약속이 되어있어야 한다는 것이다.\n신규 리소스 등록 처리 과정을 살펴보자.\n  신규 리소스 등록 예제\n   클라이언트는 POST 방식으로 서버의 /members 경로에 메시지 바디를 전달한다.\n(예제는 신규 리소스 등록에 대한 약속이 되어있음을 전제로 한다.)\n    POST 방식으로 데이터를 전달받은 서버는 100번이라는 신규 리소스 식별자를 생성한다.\n    서버는 생성된 신규 리소스에 대한 정보를 클라이언트에 전송한다.\n   응답 메시지에 포함된 데이터  응답 상태(201 created, 200도 무관)  201 상태값일 경우 보통 Location이라는 자원 생성 경로를 포함한다.   등록된 리소스 데이터        POST에서 요청 데이터를 어떻게 처리한다는 뜻일까? 사실 POST는 의미가 굉장히 많다.\nPOST가 실제로 어떻게 사용되고 있는지 예시를 살펴보자.\n HTML 양식에 입력된 데이터를 서버측 데이터 처리 프로세스에 제공  HTML FORM에 입력한 정보로 회원 가입, 주문 등의 행위를 할 때 사용   게시판, 뉴스 그룹, 메일링 리스트, 블로그 또는 유사한 기사 그룹에 메시지 게시  게시판 글쓰기, 댓글 달기 등   서버가 아직 실별하지 않은 새 리소스 생성  신규 주문 생성   기존 자원에 데이터 추가  문서 내용 수정 및 추가    이 예시의 핵심은 (위 예제의 /members와 같은) 리소스 URI에 POST 요청을 전달받은 서버가\n요청 데이터를 어떻게 처리할지 리소스마다 스스로 정해야 한다.\n즉, POST 리소스 처리 방식에 대한 정해진 방법은 없다.\nPOST 정리  새 리소스 생성(등록)  서버가 아직 식별하지 않는 새 리소스 생성   요청 데이터 처리 (굉장히 중요한 부분이다.)  단순히 데이터를 생성하거나, 변경하는 것을 넘어 프로세스를 처리해야 하는 경우에도 사용된다.  예) 주문 - 결제완료 - 배달시작 - 배달완료\n단순히 값 변경을 넘어 프로세스 상태가 지속적으로 변경되는 단계에서도 POST가 쓰인다.   POST의 결과로 새로운 리소스가 생성되지 않을 수도 있다.  예) POST /orders/{orderId}/start-delivery  이전 포스트에서 URI 설계는 분명 리소스를 기준으로 해야한다고 했지만 실무에선 리소스만으로 모든 URI를 설계할 순 없다.\n리소스 만으로 설계된 URI는 굉장히 이상적인 케이스이다.\n예제의 /start-delivery와 같이 어떤 행위(동사)를 포함하는 URI를 컨트롤 URI라고 한다.       다른 메서드로 처리하기 애매한 경우  예) JSON으로 조회 데이터를 넘겨야 하는데, GET 메서드를 사용하기 어려운 경우  이런 경우 조회이지만 메시지 바디에 조회용 데이터를 포함하여 POST로 요청해야한다.      POST는 마치 만능인 것 같다. 맞다. POST는 만능이다.\n하지만 우리는 위에서 조회할 때 GET을 사용해야 한다고 배웠다.\n그 이유는 GET은 조회 데이터가 캐싱되기 때문이다. POST는 캐싱이 어렵다.\nPOST 데이터 조회는 정말 어쩔 수 없을때만 사용하자.\n","wordCount":"463","inLanguage":"en","image":"https://5hdumat.github.io/resources/images/network/http.jpeg","datePublished":"2021-08-11T00:41:50+09:00","dateModified":"2021-08-11T00:41:50+09:00","author":{"@type":"Person","name":"서민규"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://5hdumat.github.io/posts/network/http-method/"},"publisher":{"@type":"Organization","name":"5hdumat","logo":{"@type":"ImageObject","url":"https://5hdumat.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -227,12 +227,12 @@ POST가 실제로 어떻게 사용되고 있는지 예시를 살펴보자.</p>
 <p><strong>즉, POST 리소스 처리 방식에 대한 정해진 방법은 없다.</strong></p>
 <h3 id=post-정리>POST 정리<a hidden class=anchor aria-hidden=true href=#post-정리>#</a></h3>
 <ul>
-<li><strong>1. 새 리소스 생성(등록)</strong>
+<li><strong>새 리소스 생성(등록)</strong>
 <ul>
 <li>서버가 아직 식별하지 않는 새 리소스 생성</li>
 </ul>
 </li>
-<li><strong>2. 요청 데이터 처리 (굉장히 중요한 부분이다.)</strong>
+<li><strong>요청 데이터 처리 (굉장히 중요한 부분이다.)</strong>
 <ul>
 <li>단순히 데이터를 생성하거나, 변경하는 것을 넘어 프로세스를 처리해야 하는 경우에도 사용된다.
 <ul>
@@ -253,7 +253,7 @@ POST가 실제로 어떻게 사용되고 있는지 예시를 살펴보자.</p>
 </li>
 </ul>
 </li>
-<li><strong>3. 다른 메서드로 처리하기 애매한 경우</strong>
+<li><strong>다른 메서드로 처리하기 애매한 경우</strong>
 <ul>
 <li>예) JSON으로 조회 데이터를 넘겨야 하는데, GET 메서드를 사용하기 어려운 경우
 <ul>
@@ -265,7 +265,7 @@ POST가 실제로 어떻게 사용되고 있는지 예시를 살펴보자.</p>
 </ul>
 <p>POST는 마치 만능인 것 같다. 맞다. POST는 만능이다.<br>
 하지만 우리는 위에서 <strong>조회할 때 GET을 사용해야 한다고 배웠다.</strong></p>
-<p>그 이유는 GET은 조회 데이터가 캐싱되기 때문이다. POST는 캐싱이 어렵다.<br>
+<p>그 이유는 <strong>GET은 조회 데이터가 캐싱되기 때문이다. POST는 캐싱이 어렵다.</strong><br>
 POST 데이터 조회는 정말 어쩔 수 없을때만 사용하자.</p>
 </div>
 <footer class=post-footer>
