@@ -76,6 +76,20 @@
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
 </figure>
 <header class=entry-header>
+<h2>HTTP 상태 코드</h2>
+</header>
+<section class=entry-content>
+<p>HTTP 상태코드 클라이언트가 보낸 요청의 처리 상태를 응답에서 알려주는 기능
+1xx (Informational): 요청이 수신되어 처리중 (거의 사용하지 않으므로 생략) 2xx (Successful): 요청 정상 처리 3xx (Redirection): 요청을 완료하려면 추가 행동이 필요 4xx (Client Error): 클라이언트 오류, 잘못된 문법등으로 서버가 요청을 수행할 수 없음 5xx (Server Error): 서버 오류, 서버가 정상 요청을 처리하지 못함 만약 모르는 상태 코드가 나타나면? 클라이언트는 상위 상태코드로 해석해서 처리한다.
+클라이언트 입장에서 상태코드에 대한 이해가 어려울 경우 큰 범위로 이해하면 된다....</p>
+</section>
+<footer class=entry-footer>August 19, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to HTTP 상태 코드" href=https://5hdumat.github.io/posts/network/http-status-code/></a>
+</article>
+<article class=post-entry>
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
+</figure>
+<header class=entry-header>
 <h2>HTTP API 설계</h2>
 </header>
 <section class=entry-content>
@@ -222,27 +236,6 @@ DNS의 특징 DNS는 등록한 도메인 명을 IP 주소로 변환해 준다.
 </section>
 <footer class=entry-footer>August 4, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to DNS" href=https://5hdumat.github.io/posts/network/dns/></a>
-</article>
-<article class=post-entry>
-<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
-</figure>
-<header class=entry-header>
-<h2>PORT</h2>
-</header>
-<section class=entry-content>
-<p>PORT ? PORT는 배가 도착하는 항구라는 뜻이다.
-포트는 마치 항구와 같다. 패킷이 목적지 IP까지 안전하게 도착하도록 도와준다.
-그게 어떤 애플리케이션이든 말이다.
-예를 들면 아래와 같다.
-한번에 둘 이상 연결해야 한다면? 우리는 PC에서 한 작업만 하지 않는다.
-ZOOM회의를 하면서 몰래 게임을 켜놓고 웹 브라우저로 쇼핑을 한다고 가정해보자.
-가정대로라면 클라이언트는 여러개의 서버와 통신 해야한다.
-위와 같은 상황에선 서버의 응답 패킷들이 클라이언트에 뒤죽박죽 도착할 것이다.
-(이건 클라이언트가 서버로 요청을 보낼때도 마찬가지다.)
-게임 패킷인지, 화상통화 패킷인지, 웹 브라우저의 패킷인지 IP 프로토콜만 가지고는 구분할 수 없다....</p>
-</section>
-<footer class=entry-footer>August 3, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to PORT" href=https://5hdumat.github.io/posts/network/port/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
