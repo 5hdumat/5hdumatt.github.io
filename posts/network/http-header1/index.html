@@ -5,10 +5,10 @@
 <meta name=robots content="index, follow">
 <title>HTTP 일반헤더 | 5hdumat</title>
 <meta name=keywords content="Network,Http,Http API">
-<meta name=description content="HTTP 헤더 개요 앞서 간단히 정리했었던 HTTP 메시지내용을 다시 한번 정리해보자.
+<meta name=description content="HTTP 헤더 개요 앞서 간단히 정리했었던 HTTP 메시지 내용을 다시 한번 정리해보자.
 HTTP 헤더  HTTP 전송에 필요한 모든 부가정보를 헤더가 포함한다.
 예) 메시지 바대의 내용, 메시지 바디의 크기, 압축, 인증, 요청 클라이언트, 서버 정보 캐시 관리 정보 등
-  header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하자)  field-name &ldquo;:&rdquo; OWS field-value OWS (OWS: 띄어쓰기) field-name은 대소문자 구분이 없다.   표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더도 추가 가능하다.">
+  header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하자)  field-name &ldquo;:&rdquo; OWS field-value OWS (OWS: 띄어쓰기) field-name은 대소문자 구분이 없다.   표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더를 추가할 수도 있다.">
 <meta name=author content="서민규">
 <link rel=canonical href=https://5hdumat.github.io/posts/network/http-header1/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.6cba0d81b5f3f42bb578d49f402ba4175aa72b43def148780b8ad714c957c6f5.css integrity="sha256-bLoNgbXz9Cu1eNSfQCukF1qnK0Pe8Uh4C4rXFMlXxvU=" rel="preload stylesheet" as=style>
@@ -25,10 +25,10 @@ HTTP 헤더  HTTP 전송에 필요한 모든 부가정보를 헤더가 포함한
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-05YE8R0TGZ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-05YE8R0TGZ',{anonymize_ip:!1})}</script>
 <meta property="og:title" content="HTTP 일반헤더">
-<meta property="og:description" content="HTTP 헤더 개요 앞서 간단히 정리했었던 HTTP 메시지내용을 다시 한번 정리해보자.
+<meta property="og:description" content="HTTP 헤더 개요 앞서 간단히 정리했었던 HTTP 메시지 내용을 다시 한번 정리해보자.
 HTTP 헤더  HTTP 전송에 필요한 모든 부가정보를 헤더가 포함한다.
 예) 메시지 바대의 내용, 메시지 바디의 크기, 압축, 인증, 요청 클라이언트, 서버 정보 캐시 관리 정보 등
-  header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하자)  field-name &ldquo;:&rdquo; OWS field-value OWS (OWS: 띄어쓰기) field-name은 대소문자 구분이 없다.   표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더도 추가 가능하다.">
+  header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하자)  field-name &ldquo;:&rdquo; OWS field-value OWS (OWS: 띄어쓰기) field-name은 대소문자 구분이 없다.   표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더를 추가할 수도 있다.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://5hdumat.github.io/posts/network/http-header1/">
 <meta property="og:image" content="https://5hdumat.github.io/resources/images/network/http.jpeg"><meta property="article:section" content="posts">
@@ -37,12 +37,12 @@ HTTP 헤더  HTTP 전송에 필요한 모든 부가정보를 헤더가 포함한
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://5hdumat.github.io/resources/images/network/http.jpeg">
 <meta name=twitter:title content="HTTP 일반헤더">
-<meta name=twitter:description content="HTTP 헤더 개요 앞서 간단히 정리했었던 HTTP 메시지내용을 다시 한번 정리해보자.
+<meta name=twitter:description content="HTTP 헤더 개요 앞서 간단히 정리했었던 HTTP 메시지 내용을 다시 한번 정리해보자.
 HTTP 헤더  HTTP 전송에 필요한 모든 부가정보를 헤더가 포함한다.
 예) 메시지 바대의 내용, 메시지 바디의 크기, 압축, 인증, 요청 클라이언트, 서버 정보 캐시 관리 정보 등
-  header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하자)  field-name &ldquo;:&rdquo; OWS field-value OWS (OWS: 띄어쓰기) field-name은 대소문자 구분이 없다.   표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더도 추가 가능하다.">
+  header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하자)  field-name &ldquo;:&rdquo; OWS field-value OWS (OWS: 띄어쓰기) field-name은 대소문자 구분이 없다.   표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더를 추가할 수도 있다.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://5hdumat.github.io/posts/"},{"@type":"ListItem","position":3,"name":"HTTP 일반헤더","item":"https://5hdumat.github.io/posts/network/http-header1/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"HTTP 일반헤더","name":"HTTP 일반헤더","description":"HTTP 헤더 개요 앞서 간단히 정리했었던 HTTP 메시지내용을 다시 한번 정리해보자.\nHTTP 헤더  HTTP 전송에 필요한 모든 부가정보를 헤더가 포함한다.\n예) 메시지 바대의 내용, 메시지 바디의 크기, 압축, 인증, 요청 클라이언트, 서버 정보 캐시 관리 정보 등\n  header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하자)  field-name \u0026ldquo;:\u0026rdquo; OWS field-value OWS (OWS: 띄어쓰기) field-name은 대소문자 구분이 없다.   표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더도 추가 가능하다.","keywords":["Network","Http","Http API"],"articleBody":"HTTP 헤더 개요 앞서 간단히 정리했었던 HTTP 메시지내용을 다시 한번 정리해보자.\nHTTP 헤더  HTTP 전송에 필요한 모든 부가정보를 헤더가 포함한다.\n예) 메시지 바대의 내용, 메시지 바디의 크기, 압축, 인증, 요청 클라이언트, 서버 정보 캐시 관리 정보 등\n  header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하자)  field-name “:” OWS field-value OWS (OWS: 띄어쓰기) field-name은 대소문자 구분이 없다.   표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더도 추가 가능하다.  HTTP 표준 변화  1999년 RFC2616이 폐기되고 2014년 RFC7230~7235로 HTTP 표준이 개정된다.\n   RFC723x 변화\n RFC2616에서 쓰이던 엔티티(Entity)라는 용어가 표현(Representation)이라는 용어로 대체  표현(Representation) = 표현 메타데이터(Representation Metadata) + 표현 데이터(Representation Data)      RFC7230 스펙\n RFC2616에서 쓰이던 엔티티(Entity)라는 용어가 표현(Representation)이라는 용어로 대체 메시지 본문(Message Body)을 통해 표현 데이터 전달, 메시지 본문을 페이로드(Payload)라고도 한다. 표현은 요청이나 응답에서 전달할 실제 데이터를 의미한다. 표현 헤더는 표현 데이터를 해석할 수 있는 정보를 제공한다.  데이터 유형(html, json), 데이터 길이, 압축 정보 등      ","wordCount":"139","inLanguage":"en","image":"https://5hdumat.github.io/resources/images/network/http.jpeg","datePublished":"2021-08-21T02:33:59+09:00","dateModified":"2021-08-21T02:33:59+09:00","author":{"@type":"Person","name":"서민규"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://5hdumat.github.io/posts/network/http-header1/"},"publisher":{"@type":"Organization","name":"5hdumat","logo":{"@type":"ImageObject","url":"https://5hdumat.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"HTTP 일반헤더","name":"HTTP 일반헤더","description":"HTTP 헤더 개요 앞서 간단히 정리했었던 HTTP 메시지 내용을 다시 한번 정리해보자.\nHTTP 헤더  HTTP 전송에 필요한 모든 부가정보를 헤더가 포함한다.\n예) 메시지 바대의 내용, 메시지 바디의 크기, 압축, 인증, 요청 클라이언트, 서버 정보 캐시 관리 정보 등\n  header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하자)  field-name \u0026ldquo;:\u0026rdquo; OWS field-value OWS (OWS: 띄어쓰기) field-name은 대소문자 구분이 없다.   표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더를 추가할 수도 있다.","keywords":["Network","Http","Http API"],"articleBody":"HTTP 헤더 개요 앞서 간단히 정리했었던 HTTP 메시지 내용을 다시 한번 정리해보자.\nHTTP 헤더  HTTP 전송에 필요한 모든 부가정보를 헤더가 포함한다.\n예) 메시지 바대의 내용, 메시지 바디의 크기, 압축, 인증, 요청 클라이언트, 서버 정보 캐시 관리 정보 등\n  header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하자)  field-name “:” OWS field-value OWS (OWS: 띄어쓰기) field-name은 대소문자 구분이 없다.   표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더를 추가할 수도 있다.  HTTP 표준 변화  1999년 RFC2616이 폐기되고, 2014년 RFC7230~7235로 HTTP 표준이 개정된다.\n   RFC723x 변화\n RFC2616에서 쓰이던 엔티티(Entity)라는 용어가 표현(Representation)이라는 용어로 대체    RFC7230 스펙\n RFC2616에서 쓰이던 엔티티(Entity)라는 용어가 표현(Representation)이라는 용어로 대체 메시지 본문(Message Body)을 통해 표현 데이터 전달, 메시지 본문을 페이로드(Payload)라고도 한다. 표현은 요청이나 응답에서 전달할 실제 데이터를 의미한다.  표현(Representation) = 표현 헤더(Representation Metadata) + 표현 데이터(Representation Data)   표현 헤더는 표현 데이터를 해석할 수 있는 정보를 제공한다.  데이터 유형(html, json), 데이터 길이, 압축 정보 등      왜 표현이라고 정의 했을까? 예를 들어 회원 조회 내역을 HTML로 제공해준다 가정해보자.\nDB에 저장되어있는 회원 리소스를 HTTP로 전송할 때 HTML, JSON 등으로 다양하게 표현할 수 있다. 그래서 실제 전달 데이터를 표현이라고 정의했다.\n표현  표현 헤더는 전송, 응답 둘다 사용할 수 있다.\n  Content-Type: 표현 데이터의 형식 Content-Encoding: 표현 데이터의 압축 방식 Content-Language: 표현 데이터의 자연 언어 Content-Length: 표현 데이터의 길이  Content-Length는 사실 표현이라고 보긴 어렵고 메시지 본문(Payload) 헤더로 분류    하나씩 자세하게 살펴보자.\nContent-Type  표현 데이터의 형식 설명\n  미디어 타입, 문자 인코딩  예) text/html; charset=utf-8, application/json(기본 utf-8), image/png    Content-Encoding  표현 데이터에 대한 인코딩\n  표현 데이터를 압축하기 위해 사용 데이터를 전달하는 곳에서 압축 후 인코딩 헤더를 추가한다.  데이터를 읽는 쪽에서 인코딩 헤더의 정보로 압축 해제하기 때문이다.  예) gzip, deflate, identity      Content-Language  표현 데이터의 자연 언어\n  표현 데이터의 자연 언어를 표현  한국 클라이언트로 애플 공식 사이트 접속 시 Content-Language: en으로 응답이 오면 국가 또는 지역을 선택하세요와 같은 부가 서비스를 위한 헤더로도 사용할 수 있다.    Content-Length  표현 데이터의 길이\n  바이트 단위 Transfer-Encoding(전송 코딩)을 사용하면 Content-Length를 사용하면 안된다.  컨텐츠 협상 (Contents Negotiation)  클라이언트가 선호하는 표현 요청이다. 협상 헤더는 요청시에만 사용한다.\n  Accept: 클라이언트가 선호하는 미디어 타입으로 요청 Accept-Charset: 클라이언트가 선호하는 문자 인코딩으로 요청 Accept-Encoding: 클라이언트가 선호하는 압축 인코딩으로 요청 Aceept-Language: 클라이언트가 선호하는 자연 언어로 요청  Aceept-Language를 예로 들어보자. 아래 예제는 한국어 브라우저를 사용하는 클라이언트가 외국 이벤트 사이트에 접속했을 때의 상황이다.\nAccept-Language 적용 전 클라이언트는 리소스 경로만 서버에게 요청하고 그 외 아무런 정보도 요청하지 않았다.\n즉 컨텐츠 협상이 이루어지지 않아 다중 언어 지원 서버임에도 서버는 영어로 응답했다.\n영알못 한국인 클라이언트라면 난감한 상황일 것이다. (본인 소개 아님)\n하지만 컨텐츠 협상이 이루어 졌다면 서버는 어떻게 응답했을까?\nAccept-Language 적용 후 클라이언트가 Accept-Language: ko라는 표현 헤더를 포함해 요청했다. 서버는 한국어도 지원하기 때문에 클라이언트가 원하는 Content-Language로 응답했다. 작은 부분 같지만 굉장히 큰 이점이 있는 ㅍ기능이다.\n","wordCount":"423","inLanguage":"en","image":"https://5hdumat.github.io/resources/images/network/http.jpeg","datePublished":"2021-08-21T02:33:59+09:00","dateModified":"2021-08-21T02:33:59+09:00","author":{"@type":"Person","name":"서민규"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://5hdumat.github.io/posts/network/http-header1/"},"publisher":{"@type":"Organization","name":"5hdumat","logo":{"@type":"ImageObject","url":"https://5hdumat.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <noscript>
@@ -92,7 +92,7 @@ HTTP 일반헤더
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
 </figure>
 <div class=post-content><h2 id=http-헤더-개요>HTTP 헤더 개요<a hidden class=anchor aria-hidden=true href=#http-헤더-개요>#</a></h2>
-<p>앞서 간단히 정리했었던 <a href=/posts/network/http-message>HTTP 메시지</a>내용을 다시 한번 정리해보자.</p>
+<p>앞서 간단히 정리했었던 <a href=/posts/network/http-message>HTTP 메시지</a> 내용을 다시 한번 정리해보자.</p>
 <h3 id=http-헤더>HTTP 헤더<a hidden class=anchor aria-hidden=true href=#http-헤더>#</a></h3>
 <blockquote>
 <p><strong>HTTP 전송에 필요한 모든 부가정보를 헤더가 포함한다.</strong><br>
@@ -107,21 +107,17 @@ HTTP 일반헤더
 <li>field-name은 대소문자 구분이 없다.</li>
 </ul>
 </li>
-<li>표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더도 추가 가능하다.</li>
+<li>표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더를 추가할 수도 있다.</li>
 </ul>
 <h3 id=http-표준-변화>HTTP 표준 변화<a hidden class=anchor aria-hidden=true href=#http-표준-변화>#</a></h3>
 <blockquote>
-<p>1999년 RFC2616이 폐기되고 2014년 RFC7230~7235로 HTTP 표준이 개정된다.</p>
+<p>1999년 RFC2616이 폐기되고, 2014년 RFC7230~7235로 HTTP 표준이 개정된다.</p>
 </blockquote>
 <ul>
 <li>
 <p><strong>RFC723x 변화</strong></p>
 <ul>
-<li>RFC2616에서 쓰이던 엔티티(Entity)라는 용어가 표현(Representation)이라는 용어로 대체
-<ul>
-<li><strong>표현(Representation) = 표현 메타데이터(Representation Metadata) + 표현 데이터(Representation Data)</strong></li>
-</ul>
-</li>
+<li>RFC2616에서 쓰이던 엔티티(Entity)라는 용어가 표현(Representation)이라는 용어로 대체</li>
 </ul>
 </li>
 <li>
@@ -131,8 +127,12 @@ HTTP 일반헤더
 <ul>
 <li>RFC2616에서 쓰이던 엔티티(Entity)라는 용어가 표현(Representation)이라는 용어로 대체</li>
 <li>메시지 본문(Message Body)을 통해 표현 데이터 전달, 메시지 본문을 페이로드(Payload)라고도 한다.</li>
-<li><strong>표현</strong>은 요청이나 응답에서 전달할 실제 데이터를 의미한다.</li>
-<li><strong>표현 헤더는 표현 데이터</strong>를 해석할 수 있는 정보를 제공한다.
+<li><strong>표현</strong>은 요청이나 응답에서 전달할 실제 데이터를 의미한다.
+<ul>
+<li><strong>표현(Representation) = 표현 헤더(Representation Metadata) + 표현 데이터(Representation Data)</strong></li>
+</ul>
+</li>
+<li><strong>표현 헤더는 표현 데이터를 해석할 수 있는 정보를 제공한다.</strong>
 <ul>
 <li>데이터 유형(html, json), 데이터 길이, 압축 정보 등</li>
 </ul>
@@ -140,6 +140,100 @@ HTTP 일반헤더
 </ul>
 </li>
 </ul>
+<p>왜 표현이라고 정의 했을까? 예를 들어 회원 조회 내역을 HTML로 제공해준다 가정해보자.<br>
+DB에 저장되어있는 회원 리소스를 HTTP로 전송할 때 HTML, JSON 등으로 다양하게 표현할 수 있다. 그래서 실제 전달 데이터를 <strong>표현</strong>이라고 정의했다.</p>
+<h2 id=표현>표현<a hidden class=anchor aria-hidden=true href=#표현>#</a></h2>
+<blockquote>
+<p>표현 헤더는 전송, 응답 둘다 사용할 수 있다.</p>
+</blockquote>
+<ul>
+<li>Content-Type: 표현 데이터의 형식</li>
+<li>Content-Encoding: 표현 데이터의 압축 방식</li>
+<li>Content-Language: 표현 데이터의 자연 언어</li>
+<li>Content-Length: 표현 데이터의 길이
+<ul>
+<li>Content-Length는 사실 표현이라고 보긴 어렵고 메시지 본문(Payload) 헤더로 분류</li>
+</ul>
+</li>
+</ul>
+<p>하나씩 자세하게 살펴보자.</p>
+<h3 id=content-type>Content-Type<a hidden class=anchor aria-hidden=true href=#content-type>#</a></h3>
+<blockquote>
+<p><strong>표현 데이터의 형식 설명</strong></p>
+</blockquote>
+<p><img loading=lazy src=/resources/images/network/internet-network-75.png alt=internet-network-75>
+</p>
+<ul>
+<li>미디어 타입, 문자 인코딩
+<ul>
+<li>예) text/html; charset=utf-8, application/json(기본 utf-8), image/png</li>
+</ul>
+</li>
+</ul>
+<h3 id=content-encoding>Content-Encoding<a hidden class=anchor aria-hidden=true href=#content-encoding>#</a></h3>
+<blockquote>
+<p><strong>표현 데이터에 대한 인코딩</strong></p>
+</blockquote>
+<p><img loading=lazy src=/resources/images/network/internet-network-76.png alt=internet-network-76>
+</p>
+<ul>
+<li>표현 데이터를 압축하기 위해 사용</li>
+<li>데이터를 전달하는 곳에서 압축 후 인코딩 헤더를 추가한다.
+<ul>
+<li>데이터를 읽는 쪽에서 인코딩 헤더의 정보로 압축 해제하기 때문이다.
+<ul>
+<li>예) gzip, deflate, identity</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id=content-language>Content-Language<a hidden class=anchor aria-hidden=true href=#content-language>#</a></h3>
+<blockquote>
+<p><strong>표현 데이터의 자연 언어</strong></p>
+</blockquote>
+<p><img loading=lazy src=/resources/images/network/internet-network-77.png alt=internet-network-77>
+</p>
+<ul>
+<li>표현 데이터의 자연 언어를 표현
+<ul>
+<li>한국 클라이언트로 <a href=https://www.apple.com/>애플 공식 사이트</a> 접속 시 <code>Content-Language: en</code>으로 응답이 오면 <strong>국가 또는 지역을 선택하세요</strong>와 같은 부가 서비스를 위한 헤더로도 사용할 수 있다.</li>
+</ul>
+</li>
+</ul>
+<h3 id=content-length>Content-Length<a hidden class=anchor aria-hidden=true href=#content-length>#</a></h3>
+<blockquote>
+<p><strong>표현 데이터의 길이</strong></p>
+</blockquote>
+<p><img loading=lazy src=/resources/images/network/internet-network-78.png alt=internet-network-78>
+</p>
+<ul>
+<li>바이트 단위</li>
+<li>Transfer-Encoding(전송 코딩)을 사용하면 Content-Length를 사용하면 안된다.</li>
+</ul>
+<h2 id=컨텐츠-협상-contents-negotiation>컨텐츠 협상 (Contents Negotiation)<a hidden class=anchor aria-hidden=true href=#컨텐츠-협상-contents-negotiation>#</a></h2>
+<blockquote>
+<p>클라이언트가 선호하는 표현 요청이다. <strong>협상 헤더는 요청시에만 사용한다.</strong></p>
+</blockquote>
+<ul>
+<li>Accept: 클라이언트가 선호하는 미디어 타입으로 요청</li>
+<li>Accept-Charset: 클라이언트가 선호하는 문자 인코딩으로 요청</li>
+<li>Accept-Encoding: 클라이언트가 선호하는 압축 인코딩으로 요청</li>
+<li>Aceept-Language: 클라이언트가 선호하는 자연 언어로 요청</li>
+</ul>
+<h3 id=aceept-language를-예로-들어보자>Aceept-Language를 예로 들어보자.<a hidden class=anchor aria-hidden=true href=#aceept-language를-예로-들어보자>#</a></h3>
+<p>아래 예제는 한국어 브라우저를 사용하는 클라이언트가 외국 이벤트 사이트에 접속했을 때의 상황이다.</p>
+<h4 id=accept-language-적용-전>Accept-Language 적용 전<a hidden class=anchor aria-hidden=true href=#accept-language-적용-전>#</a></h4>
+<p><img loading=lazy src=/resources/images/network/internet-network-79.png alt=internet-network-79>
+</p>
+<p>클라이언트는 리소스 경로만 서버에게 요청하고 그 외 아무런 정보도 요청하지 않았다.<br>
+<strong>즉 컨텐츠 협상이 이루어지지 않아 다중 언어 지원 서버임에도 서버는 영어로 응답했다.</strong><br>
+영알못 한국인 클라이언트라면 난감한 상황일 것이다. (본인 소개 아님)</p>
+<p>하지만 컨텐츠 협상이 이루어 졌다면 서버는 어떻게 응답했을까?</p>
+<h4 id=accept-language-적용-후>Accept-Language 적용 후<a hidden class=anchor aria-hidden=true href=#accept-language-적용-후>#</a></h4>
+<p><img loading=lazy src=/resources/images/network/internet-network-80.png alt=internet-network-80>
+</p>
+<p>클라이언트가 <code>Accept-Language: ko</code>라는 표현 헤더를 포함해 요청했다. 서버는 한국어도 지원하기 때문에 클라이언트가 원하는 <code>Content-Language</code>로 응답했다. 작은 부분 같지만 굉장히 큰 이점이 있는 ㅍ기능이다.</p>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
@@ -148,7 +242,7 @@ HTTP 일반헤더
 <li><a href=https://5hdumat.github.io/tags/http-api/>Http API</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://5hdumat.github.io/posts/servlet/servlet-programing-basic-step2/>
+<a class=prev href=https://5hdumat.github.io/posts/servlet/servlet-programing-basic-step3/>
 <span class=title>« Prev Page</span>
 <br>
 <span>[서블릿 프로그래밍 기본] 서블릿 인터페이스</span>

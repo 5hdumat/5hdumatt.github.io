@@ -73,6 +73,20 @@
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/servlet/java.jpg alt>
 </figure>
 <header class=entry-header>
+<h2>[서블릿 프로그래밍 기본] GenericServlet</h2>
+</header>
+<section class=entry-content>
+<p>개발환경: IntelliJ IDEA 2021.2 (Utimate Edition)
+목표 GenericServlet 추상 클래스를 사용하여 서블릿을 만들 수 있다. 웹 브라우저와 서블릿간의 CGI를 이해한다. GenericServlet? 이전 포스트에선 서블릿 클래스를 만들 때 Servlet 인터페이스를 구현했다. 인터페이스를 구현하려면 선언된 모든 메서드를 구현해야 하는데 이 방식에는 문제점이 있다.
+사실 Servlet 인터페이스에 선언된 다섯 개의 메서드 중 반드시 구현해야 하는 메서드는 클라이언트가 요청할 때마다 호출되는 service() 메서드이다. init() 의 경우 서블릿이 생성될 때 한 번 호출되는데, 서블릿을 위해 특별히 준비해야 하는 작업이 없다면 굳이 구현할 필요가 없다....</p>
+</section>
+<footer class=entry-footer>August 22, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to [서블릿 프로그래밍 기본] GenericServlet" href=https://5hdumat.github.io/posts/servlet/generic-servlet/></a>
+</article>
+<article class=post-entry>
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/servlet/java.jpg alt>
+</figure>
+<header class=entry-header>
 <h2>[서블릿 프로그래밍 기본] 서블릿 인터페이스</h2>
 </header>
 <section class=entry-content>
@@ -81,7 +95,7 @@
 web/src/lesson03.servlets/HelloWorld.java package lesson03.servlets; import java.io.IOException; import javax.servlet.Servlet; import javax.servlet.ServletConfig; import javax.servlet.ServletException; import javax.servlet.ServletRequest; import javax.servlet.ServletResponse; public class HelloWorld implements Servlet { ServletConfig config; @Override public void init(ServletConfig config) throws ServletException { System.out.println("init() 호출됨"); this.config = config; } @Override public void destroy() { System....</p>
 </section>
 <footer class=entry-footer>August 21, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to [서블릿 프로그래밍 기본] 서블릿 인터페이스" href=https://5hdumat.github.io/posts/servlet/servlet-programing-basic-step2/></a>
+<a class=entry-link aria-label="post link to [서블릿 프로그래밍 기본] 서블릿 인터페이스" href=https://5hdumat.github.io/posts/servlet/servlet-programing-basic-step3/></a>
 </article>
 <article class=post-entry>
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
@@ -90,10 +104,10 @@ web/src/lesson03.servlets/HelloWorld.java package lesson03.servlets; import java
 <h2>HTTP 일반헤더</h2>
 </header>
 <section class=entry-content>
-<p>HTTP 헤더 개요 앞서 간단히 정리했었던 HTTP 메시지내용을 다시 한번 정리해보자.
+<p>HTTP 헤더 개요 앞서 간단히 정리했었던 HTTP 메시지 내용을 다시 한번 정리해보자.
 HTTP 헤더 HTTP 전송에 필요한 모든 부가정보를 헤더가 포함한다.
 예) 메시지 바대의 내용, 메시지 바디의 크기, 압축, 인증, 요청 클라이언트, 서버 정보 캐시 관리 정보 등
-header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하자) field-name “:” OWS field-value OWS (OWS: 띄어쓰기) field-name은 대소문자 구분이 없다. 표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더도 추가 가능하다....</p>
+header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하자) field-name “:” OWS field-value OWS (OWS: 띄어쓰기) field-name은 대소문자 구분이 없다. 표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더를 추가할 수도 있다....</p>
 </section>
 <footer class=entry-footer>August 21, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to HTTP 일반헤더" href=https://5hdumat.github.io/posts/network/http-header1/></a>
@@ -122,10 +136,10 @@ header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하
 <h2>서블릿(Servlet) 이란?</h2>
 </header>
 <section class=entry-content>
-<p>웹 애플리케이션을 공부하다 보면 CGI 프로그램이라는 용어를 만나게 된다. 여기서 우리는 CGI 프로그램이 무엇인지 알아보고 CGI 프로그램은 Servlet과 어떤 관계가 있는지 살펴본다.
+<p>서블릿을 알기전에 웹 애플리케이션을 공부하다 보면 CGI 프로그램이라는 용어를 만나게 된다. 여기서 우리는 CGI 프로그램이 무엇인지 알아보고 CGI 프로그램은 Servlet과 어떤 관계가 있는지 살펴본다.
 CGI의 이해 사용자가 직접 아이콘을 클릭하거나 명령 창(또는 터미널)을 통해 실행시키는 프로그램을 일반적으로 애플리케이션이라고 한다. 반면에 사용자가 웹 서버를 통해 간접적으로 실행시키는 프로그램을 웹 애플리케이션이라고 한다.
 웹 애플리케이션의 실행은 다음 그림과 같이 웹 브라우저가 웹 서버에게 실행을 요청한다.
-CGI 규칙 예제
+CGI 규칙 예제를 살펴보자.
 클라이언트가 웹서버에 요청한다. 웹 서버는 클라이언트가 요청한 프로그램을 찾아서 실행한다....</p>
 </section>
 <footer class=entry-footer>August 20, 2021&nbsp;·&nbsp;서민규</footer>
@@ -208,22 +222,6 @@ GET 메서드와 함께 /members/100 경로(path)의 리소스를 서버에 요�
 </section>
 <footer class=entry-footer>August 7, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to HTTP API를 만들어보자" href=https://5hdumat.github.io/posts/network/http-api/></a>
-</article>
-<article class=post-entry>
-<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
-</figure>
-<header class=entry-header>
-<h2>HTTP 메시지</h2>
-</header>
-<section class=entry-content>
-<p>HTTP 요청/응답 내용을 자세히 살펴보자.
-HTTP 요청 아래는 www.daum.net의 HTTP 요청 정보 일부분이다.
-GET / HTTP/1.1 Host: www.daum.net Cache-Control: max-age=0 Accept: text/html, application ... User-Agent: Mozilla/5.0 (Macint ... # 공백 Request-Line 분석 GET / HTTP/1.1 GET 요청하는 자원에 대해 웹 서버에 내리는 명령이다.
-이를 메서드라고 하는데 GET, POST, HEAD, PUT, DELETE 등이 있다. / 자원의 식별자이다. 요청 URI라고 한다.
-HTML이나 이미지, 동영상, 애플리케이션 등이 있는 가상의 경로이다....</p>
-</section>
-<footer class=entry-footer>August 7, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to HTTP 메시지" href=https://5hdumat.github.io/posts/network/http-message/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
