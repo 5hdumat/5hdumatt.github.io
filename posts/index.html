@@ -78,7 +78,7 @@
 <section class=entry-content>
 <p>개발환경: IntelliJ IDEA 2021.2 (Utimate Edition)
 목표 서블릿 프로그래밍을 통해 웹 애플리케이션 만드는 방법을 숙지한다. Servlet 인터페이스를 이해한다. 서블릿 클래스 만들기 다음과 같이 servlets 패키지에 javax.servlet.Servlet 인터페이스를 구현한 HelloWorld 클래스를 만들었다.
-web/src/lesson03/servlets/HelloWorld.java package lesson03.servlets; import java.io.IOException; import javax.servlet.Servlet; import javax.servlet.ServletConfig; import javax.servlet.ServletException; import javax.servlet.ServletRequest; import javax.servlet.ServletResponse; public class HelloWorld implements Servlet { ServletConfig config; @Override public void init(ServletConfig config) throws ServletException { System.out.println("init() 호출됨"); this.config = config; } @Override public void destroy() { System....</p>
+web/src/lesson03.servlets/HelloWorld.java package lesson03.servlets; import java.io.IOException; import javax.servlet.Servlet; import javax.servlet.ServletConfig; import javax.servlet.ServletException; import javax.servlet.ServletRequest; import javax.servlet.ServletResponse; public class HelloWorld implements Servlet { ServletConfig config; @Override public void init(ServletConfig config) throws ServletException { System.out.println("init() 호출됨"); this.config = config; } @Override public void destroy() { System....</p>
 </section>
 <footer class=entry-footer>August 21, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to [서블릿 프로그래밍 기본] 서블릿 인터페이스" href=https://5hdumat.github.io/posts/servlet/servlet-programing-basic-step2/></a>
