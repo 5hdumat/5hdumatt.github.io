@@ -73,19 +73,47 @@
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/servlet/java.jpg alt>
 </figure>
 <header class=entry-header>
-<h2>서블릿 프로그래밍 기본</h2>
+<h2>[서블릿 프로그래밍 기본] 서블릿 인터페이스</h2>
 </header>
 <section class=entry-content>
 <p>개발환경: IntelliJ IDEA 2021.2 (Utimate Edition)
-웹 프로젝트 준비 책은 이클립스 예제만 있어 IntelliJ Dynamic Web Project 생성 방법을 따로 숙지해야 했다.
-프로젝트 생성 [New Project] -> [SDK만 선택] -> [Next]
-[프로젝트 명과 경로 지정] -> [Finish]
-[생성된 프로젝트 오른쪽 클릭] -> [Add Framework Support…]
-[Web Application (4.0) 체크] -> [Versions 선택] -> [OK]
-web.xml은 필요에 따라 선택한다....</p>
+목표 서블릿 프로그래밍을 통해 웹 애플리케이션 만드는 방법을 숙지한다. Servlet 인터페이스를 이해한다. 서블릿 클래스 만들기 다음과 같이 servlets 패키지에 javax.servlet.Servlet 인터페이스를 구현한 HelloWorld 클래스를 만들었다.
+web/src/lesson03/servlets/HelloWorld.java package lesson03.servlets; import java.io.IOException; import javax.servlet.Servlet; import javax.servlet.ServletConfig; import javax.servlet.ServletException; import javax.servlet.ServletRequest; import javax.servlet.ServletResponse; public class HelloWorld implements Servlet { ServletConfig config; @Override public void init(ServletConfig config) throws ServletException { System.out.println("init() 호출됨"); this.config = config; } @Override public void destroy() { System....</p>
 </section>
 <footer class=entry-footer>August 21, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to 서블릿 프로그래밍 기본" href=https://5hdumat.github.io/posts/servlet/servlet-programing-basic/></a>
+<a class=entry-link aria-label="post link to [서블릿 프로그래밍 기본] 서블릿 인터페이스" href=https://5hdumat.github.io/posts/servlet/servlet-programing-basic-step2/></a>
+</article>
+<article class=post-entry>
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
+</figure>
+<header class=entry-header>
+<h2>HTTP 일반헤더</h2>
+</header>
+<section class=entry-content>
+<p>HTTP 헤더 개요 앞서 간단히 정리했었던 HTTP 메시지내용을 다시 한번 정리해보자.
+HTTP 헤더 HTTP 전송에 필요한 모든 부가정보를 헤더가 포함한다.
+예) 메시지 바대의 내용, 메시지 바디의 크기, 압축, 인증, 요청 클라이언트, 서버 정보 캐시 관리 정보 등
+header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하자) field-name “:” OWS field-value OWS (OWS: 띄어쓰기) field-name은 대소문자 구분이 없다. 표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더도 추가 가능하다....</p>
+</section>
+<footer class=entry-footer>August 21, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to HTTP 일반헤더" href=https://5hdumat.github.io/posts/network/http-header1/></a>
+</article>
+<article class=post-entry>
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/servlet/java.jpg alt>
+</figure>
+<header class=entry-header>
+<h2>[서블릿 프로그래밍 기본] 프로젝트 준비</h2>
+</header>
+<section class=entry-content>
+<p>개발환경: IntelliJ IDEA 2021.2 (Utimate Edition)
+목표 서블릿 프로그래밍을 통해 웹 애플리케이션 만드는 방법을 숙지한다. Servlet 인터페이스를 이해한다. 웹 프로젝트 준비 책은 이클립스 예제만 있어 IntelliJ Dynamic Web Project 생성 방법을 따로 숙지해야 했다.
+프로젝트 생성 1. [New Project] -> [SDK만 선택] -> [Next]
+2. [프로젝트 명과 경로 지정] -> [Finish]
+3. [생성된 프로젝트 오른쪽 클릭] -> [Add Framework Support…]
+4....</p>
+</section>
+<footer class=entry-footer>August 21, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to [서블릿 프로그래밍 기본] 프로젝트 준비" href=https://5hdumat.github.io/posts/servlet/servlet-programing-basic/></a>
 </article>
 <article class=post-entry>
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/servlet/java.jpg alt>
@@ -196,41 +224,6 @@ HTML이나 이미지, 동영상, 애플리케이션 등이 있는 가상의 경�
 </section>
 <footer class=entry-footer>August 7, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to HTTP 메시지" href=https://5hdumat.github.io/posts/network/http-message/></a>
-</article>
-<article class=post-entry>
-<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
-</figure>
-<header class=entry-header>
-<h2>HTTP</h2>
-</header>
-<section class=entry-content>
-<p>지금은 HTTP 시대! 웹 프로그래밍을 하려면 웹 브라우저와 웹 서버 간의 통신 프로토콜을 이해하는 것이 필수이다.
-웹 애플리케이션은 웹을 기반으로 구동되기 때문이다.
-웹 브라우저와 웹 서버간의 통신 프로토콜을 우리는 HTTP라고 부른다.
-현재는 아래와 같이 거의 모든 데이터를 HTTP 프로토콜에 담아 전송한다.
-HTML, TEXT IMAGE, 음성, 영상, 파일 JSON, XML (API) 서버간에 데이터를 주고 받을 때도 대부분 HTTP 사용 지금은 바야흐로 HTTP의 시대이다.
-HTTP? HyperText Transfer Protocol
-HTTP는 문서간의 링크를 통해 연결할 수 있는 HTML을 전송하기 위한 프로토콜로 시작되었다....</p>
-</section>
-<footer class=entry-footer>August 6, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to HTTP" href=https://5hdumat.github.io/posts/network/http/></a>
-</article>
-<article class=post-entry>
-<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
-</figure>
-<header class=entry-header>
-<h2>웹 브라우저 요청 흐름</h2>
-</header>
-<section class=entry-content>
-<p>웹 브라우저 요청 흐름 위 예제와 같이 구글링 할 경우 브라우저 요청의 흐름을 알아보자.
-1. 클라이언트는 구글 서버를 찾아야 하므로 DNS 서버를 조회하여 IP와 PORT 정보를 찾아낸다.
-2. HTTP 요청 메시지를 생성한다. 요청 메시지의 간략한 생김새는 아래와 같다.
-GET /search?q=hello&hl=ko HTTP/1.1
-HOST: www.google.com 3. 생성한 HTTP 요청 메시지는 SOCKET 라이브러리를 통해 TCP/IP 계층에 전달한다.
-이 과정에서 3 Way Handshake를 통해 구글서버와 가상연결 한다....</p>
-</section>
-<footer class=entry-footer>August 6, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to 웹 브라우저 요청 흐름" href=https://5hdumat.github.io/posts/network/web-browser-request/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
