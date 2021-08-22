@@ -72,16 +72,30 @@
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
 </figure>
 <header class=entry-header>
-<h2>HTTP 일반헤더</h2>
+<h2>[HTTP 일반헤더] 콘텐츠 협상</h2>
+</header>
+<section class=entry-content>
+<p>컨텐츠 협상 (Contents Negotiation) 클라이언트가 선호하는 표현 요청이다. 협상 헤더는 요청시에만 사용한다.
+Accept: 클라이언트가 선호하는 미디어 타입으로 요청 Accept-Charset: 클라이언트가 선호하는 문자 인코딩으로 요청 Accept-Encoding: 클라이언트가 선호하는 압축 인코딩으로 요청 Aceept-Language: 클라이언트가 선호하는 자연 언어로 요청 Aceept-Language를 예로 들어보자. 아래 예제는 한국어 브라우저를 사용하는 클라이언트가 외국 이벤트 사이트에 접속했을 때의 상황이다.
+Accept-Language 적용 전 위 예제에서 클라이언트는 리소스 경로만 서버에게 요청하고 그 외 아무런 정보도 요청하지 않았다....</p>
+</section>
+<footer class=entry-footer>August 23, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to [HTTP 일반헤더] 콘텐츠 협상" href=https://5hdumat.github.io/posts/network/http-header-contents-negotiation/></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
+</figure>
+<header class=entry-header>
+<h2>[HTTP 일반헤더] HTTP 헤더 개요</h2>
 </header>
 <section class=entry-content>
 <p>HTTP 헤더 개요 앞서 간단히 정리했었던 HTTP 메시지 내용을 다시 한번 정리해보자.
 HTTP 헤더 HTTP 전송에 필요한 모든 부가정보를 헤더가 포함한다.
 예) 메시지 바대의 내용, 메시지 바디의 크기, 압축, 인증, 요청 클라이언트, 서버 정보 캐시 관리 정보 등
-header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하자) field-name “:” OWS field-value OWS (OWS: 띄어쓰기) field-name은 대소문자 구분이 없다. 표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더를 추가할 수도 있다....</p>
+HTTP 헤더 예제 header-field는 아래의 형태로 사용 (헷갈리면 위 예제를 참고하자) field-name “:” OWS field-value OWS (OWS: 띄어쓰기) field-name은 대소문자 구분이 없다. 표준 헤더 필드가 굉장히 많고, 필요시 임의의 헤더를 추가할 수도 있다....</p>
 </section>
 <footer class=entry-footer>August 21, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to HTTP 일반헤더" href=https://5hdumat.github.io/posts/network/http-header1/></a>
+<a class=entry-link aria-label="post link to [HTTP 일반헤더] HTTP 헤더 개요" href=https://5hdumat.github.io/posts/network/http-header-outline/></a>
 </article>
 <article class="post-entry tag-entry">
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
@@ -211,22 +225,6 @@ HOST: www.google.com 3. 생성한 HTTP 요청 메시지는 SOCKET 라이브러�
 </section>
 <footer class=entry-footer>August 6, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to 웹 브라우저 요청 흐름" href=https://5hdumat.github.io/posts/network/web-browser-request/></a>
-</article>
-<article class="post-entry tag-entry">
-<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
-</figure>
-<header class=entry-header>
-<h2>URI</h2>
-</header>
-<section class=entry-content>
-<p>URI(Uniform Resource Identifier) URI는 리소스를 식별하는 통합된 방법이라는 의미이다.
-사람을 식별할 때는 주민등록번호를 이용하는 것 처럼 리소스가 어디있는지 식별하는 방법을 URI라고 한다.
-Uniform: 리소스 식별하는 통일된 방식 Resource: 리소스, URI로 식별할 수 있는 모든 자원 (제한 X)
-즉, URI로 식별할 수 있는 모든 정보를 리소스라고 한다. Identifier: 다른 항복과 구분하는 데 필요한 정보
-예) 사람을 식별할 때 사용하는 주민등록번호가 사람의 Identifier가 된다. “URI는 로케이터(locator), 이름(name) 또는 둘다 추가로 분류될 수 있다....</p>
-</section>
-<footer class=entry-footer>August 5, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to URI" href=https://5hdumat.github.io/posts/network/uri/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
