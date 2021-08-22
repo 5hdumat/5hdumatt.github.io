@@ -3,7 +3,7 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>servlet | 5hdumat</title>
+<title>Servlet | 5hdumat</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
@@ -21,12 +21,12 @@
 <link rel=alternate type=application/rss+xml href=https://5hdumat.github.io/tags/servlet/index.xml>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-05YE8R0TGZ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-05YE8R0TGZ',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="servlet">
+<meta property="og:title" content="Servlet">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://5hdumat.github.io/tags/servlet/">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="servlet">
+<meta name=twitter:title content="Servlet">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -66,8 +66,21 @@
 </header>
 <main class=main>
 <header class=page-header><div class=breadcrumbs><a href=https://5hdumat.github.io>Home</a>&nbsp;»&nbsp;<a href=https://5hdumat.github.io/tags/>Tags</a></div>
-<h1>servlet</h1>
+<h1>Servlet</h1>
 </header>
+<article class="post-entry tag-entry">
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/servlet/java.jpg alt>
+</figure>
+<header class=entry-header>
+<h2>[서블릿 프로그래밍 기본] @WebServlet 애노테이션</h2>
+</header>
+<section class=entry-content>
+<p>@WebServlet 애노테이션을 이용한 서블릿 배치 설정 Servlet 3.0 사양부터는 애노테이션으로 서블릿 배치 정보를 설정할 수 있다. web.xml 대신 애노테이션을 이용해 배치 정보를 작성해 보자.
+다음과 같이 서블릿 정의와 URL 매핑을 설정하는 부분을 주석으로 만든다. &lt;?xml version="1.0" encoding="UTF-8"?> &lt;web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0"> &lt;display-name>web03&lt;/display-name> &lt;!-- &lt;servlet> &lt;servlet-name>Calculator&lt;/servlet-name> &lt;servlet-class>lesson03.servlets.CalculatorServlet&lt;/servlet-class> &lt;/servlet> &lt;servlet-mapping> &lt;servlet-name>Calculator&lt;/servlet-name> &lt;url-pattern>/Calculator&lt;/url-pattern> &lt;/servlet-mapping> --> &lt;welcome-file-list> &lt;welcome-file>index.html&lt;/welcome-file> &lt;welcome-file>index.htm&lt;/welcome-file> &lt;welcome-file>index.jsp&lt;/welcome-file> &lt;welcome-file>default.html&lt;/welcome-file> &lt;welcome-file>default.htm&lt;/welcome-file> &lt;welcome-file>default.jsp&lt;/welcome-file> &lt;/welcome-file-list> &lt;/web-app> CalculatorServlet 클래스에 @WebServlet 애노테이션을 작성하면 된다....</p>
+</section>
+<footer class=entry-footer>August 22, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to [서블릿 프로그래밍 기본] @WebServlet 애노테이션" href=https://5hdumat.github.io/posts/servlet/generic-annotation/></a>
+</article>
 <article class="post-entry tag-entry">
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/servlet/java.jpg alt>
 </figure>
@@ -76,7 +89,7 @@
 </header>
 <section class=entry-content>
 <p>개발환경: IntelliJ IDEA 2021.2 (Utimate Edition)
-목표 GenericServlet 추상 클래스를 사용하여 서블릿을 만들 수 있다. 웹 브라우저와 서블릿간의 CGI를 이해한다. GenericServlet? 이전 포스트에선 서블릿 클래스를 만들 때 Servlet 인터페이스를 구현했다. 인터페이스를 구현하려면 선언된 모든 메서드를 구현해야 하는데 이 방식에는 문제점이 있다.
+목표 GenericServlet 추상 클래스를 활용하여 서블릿을 만들 수 있다. 웹 브라우저와 서블릿간의 CGI를 이해한다. GenericServlet? 이전 포스트에선 서블릿 클래스를 만들 때 Servlet 인터페이스를 구현했다. 인터페이스를 구현하려면 선언된 모든 메서드를 구현해야 하는데 이 방식에는 문제점이 있다.
 사실 Servlet 인터페이스에 선언된 다섯 개의 메서드 중 반드시 구현해야 하는 메서드는 클라이언트가 요청할 때마다 호출되는 service() 메서드이다. init() 의 경우 서블릿이 생성될 때 한 번 호출되는데, 서블릿을 위해 특별히 준비해야 하는 작업이 없다면 굳이 구현할 필요가 없다....</p>
 </section>
 <footer class=entry-footer>August 22, 2021&nbsp;·&nbsp;서민규</footer>
@@ -94,7 +107,7 @@
 web/src/lesson03.servlets/HelloWorld.java package lesson03.servlets; import java.io.IOException; import javax.servlet.Servlet; import javax.servlet.ServletConfig; import javax.servlet.ServletException; import javax.servlet.ServletRequest; import javax.servlet.ServletResponse; public class HelloWorld implements Servlet { ServletConfig config; @Override public void init(ServletConfig config) throws ServletException { System.out.println("init() 호출됨"); this.config = config; } @Override public void destroy() { System....</p>
 </section>
 <footer class=entry-footer>August 21, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to [서블릿 프로그래밍 기본] 서블릿 인터페이스" href=https://5hdumat.github.io/posts/servlet/servlet-programing-basic-step3/></a>
+<a class=entry-link aria-label="post link to [서블릿 프로그래밍 기본] 서블릿 인터페이스" href=https://5hdumat.github.io/posts/servlet/servlet-programing-basic-step2/></a>
 </article>
 <article class="post-entry tag-entry">
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/servlet/java.jpg alt>
