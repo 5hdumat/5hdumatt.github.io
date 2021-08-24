@@ -72,6 +72,41 @@
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
 </figure>
 <header class=entry-header>
+<h2>HTTP</h2>
+</header>
+<section class=entry-content>
+<p>지금은 HTTP 시대! 웹 프로그래밍을 하려면 웹 브라우저와 웹 서버 간의 통신 프로토콜을 이해하는 것이 필수이다.
+웹 애플리케이션은 웹을 기반으로 구동되기 때문이다.
+웹 브라우저와 웹 서버간의 통신 프로토콜을 우리는 HTTP라고 부른다.
+현재는 아래와 같이 거의 모든 데이터를 HTTP 프로토콜에 담아 전송한다.
+HTML, TEXT IMAGE, 음성, 영상, 파일 JSON, XML (API) 서버간에 데이터를 주고 받을 때도 대부분 HTTP 사용 지금은 바야흐로 HTTP의 시대이다.
+HTTP? HyperText Transfer Protocol
+HTTP는 문서간의 링크를 통해 연결할 수 있는 HTML을 전송하기 위한 프로토콜로 시작되었다....</p>
+</section>
+<footer class=entry-footer>August 6, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to HTTP" href=https://5hdumat.github.io/posts/network/http/></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
+</figure>
+<header class=entry-header>
+<h2>웹 브라우저 요청 흐름</h2>
+</header>
+<section class=entry-content>
+<p>웹 브라우저 요청 흐름 위 예제와 같이 구글링 할 경우 브라우저 요청의 흐름을 알아보자.
+1. 클라이언트는 구글 서버를 찾아야 하므로 DNS 서버를 조회하여 IP와 PORT 정보를 찾아낸다.
+2. HTTP 요청 메시지를 생성한다. 요청 메시지의 간략한 생김새는 아래와 같다.
+GET /search?q=hello&hl=ko HTTP/1.1
+HOST: www.google.com 3. 생성한 HTTP 요청 메시지는 SOCKET 라이브러리를 통해 TCP/IP 계층에 전달한다.
+이 과정에서 3 Way Handshake를 통해 구글서버와 가상연결 한다....</p>
+</section>
+<footer class=entry-footer>August 6, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to 웹 브라우저 요청 흐름" href=https://5hdumat.github.io/posts/network/web-browser-request/></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
+</figure>
+<header class=entry-header>
 <h2>URI</h2>
 </header>
 <section class=entry-content>

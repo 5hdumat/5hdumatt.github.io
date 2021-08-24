@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Http API | 5hdumat</title>
+<title>Http Header | 5hdumat</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://5hdumat.github.io/tags/http-api/>
+<link rel=canonical href=https://5hdumat.github.io/tags/http-header/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.6cba0d81b5f3f42bb578d49f402ba4175aa72b43def148780b8ad714c957c6f5.css integrity="sha256-bLoNgbXz9Cu1eNSfQCukF1qnK0Pe8Uh4C4rXFMlXxvU=" rel="preload stylesheet" as=style>
 <link rel=preload href=/resources/images/profile/giphy.gif as=image>
 <link rel=icon href=https://5hdumat.github.io/favicon.ico>
@@ -18,15 +18,15 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.87.0">
-<link rel=alternate type=application/rss+xml href=https://5hdumat.github.io/tags/http-api/index.xml>
+<link rel=alternate type=application/rss+xml href=https://5hdumat.github.io/tags/http-header/index.xml>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-05YE8R0TGZ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-05YE8R0TGZ',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="Http API">
+<meta property="og:title" content="Http Header">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://5hdumat.github.io/tags/http-api/">
+<meta property="og:url" content="https://5hdumat.github.io/tags/http-header/">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Http API">
+<meta name=twitter:title content="Http Header">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -66,8 +66,51 @@
 </header>
 <main class=main>
 <header class=page-header><div class=breadcrumbs><a href=https://5hdumat.github.io>Home</a>&nbsp;»&nbsp;<a href=https://5hdumat.github.io/tags/>Tags</a></div>
-<h1>Http API</h1>
+<h1>Http Header</h1>
 </header>
+<article class="post-entry tag-entry">
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
+</figure>
+<header class=entry-header>
+<h2>[HTTP 일반헤더] HTTP 헤더엔 무엇이 있을까?</h2>
+</header>
+<section class=entry-content>
+<p>HTTP 헤더엔 어떤 항목들이 있을까? from 유저 에이전트의 이메일 정보
+일반적으로 잘 사용하진 않는다. 검색 엔진 같은 곳에서, 주로 사용 요청에서 사용 referer (중요) 이전 웹 페이지 주소
+참고로 referer는 단어 referrer의 오타이다 :(
+현재 요청된 페이지의 이전 웹 페이지 주소 A -> B로 이동하는 경우 B를 요청할 때 referer: A를 포함해서 요청 referer를 사용해 유입 경로 분석 가능 요청에서 사용 구글링을 통해 좋아하는 음악을 검색해서 들어가면 referer이 google로 되어있다....</p>
+</section>
+<footer class=entry-footer>August 25, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to [HTTP 일반헤더] HTTP 헤더엔 무엇이 있을까?" href=https://5hdumat.github.io/posts/network/http-header-info/></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
+</figure>
+<header class=entry-header>
+<h2>[HTTP 일반헤더] 전송 방식</h2>
+</header>
+<section class=entry-content>
+<p>전송 방식 전송 방식은 단순하게 4가지로 분류할 수 있다.
+단순 전송 압축 전송 분할 전송 범위 전송 한가지 씩 간단하게 살펴보자.
+단순 전송 서버가 Message-Body에 대한 Content-Length를 알 수 있을 때 그냥 단순하게 요청하고 내려받는 방식 압축 전송 단순 전송 방식을 압축하여 보내는 방식 용량을 줄이기 위해 사용 압축 전송 방식을 사용하는 서버는 Content-Encoding을 헤더에 추가해서 응답해야 한다. 분할 전송 chunk는 덩어리를 의미한다. 아래 예제의 숫자는 바이트를 의미 한 번에 전송하는 방식은 모든 메시지 바디가 로드될 때까지 대기해야 하지만 분할 전송 방식은 서버가 바이트와 내용을 쪼개서 응답하기 때문에 클라이언트가 그때그때 표현할 수 있다....</p>
+</section>
+<footer class=entry-footer>August 24, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to [HTTP 일반헤더] 전송 방식" href=https://5hdumat.github.io/posts/network/http-header-transmission-method/></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
+</figure>
+<header class=entry-header>
+<h2>[HTTP 일반헤더] 컨텐츠 협상</h2>
+</header>
+<section class=entry-content>
+<p>컨텐츠 협상 (Contents Negotiation) 컨텐츠 협상이란 동일한 URI에서 리소스의 서로 다른 버전을 서브하기 위해 사용되는 메커니즘으로, 사용자 에이전트(브라우저)가 사용자에게 제일 잘 맞는 것이 무엇인지(예를 들어, 문서의 언어, 이미지 포맷 혹은 컨텐츠 인코딩에 있어 어떤 것이 적절한지)를 명시할 수 있다.
+즉, 클라이언트가 선호하는 표현 요청이며, 협상 헤더는 요청시에만 사용한다.
+Accept: 클라이언트가 선호하는 미디어 타입으로 요청 Accept-Charset: 클라이언트가 선호하는 문자 인코딩으로 요청 Accept-Encoding: 클라이언트가 선호하는 압축 인코딩으로 요청 Aceept-Language: 클라이언트가 선호하는 자연 언어로 요청 Aceept-Language를 예로 들어보자....</p>
+</section>
+<footer class=entry-footer>August 23, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to [HTTP 일반헤더] 컨텐츠 협상" href=https://5hdumat.github.io/posts/network/http-header-contents-negotiation/></a>
+</article>
 <article class="post-entry tag-entry">
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
 </figure>
@@ -82,35 +125,6 @@ HTTP 헤더 예제 header-field는 아래의 형태로 사용 (헷갈리면 위 
 </section>
 <footer class=entry-footer>August 21, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to [HTTP 일반헤더] HTTP 헤더 개요" href=https://5hdumat.github.io/posts/network/http-header-outline/></a>
-</article>
-<article class="post-entry tag-entry">
-<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
-</figure>
-<header class=entry-header>
-<h2>HTTP API 설계</h2>
-</header>
-<section class=entry-content>
-<p>목표 회원 관리용 API 설계 POST, PUT의 차이점을 이해한다. GET, POST만 지원하는 HTML FORM 태그 제약조건 속에서의 사용법을 숙지한다. HTTP API 설계 예시 POST 기반 등록 회원 관리 시스템 API를 설계한다고 가정해보자.
-회원 목록 /members -> GET 회원 등록 /members -> POST 회원 조회 /members/{id} -> GET 회원 수정 /members/{id} -> PATCH, PUT, POST 회원 삭제 /members/{id} -> DELETE 이전 포스트에서 URI는 리소스를 식별하는 통합된 방법이라고 배웠다....</p>
-</section>
-<footer class=entry-footer>August 18, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to HTTP API 설계" href=https://5hdumat.github.io/posts/network/http-api-design/></a>
-</article>
-<article class="post-entry tag-entry">
-<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
-</figure>
-<header class=entry-header>
-<h2>HTTP API를 만들어보자</h2>
-</header>
-<section class=entry-content>
-<p>API URI를 만들어보자 회원 정보 관리 API를 요구사항대로 만든다고 가정해보자.
-요구사항 회원 목록 조회 회원 조회 회원 등록 회원 수정 회원 삭제 URI 설계가 끝난 후 경로가 나왔다.
-회원 목록 조회 /read-member-list 회원 조회 /read-member-by-id 회원 등록 /create-member 회원 수정 /update-member 회원 삭제 /delete-member 뭔가 그럴듯하다. 실제 현업에서도 위와 같은 설계가 많이 이루어진다.
-하지만 이것은 좋은 URI 설계일까?
-우리는 위와 같이 설계된 URI가 좋은 설계인지에 대해서는 다시한번 고민해 봐야 한다....</p>
-</section>
-<footer class=entry-footer>August 7, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to HTTP API를 만들어보자" href=https://5hdumat.github.io/posts/network/http-api/></a>
 </article>
 </main>
 <a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
