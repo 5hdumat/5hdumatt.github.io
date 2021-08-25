@@ -72,10 +72,27 @@
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
 </figure>
 <header class=entry-header>
+<h2>[HTTP 일반헤더] 쿠키</h2>
+</header>
+<section class=entry-content>
+<p>쿠키는 왜 생긴걸까? 쿠키를 사용할 땐 2가지 헤더를 사용한다.
+Set-Cookie: 서버에서 클라이언트로 쿠키 전달 (응답) Cookie: 클라이언트가 서버로 부터 받은 쿠키를 저장하고, HTTP 요청 시 서버로 전달 위 두 가지 헤더가 왜 필요할까? 쿠키를 미사용 했을때 예시를 들어보자.
+쿠키 미사용 예시 웹 브라우저에서 클라이언트가 /welcome으로 접근을 한다.
+클라이언트가 로그인을 요청하고 서버는 응답한다.
+다시 /welcome으로 접근한다.
+위 예제에서 분명 로그인을 했음에도 다시 웰컴 페이지로 접근했을 때 서버는 홍길동이 아닌 손님으로 응답한다....</p>
+</section>
+<footer class=entry-footer>August 26, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to [HTTP 일반헤더] 쿠키" href=https://5hdumat.github.io/posts/network/http-header-cookie/></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
+</figure>
+<header class=entry-header>
 <h2>[HTTP 일반헤더] HTTP 헤더엔 무엇이 있을까?</h2>
 </header>
 <section class=entry-content>
-<p>HTTP 헤더엔 어떤 항목들이 있을까? from 유저 에이전트의 이메일 정보
+<p>일반적인 헤더 from 유저 에이전트의 이메일 정보
 일반적으로 잘 사용하진 않는다. 검색 엔진 같은 곳에서, 주로 사용 요청에서 사용 referer (중요) 이전 웹 페이지 주소
 참고로 referer는 단어 referrer의 오타이다 :(
 현재 요청된 페이지의 이전 웹 페이지 주소 A -> B로 이동하는 경우 B를 요청할 때 referer: A를 포함해서 요청 referer를 사용해 유입 경로 분석 가능 요청에서 사용 구글링을 통해 좋아하는 음악을 검색해서 들어가면 referer이 google로 되어있다....</p>
@@ -203,22 +220,6 @@ GET 메서드와 함께 /members/100 경로(path)의 리소스를 서버에 요�
 </section>
 <footer class=entry-footer>August 7, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to HTTP API를 만들어보자" href=https://5hdumat.github.io/posts/network/http-api/></a>
-</article>
-<article class="post-entry tag-entry">
-<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
-</figure>
-<header class=entry-header>
-<h2>HTTP 메시지</h2>
-</header>
-<section class=entry-content>
-<p>HTTP 요청/응답 내용을 자세히 살펴보자.
-HTTP 요청 아래는 www.daum.net의 HTTP 요청 정보 일부분이다.
-GET / HTTP/1.1 Host: www.daum.net Cache-Control: max-age=0 Accept: text/html, application ... User-Agent: Mozilla/5.0 (Macint ... # 공백 Request-Line 분석 GET / HTTP/1.1 GET 요청하는 자원에 대해 웹 서버에 내리는 명령이다.
-이를 메서드라고 하는데 GET, POST, HEAD, PUT, DELETE 등이 있다. / 자원의 식별자이다. 요청 URI라고 한다.
-HTML이나 이미지, 동영상, 애플리케이션 등이 있는 가상의 경로이다....</p>
-</section>
-<footer class=entry-footer>August 7, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to HTTP 메시지" href=https://5hdumat.github.io/posts/network/http-message/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
