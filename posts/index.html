@@ -73,18 +73,33 @@
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
 </figure>
 <header class=entry-header>
+<h2>[HTTP 일반헤더] 퍼스트 파티 쿠키와 서드 파티 쿠키</h2>
+</header>
+<section class=entry-content>
+<p>퍼스트 파티 쿠키와 서드 파티 쿠키 이전 포스트에서 Domain 설정에 따라 퍼스트 파티 쿠키(First-party cookies)와 서드 파티 쿠키(Third-party cookies) 를 나눌 수 있다.
+아래 예시로 예를 들어보자.
+클라이언트가 site1.com에 접속한다. site1.com에 접속한 클라이언트가 image-site.com이 제공하는 이미지 리소스를 사용하려고 한다. 이 경우 site1.com에서 image-site.com로 이미지 리소스에 대한 요청을 보내게 된다.
+만약 브라우저 쿠키 저장소에 image-site.com에 대한 쿠키가 조회된다면 브라우저는 요청 헤더에 쿠키 정보를 같이 넘길 것이다. 이 때 전송되는 쿠키를 서드 파트 쿠키라고 한다....</p>
+</section>
+<footer class=entry-footer>August 26, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to [HTTP 일반헤더] 퍼스트 파티 쿠키와 서드 파티 쿠키" href=https://5hdumat.github.io/posts/network/http-header-cookie/></a>
+</article>
+<article class=post-entry>
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
+</figure>
+<header class=entry-header>
 <h2>[HTTP 일반헤더] 쿠키</h2>
 </header>
 <section class=entry-content>
 <p>쿠키는 왜 생긴걸까? 쿠키를 사용할 땐 2가지 헤더를 사용한다.
-Set-Cookie: 서버에서 클라이언트로 쿠키 전달 (응답) Cookie: 클라이언트가 서버로 부터 받은 쿠키를 저장하고, HTTP 요청 시 서버로 전달 위 두 가지 헤더가 왜 필요할까? 쿠키를 미사용 했을때 예시를 들어보자.
+Set-Cookie: 서버에서 클라이언트로 쿠키 전달 (응답) Cookie: 클라이언트가 서버로 부터 받은 쿠키를 저장하고, HTTP 요청 시 서버로 전달 위 두 가지 헤더가 왜 필요할까? 쿠키를 미사용 했을 때 예시를 들어보자.
 쿠키 미사용 예시 웹 브라우저에서 클라이언트가 /welcome으로 접근을 한다.
 클라이언트가 로그인을 요청하고 서버는 응답한다.
 다시 /welcome으로 접근한다.
 위 예제에서 분명 로그인을 했음에도 다시 웰컴 페이지로 접근했을 때 서버는 홍길동이 아닌 손님으로 응답한다....</p>
 </section>
 <footer class=entry-footer>August 26, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to [HTTP 일반헤더] 쿠키" href=https://5hdumat.github.io/posts/network/http-header-cookie/></a>
+<a class=entry-link aria-label="post link to [HTTP 일반헤더] 쿠키" href=https://5hdumat.github.io/posts/network/http-header-cookie2/></a>
 </article>
 <article class=post-entry>
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
@@ -201,22 +216,6 @@ HTTP 헤더 예제 header-field는 아래의 형태로 사용 (헷갈리면 위 
 </section>
 <footer class=entry-footer>August 21, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to [서블릿 프로그래밍 기본] 프로젝트 준비" href=https://5hdumat.github.io/posts/servlet/servlet-programing-basic/></a>
-</article>
-<article class=post-entry>
-<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/servlet/java.jpg alt>
-</figure>
-<header class=entry-header>
-<h2>서블릿(Servlet) 이란?</h2>
-</header>
-<section class=entry-content>
-<p>서블릿을 알기전에 웹 애플리케이션을 공부하다 보면 CGI 프로그램이라는 용어를 만나게 된다. 여기서 우리는 CGI 프로그램이 무엇인지 알아보고 CGI 프로그램은 Servlet과 어떤 관계가 있는지 살펴본다.
-CGI의 이해 사용자가 직접 아이콘을 클릭하거나 명령 창(또는 터미널)을 통해 실행시키는 프로그램을 일반적으로 애플리케이션이라고 한다. 반면에 사용자가 웹 서버를 통해 간접적으로 실행시키는 프로그램을 웹 애플리케이션이라고 한다.
-웹 애플리케이션의 실행은 다음 그림과 같이 웹 브라우저가 웹 서버에게 실행을 요청한다.
-CGI 규칙 예제를 살펴보자.
-클라이언트가 웹서버에 요청한다. 웹 서버는 클라이언트가 요청한 프로그램을 찾아서 실행한다....</p>
-</section>
-<footer class=entry-footer>August 20, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to 서블릿(Servlet) 이란?" href=https://5hdumat.github.io/posts/servlet/servlet/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
