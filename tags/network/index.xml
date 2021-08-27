@@ -51,8 +51,8 @@ GET /search?q=hello&amp;amp;hl=ko HTTP/1.1
 HOST: www.google.com 3. 생성한 HTTP 요청 메시지는 SOCKET 라이브러리를 통해 TCP/IP 계층에 전달한다.
 이 과정에서 3 Way Handshake를 통해 구글서버와 가상연결 한다.</description></item><item><title>URI</title><link>https://5hdumat.github.io/posts/network/uri/</link><pubDate>Thu, 05 Aug 2021 01:20:20 +0900</pubDate><guid>https://5hdumat.github.io/posts/network/uri/</guid><description>URI(Uniform Resource Identifier) URI는 리소스를 식별하는 통합된 방법이라는 의미이다.
 사람을 식별할 때는 주민등록번호를 이용하는 것 처럼 리소스가 어디있는지 식별하는 방법을 URI라고 한다.
-Uniform: 리소스 식별하는 통일된 방식 Resource: 리소스, URI로 식별할 수 있는 모든 자원 (제한 X)
-즉, URI로 식별할 수 있는 모든 정보를 리소스라고 한다. Identifier: 다른 항복과 구분하는 데 필요한 정보
+Uniform: 리소스 식별하는 통일된 방식을 의미 Resource: URI로 식별할 수 있는 모든 자원 (제한 X)
+즉, URI로 식별할 수 있는 모든 정보를 리소스라고 한다. Identifier: 다른 항목과 구분할 때 필요한 정보
 예) 사람을 식별할 때 사용하는 주민등록번호가 사람의 Identifier가 된다. &amp;ldquo;URI는 로케이터(locator), 이름(name) 또는 둘다 추가로 분류될 수 있다.</description></item><item><title>DNS</title><link>https://5hdumat.github.io/posts/network/dns/</link><pubDate>Wed, 04 Aug 2021 23:08:20 +0900</pubDate><guid>https://5hdumat.github.io/posts/network/dns/</guid><description>DNS? DNS는 무엇이고 왜 사용하는 걸까?
 그 이유는 위 예제처럼 IP는 기억하기 어렵다는 점이고
 또 다른 이유는 IP는 언제든지 변경될 수 있다는 점이다.
