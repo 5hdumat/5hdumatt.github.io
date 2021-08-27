@@ -82,7 +82,7 @@ Set-Cookie: normal=yes; Domain=localhost 이렇게 도메인이 명시된 쿠키
 퍼스트 파티 쿠키와 서드 파티 쿠키 이렇게 설정된 도메인을 기준으로 퍼스트 파티 쿠키(First-party cookies)와 서드 파티 쿠키(Third-party cookies) 를 나눌 수 있다....</p>
 </section>
 <footer class=entry-footer>August 26, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to 퍼스트 파티 쿠키와 서드 파티 쿠키" href=https://5hdumat.github.io/posts/network/first-party-cookie-vs-third-party-cookie/></a>
+<a class=entry-link aria-label="post link to 퍼스트 파티 쿠키와 서드 파티 쿠키" href=https://5hdumat.github.io/posts/network/first-party-cookie-third-party-cookie/></a>
 </article>
 <article class=post-entry>
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
@@ -99,7 +99,7 @@ Set-Cookie: 서버에서 클라이언트로 쿠키 전달 (응답) Cookie: 클�
 위 예제에서 분명 로그인을 했음에도 다시 웰컴 페이지로 접근했을 때 서버는 홍길동이 아닌 손님으로 응답한다....</p>
 </section>
 <footer class=entry-footer>August 26, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to [HTTP 일반헤더] 쿠키" href=https://5hdumat.github.io/posts/network/http-header-cookie/></a>
+<a class=entry-link aria-label="post link to [HTTP 일반헤더] 쿠키" href=https://5hdumat.github.io/posts/network/cookie/></a>
 </article>
 <article class=post-entry>
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/network/http.jpeg alt>
@@ -142,7 +142,7 @@ Set-Cookie: 서버에서 클라이언트로 쿠키 전달 (응답) Cookie: 클�
 Accept: 클라이언트가 선호하는 미디어 타입으로 요청 Accept-Charset: 클라이언트가 선호하는 문자 인코딩으로 요청 Accept-Encoding: 클라이언트가 선호하는 압축 인코딩으로 요청 Aceept-Language: 클라이언트가 선호하는 자연 언어로 요청 Aceept-Language를 예로 들어보자....</p>
 </section>
 <footer class=entry-footer>August 23, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to [HTTP 일반헤더] 컨텐츠 협상" href=https://5hdumat.github.io/posts/network/http-header-contents-negotiation/></a>
+<a class=entry-link aria-label="post link to [HTTP 일반헤더] 컨텐츠 협상" href=https://5hdumat.github.io/posts/network/contents-negotiation/></a>
 </article>
 <article class=post-entry>
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/servlet/java.jpg alt>
@@ -156,6 +156,19 @@ Accept: 클라이언트가 선호하는 미디어 타입으로 요청 Accept-Cha
 </section>
 <footer class=entry-footer>August 22, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to [서블릿 프로그래밍 기본] @WebServlet 애노테이션" href=https://5hdumat.github.io/posts/servlet/generic-annotation/></a>
+</article>
+<article class=post-entry>
+<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/servlet/java.jpg alt>
+</figure>
+<header class=entry-header>
+<h2>[서블릿 프로그래밍 기본] @WebServlet 애노테이션</h2>
+</header>
+<section class=entry-content>
+<p>@WebServlet 애노테이션을 이용한 서블릿 배치 설정 Servlet 3.0 사양부터는 애노테이션으로 서블릿 배치 정보를 설정할 수 있다. web.xml 대신 애노테이션을 이용해 배치 정보를 작성해 보자.
+다음과 같이 서블릿 정의와 URL 매핑을 설정 영역을 주석처리 한다. &lt;?xml version="1.0" encoding="UTF-8"?> &lt;web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0"> &lt;display-name>web03&lt;/display-name> &lt;!-- &lt;servlet> &lt;servlet-name>Calculator&lt;/servlet-name> &lt;servlet-class>lesson03.servlets.CalculatorServlet&lt;/servlet-class> &lt;/servlet> &lt;servlet-mapping> &lt;servlet-name>Calculator&lt;/servlet-name> &lt;url-pattern>/Calculator&lt;/url-pattern> &lt;/servlet-mapping> --> &lt;welcome-file-list> &lt;welcome-file>index.html&lt;/welcome-file> &lt;welcome-file>index.htm&lt;/welcome-file> &lt;welcome-file>index.jsp&lt;/welcome-file> &lt;welcome-file>default.html&lt;/welcome-file> &lt;welcome-file>default.htm&lt;/welcome-file> &lt;welcome-file>default.jsp&lt;/welcome-file> &lt;/welcome-file-list> &lt;/web-app> CalculatorServlet 클래스에 @WebServlet 애노테이션을 작성한다....</p>
+</section>
+<footer class=entry-footer>August 22, 2021&nbsp;·&nbsp;서민규</footer>
+<a class=entry-link aria-label="post link to [서블릿 프로그래밍 기본] @WebServlet 애노테이션" href=https://5hdumat.github.io/posts/servlet/servlet-jdbc-retrieve/></a>
 </article>
 <article class=post-entry>
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/servlet/java.jpg alt>
@@ -199,23 +212,6 @@ HTTP 헤더 예제 header-field는 아래의 형태로 사용 (헷갈리면 위 
 </section>
 <footer class=entry-footer>August 21, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to [HTTP 일반헤더] HTTP 헤더 개요" href=https://5hdumat.github.io/posts/network/http-header-outline/></a>
-</article>
-<article class=post-entry>
-<figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/servlet/java.jpg alt>
-</figure>
-<header class=entry-header>
-<h2>[서블릿 프로그래밍 기본] 프로젝트 준비</h2>
-</header>
-<section class=entry-content>
-<p>개발환경: IntelliJ IDEA 2021.2 (Utimate Edition)
-목표 서블릿 프로그래밍을 통해 웹 애플리케이션 만드는 방법을 숙지한다. Servlet 인터페이스를 이해한다. 웹 프로젝트 준비 책은 이클립스 예제만 있어 IntelliJ Dynamic Web Project 생성 방법을 따로 숙지해야 했다.
-프로젝트 생성 1. [New Project] -> [SDK만 선택] -> [Next]
-2. [프로젝트 명과 경로 지정] -> [Finish]
-3. [생성된 프로젝트 오른쪽 클릭] -> [Add Framework Support…]
-4....</p>
-</section>
-<footer class=entry-footer>August 21, 2021&nbsp;·&nbsp;서민규</footer>
-<a class=entry-link aria-label="post link to [서블릿 프로그래밍 기본] 프로젝트 준비" href=https://5hdumat.github.io/posts/servlet/servlet-programing-basic/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
