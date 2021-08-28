@@ -5,8 +5,11 @@
 <meta name=robots content="index, follow">
 <title>[서블릿과 JDBC] 회원 목록 조회 구현 | 5hdumat</title>
 <meta name=keywords content="Java,Servlet,IntelliJ,JDBC,homebrew">
-<meta name=description content="목표  JDBC를 이용한 데이터베이스 연동 방법 숙지  회원 목록 조회 구현 기능을 구현하기에 앞서 DB 서버 구축과 스키마 생성부터 해야 한다. 간단한 작업이지만 homebrew 사용법도 익힐 겸 겸사 겸사 정리해 두기로 했다.
-hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac)  brew 업데이트 후 mysql 관련 프로그램 검색 brew update brew search mysql    원하는 버전의 mysql과 DBMS 클라이언트 프로그램인 mysqlworkbench 설치 brew install mysql@5.7 brew install --cask mysqlworkbench mysql 설치가 완료되면 설치 안내 문구가 출력된다.">
+<meta name=description content="개발환경
+IDE: IntelliJ IDEA 2021.2 (Utimate Edition)
+OS: MAC OS X
+ 목표  JDBC를 이용한 데이터베이스 연동 방법 숙지   회원 목록 조회 구현 해보기 기능을 구현하기에 앞서 DB 서버 구축과 스키마 생성부터 해야 한다. 간단한 작업이지만 &ldquo;homebrew 사용법이나 익히자&#34;하며 겸사 겸사 정리해 두기로 했다.
+  hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac)  brew 업데이트 후 mysql 관련 프로그램 검색 brew update brew search mysql    원하는 버전의 mysql과 DBMS 클라이언트 프로그램인 mysqlworkbench 설치 brew install mysql@5.">
 <meta name=author content="서민규">
 <link rel=canonical href=https://5hdumat.github.io/posts/servlet/servlet-jdbc-retrieve/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.6cba0d81b5f3f42bb578d49f402ba4175aa72b43def148780b8ad714c957c6f5.css integrity="sha256-bLoNgbXz9Cu1eNSfQCukF1qnK0Pe8Uh4C4rXFMlXxvU=" rel="preload stylesheet" as=style>
@@ -23,8 +26,11 @@ hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac)  brew 업데이트 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-05YE8R0TGZ"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-05YE8R0TGZ',{anonymize_ip:!1})}</script>
 <meta property="og:title" content="[서블릿과 JDBC] 회원 목록 조회 구현">
-<meta property="og:description" content="목표  JDBC를 이용한 데이터베이스 연동 방법 숙지  회원 목록 조회 구현 기능을 구현하기에 앞서 DB 서버 구축과 스키마 생성부터 해야 한다. 간단한 작업이지만 homebrew 사용법도 익힐 겸 겸사 겸사 정리해 두기로 했다.
-hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac)  brew 업데이트 후 mysql 관련 프로그램 검색 brew update brew search mysql    원하는 버전의 mysql과 DBMS 클라이언트 프로그램인 mysqlworkbench 설치 brew install mysql@5.7 brew install --cask mysqlworkbench mysql 설치가 완료되면 설치 안내 문구가 출력된다.">
+<meta property="og:description" content="개발환경
+IDE: IntelliJ IDEA 2021.2 (Utimate Edition)
+OS: MAC OS X
+ 목표  JDBC를 이용한 데이터베이스 연동 방법 숙지   회원 목록 조회 구현 해보기 기능을 구현하기에 앞서 DB 서버 구축과 스키마 생성부터 해야 한다. 간단한 작업이지만 &ldquo;homebrew 사용법이나 익히자&#34;하며 겸사 겸사 정리해 두기로 했다.
+  hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac)  brew 업데이트 후 mysql 관련 프로그램 검색 brew update brew search mysql    원하는 버전의 mysql과 DBMS 클라이언트 프로그램인 mysqlworkbench 설치 brew install mysql@5.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://5hdumat.github.io/posts/servlet/servlet-jdbc-retrieve/">
 <meta property="og:image" content="https://5hdumat.github.io/resources/images/servlet/java.jpg"><meta property="article:section" content="posts">
@@ -33,10 +39,13 @@ hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac)  brew 업데이트 
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://5hdumat.github.io/resources/images/servlet/java.jpg">
 <meta name=twitter:title content="[서블릿과 JDBC] 회원 목록 조회 구현">
-<meta name=twitter:description content="목표  JDBC를 이용한 데이터베이스 연동 방법 숙지  회원 목록 조회 구현 기능을 구현하기에 앞서 DB 서버 구축과 스키마 생성부터 해야 한다. 간단한 작업이지만 homebrew 사용법도 익힐 겸 겸사 겸사 정리해 두기로 했다.
-hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac)  brew 업데이트 후 mysql 관련 프로그램 검색 brew update brew search mysql    원하는 버전의 mysql과 DBMS 클라이언트 프로그램인 mysqlworkbench 설치 brew install mysql@5.7 brew install --cask mysqlworkbench mysql 설치가 완료되면 설치 안내 문구가 출력된다.">
+<meta name=twitter:description content="개발환경
+IDE: IntelliJ IDEA 2021.2 (Utimate Edition)
+OS: MAC OS X
+ 목표  JDBC를 이용한 데이터베이스 연동 방법 숙지   회원 목록 조회 구현 해보기 기능을 구현하기에 앞서 DB 서버 구축과 스키마 생성부터 해야 한다. 간단한 작업이지만 &ldquo;homebrew 사용법이나 익히자&#34;하며 겸사 겸사 정리해 두기로 했다.
+  hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac)  brew 업데이트 후 mysql 관련 프로그램 검색 brew update brew search mysql    원하는 버전의 mysql과 DBMS 클라이언트 프로그램인 mysqlworkbench 설치 brew install mysql@5.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://5hdumat.github.io/posts/"},{"@type":"ListItem","position":3,"name":"[서블릿과 JDBC] 회원 목록 조회 구현","item":"https://5hdumat.github.io/posts/servlet/servlet-jdbc-retrieve/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[서블릿과 JDBC] 회원 목록 조회 구현","name":"[서블릿과 JDBC] 회원 목록 조회 구현","description":"목표  JDBC를 이용한 데이터베이스 연동 방법 숙지  회원 목록 조회 구현 기능을 구현하기에 앞서 DB 서버 구축과 스키마 생성부터 해야 한다. 간단한 작업이지만 homebrew 사용법도 익힐 겸 겸사 겸사 정리해 두기로 했다.\nhoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac)  brew 업데이트 후 mysql 관련 프로그램 검색 brew update brew search mysql    원하는 버전의 mysql과 DBMS 클라이언트 프로그램인 mysqlworkbench 설치 brew install mysql@5.7 brew install --cask mysqlworkbench mysql 설치가 완료되면 설치 안내 문구가 출력된다.","keywords":["Java","Servlet","IntelliJ","JDBC","homebrew"],"articleBody":"목표  JDBC를 이용한 데이터베이스 연동 방법 숙지  회원 목록 조회 구현 기능을 구현하기에 앞서 DB 서버 구축과 스키마 생성부터 해야 한다. 간단한 작업이지만 homebrew 사용법도 익힐 겸 겸사 겸사 정리해 두기로 했다.\nhoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac)  brew 업데이트 후 mysql 관련 프로그램 검색 brew update brew search mysql    원하는 버전의 mysql과 DBMS 클라이언트 프로그램인 mysqlworkbench 설치 brew install mysql@5.7 brew install --cask mysqlworkbench mysql 설치가 완료되면 설치 안내 문구가 출력된다. 환경 변수 설정 및 서비스 시작 등 간단한 사용법이 기재되어 있다. home@MacBookPro ~ % brew install mysql@5.7 == Downloading https://ghcr.io/v2/homebrew/core/mysql/5.7/manifests/5.7.35-1 Already downloaded: /Users/home/Library/Caches/Homebrew/downloads/8d6a41ecd64a64e4997897ce7c853b2f9c92646544b8f2df7260d72506eff4d9--mysql@5.7-5.7.35-1.bottle_manifest.json == Downloading https://ghcr.io/v2/homebrew/core/mysql/5.7/blobs/sha256:983b9015 Already downloaded: /Users/home/Library/Caches/Homebrew/downloads/d8237be5e54bf7044ca0e87a8e7d791325178341af709efbda5f54170b2efb14--mysql@5.7--5.7.35.big_sur.bottle.1.tar.gz == Pouring mysql@5.7--5.7.35.big_sur.bottle.1.tar.gz == /usr/local/Cellar/mysql@5.7/5.7.35/bin/mysqld --initialize-insecure --user=h == Caveats We've installed your MySQL database without a root password. To secure it run: mysql_secure_installation MySQL is configured to only allow connections from localhost by default To connect run: mysql -uroot mysql@5.7 is keg-only, which means it was not symlinked into /usr/local, because this is an alternate version of another formula. If you need to have mysql@5.7 first in your PATH, run: echo 'export PATH=\"/usr/local/opt/mysql@5.7/bin:$PATH\"'  ~/.zshrc For compilers to find mysql@5.7 you may need to set: export LDFLAGS=\"-L/usr/local/opt/mysql@5.7/lib\" export CPPFLAGS=\"-I/usr/local/opt/mysql@5.7/include\" For pkg-config to find mysql@5.7 you may need to set: export PKG_CONFIG_PATH=\"/usr/local/opt/mysql@5.7/lib/pkgconfig\" To restart mysql@5.7 after an upgrade: brew services restart mysql@5.7 Or, if you don't want/need a background service you can just run: /usr/local/opt/mysql@5.7/bin/mysqld_safe --datadir=/usr/local/var/mysql == Summary 🍺 /usr/local/Cellar/mysql@5.7/5.7.35: 320 files, 234.6MB workbench는 파인더에 잘 설치되어있다.    안내 문구에 따라 환경 변수를 설정 echo 'export PATH=\"/usr/local/opt/mysql@5.7/bin:$PATH\"'  ~/.zshrc source ~/.zshrc    brew 명령어를 통해 mysql 서버를 실행 (mysql@5.7은 설치 버전에 따라 다르게 기입) 서비스 시작 brew services start mysql@5.7 서비스 종료 brew services stop mysql@5.7    서비스가 실행되면 환경설정 세팅 명령어 실행 후 질의에 따라 사용자의 입맛에 맞게 환경설정을 세팅하면 된다. mysql_secure_installation    서비스가 잘 실행되고 있는지 확인 mysql 서버 접속 mysql -uroot -p 접속 후 콘솔 종료 exit    완료\n회원 목록 조회 애플리케이션을 만들 준비가 끝났다.  ","wordCount":"315","inLanguage":"en","image":"https://5hdumat.github.io/resources/images/servlet/java.jpg","datePublished":"2021-08-28T03:04:40+09:00","dateModified":"2021-08-28T03:04:40+09:00","author":{"@type":"Person","name":"서민규"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://5hdumat.github.io/posts/servlet/servlet-jdbc-retrieve/"},"publisher":{"@type":"Organization","name":"5hdumat","logo":{"@type":"ImageObject","url":"https://5hdumat.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[서블릿과 JDBC] 회원 목록 조회 구현","name":"[서블릿과 JDBC] 회원 목록 조회 구현","description":"개발환경\nIDE: IntelliJ IDEA 2021.2 (Utimate Edition)\nOS: MAC OS X\n 목표  JDBC를 이용한 데이터베이스 연동 방법 숙지   회원 목록 조회 구현 해보기 기능을 구현하기에 앞서 DB 서버 구축과 스키마 생성부터 해야 한다. 간단한 작업이지만 \u0026ldquo;homebrew 사용법이나 익히자\u0026quot;하며 겸사 겸사 정리해 두기로 했다.\n  hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac)  brew 업데이트 후 mysql 관련 프로그램 검색 brew update brew search mysql    원하는 버전의 mysql과 DBMS 클라이언트 프로그램인 mysqlworkbench 설치 brew install mysql@5.","keywords":["Java","Servlet","IntelliJ","JDBC","homebrew"],"articleBody":" 개발환경\nIDE: IntelliJ IDEA 2021.2 (Utimate Edition)\nOS: MAC OS X\n 목표  JDBC를 이용한 데이터베이스 연동 방법 숙지   회원 목록 조회 구현 해보기 기능을 구현하기에 앞서 DB 서버 구축과 스키마 생성부터 해야 한다. 간단한 작업이지만 “homebrew 사용법이나 익히자\"하며 겸사 겸사 정리해 두기로 했다.\n  hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac)  brew 업데이트 후 mysql 관련 프로그램 검색 brew update brew search mysql    원하는 버전의 mysql과 DBMS 클라이언트 프로그램인 mysqlworkbench 설치 brew install mysql@5.7 brew install --cask mysqlworkbench mysql 설치가 완료되면 설치 안내 문구가 출력된다. 환경 변수 설정 및 서비스 시작 등 간단한 사용법이 기재되어 있다. home@MacBookPro ~ % brew install mysql@5.7 == Downloading https://ghcr.io/v2/homebrew/core/mysql/5.7/manifests/5.7.35-1 Already downloaded: /Users/home/Library/Caches/Homebrew/downloads/8d6a41ecd64a64e4997897ce7c853b2f9c92646544b8f2df7260d72506eff4d9--mysql@5.7-5.7.35-1.bottle_manifest.json == Downloading https://ghcr.io/v2/homebrew/core/mysql/5.7/blobs/sha256:983b9015 Already downloaded: /Users/home/Library/Caches/Homebrew/downloads/d8237be5e54bf7044ca0e87a8e7d791325178341af709efbda5f54170b2efb14--mysql@5.7--5.7.35.big_sur.bottle.1.tar.gz == Pouring mysql@5.7--5.7.35.big_sur.bottle.1.tar.gz == /usr/local/Cellar/mysql@5.7/5.7.35/bin/mysqld --initialize-insecure --user=h == Caveats We've installed your MySQL database without a root password. To secure it run: mysql_secure_installation MySQL is configured to only allow connections from localhost by default To connect run: mysql -uroot mysql@5.7 is keg-only, which means it was not symlinked into /usr/local, because this is an alternate version of another formula. If you need to have mysql@5.7 first in your PATH, run: echo 'export PATH=\"/usr/local/opt/mysql@5.7/bin:$PATH\"'  ~/.zshrc For compilers to find mysql@5.7 you may need to set: export LDFLAGS=\"-L/usr/local/opt/mysql@5.7/lib\" export CPPFLAGS=\"-I/usr/local/opt/mysql@5.7/include\" For pkg-config to find mysql@5.7 you may need to set: export PKG_CONFIG_PATH=\"/usr/local/opt/mysql@5.7/lib/pkgconfig\" To restart mysql@5.7 after an upgrade: brew services restart mysql@5.7 Or, if you don't want/need a background service you can just run: /usr/local/opt/mysql@5.7/bin/mysqld_safe --datadir=/usr/local/var/mysql == Summary 🍺 /usr/local/Cellar/mysql@5.7/5.7.35: 320 files, 234.6MB workbench는 파인더에 잘 설치되어있다.    안내 문구에 따라 환경 변수를 설정 echo 'export PATH=\"/usr/local/opt/mysql@5.7/bin:$PATH\"'  ~/.zshrc source ~/.zshrc    brew 명령어를 통해 mysql 서버를 실행 (mysql@5.7은 설치 버전에 따라 다르게 기입) 서비스 시작 brew services start mysql@5.7 서비스 종료 brew services stop mysql@5.7    서비스가 실행되면 환경설정 세팅 명령어 실행 후 질의에 따라 사용자의 입맛에 맞게 환경설정을 세팅하면 된다. mysql_secure_installation    서비스가 잘 실행되고 있는지 확인 mysql 서버 접속 mysql -uroot -p 접속 후 콘솔 종료 exit    완료\n회원 목록 조회 애플리케이션을 만들 준비가 끝났다.    회원 테이블 생성  studydb 스키마 생성 후 회원 기본 정보 테이블 생성 use studydb; CREATE TABLE MEMBERS ( MNO INTEGER NOT NULL COMMENT '회원일련번호', EMAIL VARCHAR(40) NOT NULL COMMENT '이메일', PWD VARCHAR(100) NOT NULL COMMENT '암호', MNAME VARCHAR(50) NOT NULL COMMENT '이름', CRE_DATE DATETIME NOT NULL COMMENT '가입일', MOD_DATE DATETIME NOT NULL COMMENT '마지막암호변경일' ) COMMNET '회원기본정보'    MEMBERS 테이블의 기본 키 정의 ALTER TABLE MEMBERS ADD CONSTRAINT PK_MEMBERS PRIMARY KEY ( MNO );    MEMBERS 테이블 제약사항 추가 # 기본 키(PK) 정의 ALTER TABLE MEMBERS ADD CONSTRAINT PK_MEMBERS PRIMARY KEY ( MNO ); # 기본 키(PK) 자동증가 ALTER TABLE MEMBERS MODIFY COLUMN MNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '회원일련번호'; # 유니크 지정 CREATE UNIQUE INDEX UIX_MEMBERS ON MEMBERS ( EMAIL ASC );    데이터 삽입 INSERT INTO MEMBERS (EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE) VALUES ('s1@test.com', '1111', '테스터1', NOW(), NOW()); INSERT INTO MEMBERS (EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE) VALUES ('s2@test.com', '1111', '테스터2', NOW(), NOW()); INSERT INTO MEMBERS (EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE) VALUES ('s3@test.com', '1111', '테스터3', NOW(), NOW()); INSERT INTO MEMBERS (EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE) VALUES ('s4@test.com', '1111', '테스터4', NOW(), NOW()); INSERT INTO MEMBERS (EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE) VALUES ('s5@test.com', '1111', '테스터5', NOW(), NOW());    정상 입력 확인\n       JDBC 드라이버 설치 자바에서 데이터베이스에 접근하려면 JDBC 드라이버가 필요하다. JRE에 기본적으로 포함된 JDBC 드라이버도 있지만 ODBC 드라이버를 사용하기 때문에 개발 PC에 MySQL ODBC 드라이버를 따로 설치해야 한다. 따라서 우리는 MySQL에서 제공하는 별도의 드라이버를 사용하기로 한다. MySQL에서 제공하는 드라이버는 본인들만의 DMBS 통신 프로토콜에 맞추어 직접 통신하기 때문에 ODBC 드라이버가 따로 필요 없기 때문이다.\n MySQL JDBC 드라이버는 링크를 통해 설치할 수 있다.\n(IntelliJ를 사용한다면 IDE를 통해 다운로드 받을 수 있으니 그대로 패스하자.)\n  회원 목록 조회 서블릿 생성  [Project Structure] - [Libraries] - [From Maven…] 에서 JDBC 라이브러리 추가 다운로드 받은 MySQL JDBC 폴더의 mysql-connector-java-8.0.26 파일을 프로젝트 라이브러리에 추가     spms.servlets 패키지에 MemberListServlet 클래스 생성\nweb04/src/spms/servlets/MemberListServlet.java package spms.servlets; import java.io.IOException; import java.io.PrintWriter; import java.sql.Connection; import java.sql.DriverManager; import java.sql.ResultSet; import java.sql.Statement; import javax.servlet.GenericServlet; import javax.servlet.ServletException; import javax.servlet.ServletRequest; import javax.servlet.ServletResponse; import javax.servlet.annotation.WebServlet; @WebServlet(\"/member/list\") public class MemberListServlet extends GenericServlet { private static final long serialVersionUID = 1L; @Override public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException { Connection conn = null; Statement stmt = null; ResultSet rs = null; try { DriverManager.registerDriver(new com.mysql.jdbc.Driver()); conn = DriverManager.getConnection( \"jdbc:mysql://localhost/studydb\", // JDBC URL  \"root\", // DBMS 사용자 아이디  \"1111\"); // DBMS 사용자 암호  stmt = conn.createStatement(); rs = stmt.executeQuery( \"SELECT MNO,MNAME,EMAIL,CRE_DATE\" + \" FROM MEMBERS\" + \" ORDER BY MNO ASC\"); response.setContentType(\"text/html; charset=UTF-8\"); PrintWriter out = response.getWriter(); out.println(\"회원목록\"); out.println(\"회원목록\"); while (rs.next()) { out.println( rs.getInt(\"MNO\") + \",\" + rs.getString(\"MNAME\") + \",\" + rs.getString(\"EMAIL\") + \",\" + rs.getDate(\"CRE_DATE\") + \"\n\" ); } out.println(\"\"); } catch (Exception e) { throw new ServletException(e); } finally { // 자원 해제  try { if (rs != null) rs.close(); } catch (Exception e) { } try { if (stmt != null) stmt.close(); } catch (Exception e) { } try { if (conn != null) conn.close(); } catch (Exception e) { } } } } 간단해 보여도 간단히 살펴보고 넘어가자.  JDBC 객체 주소를 보관할 참조 변수를 선언한다. Connection conn = null; Statement stmt = null; ResultSet rs = null;     JDBC API 사용 전 try catch 블록으로 예외처리\ntry 블록에서 예외가 발생하면 throw new ServletException(e); 객체에 담아 이 메서드를 호출한 서블릿 컨테이너에 throw 한다. 서블릿 컨테이너는 적절한 화면을 생성하여 클라이언트에게 출력하게 된다.     DriverManager가 사용할 JDBC 드라이버 등록\nJDBC 프로그래밍의 첫 번째 작업은 DriverManager를 이용하여 java.sql.Driver 인터페이스 구현체를 등록하는 것이다.\n DriverManager.registerDriver(new com.mysql.jdbc.Driver());  MySQL 드라이버의 경우 com.mysql.jdbc.Driver 클래스가 java.sql.Driver 인터페이스의 구현체이다.\nMySQL JDBC 라이브러리(.jar)를 살펴보면 인터페이스 구현체를 찾을 수 있다.      데이터베이스에 연결\n다음과 같이 DriverManager의 getConnection()을 호출하여 Mysql 서버에 연결할 수 있다.\n conn = DriverManager.getConnection( \"jdbc:mysql://localhost/studydb\", // JDBC URL  \"root\", // DBMS 사용자 아이디  \"1111\"); // DBMS 사용자 암호  참고로 getConnection()의 첫 번째 인자값은 MySQL 서버의 접속 정보이다. 보통 이 값을 ‘JDBC URL’이라고 부른다. DriverManager는 등록된 JDBC 드라이버 중 첫 번째 인자값에 입력되어 있는 JDBC URL을 승인하는 드라이버를 찾아 java.sql.Driver 구현체를 사용하여 데이터베이스에 연결한다.\n 데이터베이스 연결에 성공하면 DB 접속 정보를 다룰 수 있는 객체를 반환한다. 반환된 객체는 java.sql.Connection 인터페이스 구현체이며, 이 반환 객체를 통하여 SQL문을 실행할 수 있는 Statement 객체를 얻을 수 있다.\n 이제 Connection 구현체를 이용하여 SQL 문을 실행할 객체를 준비해야한다.\n stmt = conn.createStatement();  createStatement()가 반환하는 것은 java.sql.Statement 인터페이스의 구현체인데, Statement 인터페이스에는 데이터베이스에 질의하는데 필요한 메서드가 정의되어 있고, 이 인터페이스를 구현했다는 것은 반환 객체가 이러한 메서드를 가지고 있다는 의미일 것이다. 이제 우리는 executeQuery(), executeUpdate(), executeBatch() 등의 명령어를 통해 SQL 문을 실행할 수 있다.\n   데이터베이스에 연결\n다음은 회원 정보를 조회하는 SQL 문이다.\n rs = stmt.executeQuery( \"SELECT MNO,MNAME,EMAIL,CRE_DATE\" + \" FROM MEMBERS\" + \" ORDER BY MNO ASC\");  이번에는 executeQuery()가 java.sql.ResultSet 인터페이스의 구현체를 반환한다. 이 바놘 객체를 통하여 서버에서 질의 결과를 가져올 수 있다. 계속 구현체를 호출하고 할당하는 행위의 연속이다.\n    화면 출력\n서블릿 컨테이너를 실행하니 정상적으로 화면이 출력됐다.\n      회고 어려울수록 기본에 미쳐야 한다는 말에 굉장히 공감했던 포스트였다. 간단한 작업임에도 실무에서 무지성으로 복붙할 때와는 다르게 꽤나 버벅거렸다. 구현체 인터페이스에 익숙해지는 것은 당연한 것이겠지만 무엇보다도 선대 개발자들이 구현체를 만들기까지 문제 해결을 위해 무엇을 고민했을지와 같은 문제해결 논리를 이해하고자 노력하고 있다. 조금씩 조금씩 앞으로 나아가자.\n","wordCount":"1143","inLanguage":"en","image":"https://5hdumat.github.io/resources/images/servlet/java.jpg","datePublished":"2021-08-28T03:04:40+09:00","dateModified":"2021-08-28T03:04:40+09:00","author":{"@type":"Person","name":"서민규"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://5hdumat.github.io/posts/servlet/servlet-jdbc-retrieve/"},"publisher":{"@type":"Organization","name":"5hdumat","logo":{"@type":"ImageObject","url":"https://5hdumat.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <noscript>
@@ -85,12 +94,20 @@ hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac)  brew 업데이트 
 </header>
 <figure class=entry-cover><img loading=lazy src=https://5hdumat.github.io/resources/images/servlet/java.jpg alt>
 </figure>
-<div class=post-content><h2 id=목표>목표<a hidden class=anchor aria-hidden=true href=#목표>#</a></h2>
+<div class=post-content><blockquote>
+<p><strong>개발환경</strong><br>
+<strong>IDE:</strong> IntelliJ IDEA 2021.2 (Utimate Edition)<br>
+<strong>OS:</strong> MAC OS X</p>
+</blockquote>
+<h2 id=목표>목표<a hidden class=anchor aria-hidden=true href=#목표>#</a></h2>
 <ul>
 <li>JDBC를 이용한 데이터베이스 연동 방법 숙지</li>
 </ul>
-<h2 id=회원-목록-조회-구현>회원 목록 조회 구현<a hidden class=anchor aria-hidden=true href=#회원-목록-조회-구현>#</a></h2>
-<p>기능을 구현하기에 앞서 DB 서버 구축과 스키마 생성부터 해야 한다. 간단한 작업이지만 homebrew 사용법도 익힐 겸 겸사 겸사 정리해 두기로 했다.</p>
+<hr>
+<h2 id=회원-목록-조회-구현-해보기>회원 목록 조회 구현 해보기<a hidden class=anchor aria-hidden=true href=#회원-목록-조회-구현-해보기>#</a></h2>
+<p>기능을 구현하기에 앞서 DB 서버 구축과 스키마 생성부터 해야 한다. 간단한 작업이지만 &ldquo;homebrew 사용법이나 익히자"하며 겸사 겸사 정리해 두기로 했다.</p>
+<ul>
+<li>
 <h3 id=hoebrew를-이용한-mysql-mysqlworkbench-설치-only-mac>hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac)<a hidden class=anchor aria-hidden=true href=#hoebrew를-이용한-mysql-mysqlworkbench-설치-only-mac>#</a></h3>
 <ol>
 <li><strong>brew 업데이트 후 mysql 관련 프로그램 검색</strong>
@@ -98,7 +115,7 @@ hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac)  brew 업데이트 
 brew search mysql
 </code></pre></div></li>
 </ol>
-<h1 id=heading><a hidden class=anchor aria-hidden=true href=#heading>#</a></h1>
+<h3 id=heading><a hidden class=anchor aria-hidden=true href=#heading>#</a></h3>
 <ol start=2>
 <li><strong>원하는 버전의 <code>mysql</code>과 DBMS 클라이언트 프로그램인 <code>mysqlworkbench</code> 설치</strong>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>brew install mysql@5.7
@@ -145,30 +162,30 @@ Or, if you don&#39;t want/need a background service you can just run:
 </p>
 </li>
 </ol>
-<h1 id=heading-1><a hidden class=anchor aria-hidden=true href=#heading-1>#</a></h1>
+<h3 id=heading-1><a hidden class=anchor aria-hidden=true href=#heading-1>#</a></h3>
 <ol start=3>
 <li><strong>안내 문구에 따라 환경 변수를 설정</strong>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>echo &#39;export PATH=&#34;/usr/local/opt/mysql@5.7/bin:$PATH&#34;&#39; &gt;&gt; ~/.zshrc
 source ~/.zshrc
 </code></pre></div></li>
 </ol>
-<h1 id=heading-2><a hidden class=anchor aria-hidden=true href=#heading-2>#</a></h1>
+<h3 id=heading-2><a hidden class=anchor aria-hidden=true href=#heading-2>#</a></h3>
 <ol start=4>
 <li><strong>brew 명령어를 통해 mysql 서버를 실행 (<a href=mailto:mysql@5.7>mysql@5.7</a>은 설치 버전에 따라 다르게 기입)</strong>
 <h5 id=서비스-시작>서비스 시작<a hidden class=anchor aria-hidden=true href=#서비스-시작>#</a></h5>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>brew services start mysql@5.7
 </code></pre></div><h5 id=서비스-종료>서비스 종료<a hidden class=anchor aria-hidden=true href=#서비스-종료>#</a></h5>
-<pre><code class=language-test data-lang=test>brew services stop mysql@5.7
-</code></pre></li>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>brew services stop mysql@5.7
+</code></pre></div></li>
 </ol>
-<h1 id=heading-3><a hidden class=anchor aria-hidden=true href=#heading-3>#</a></h1>
+<h3 id=heading-3><a hidden class=anchor aria-hidden=true href=#heading-3>#</a></h3>
 <ol start=5>
 <li><strong>서비스가 실행되면 환경설정 세팅</strong>
 <h5 id=명령어-실행-후-질의에-따라-사용자의-입맛에-맞게-환경설정을-세팅하면-된다>명령어 실행 후 질의에 따라 사용자의 입맛에 맞게 환경설정을 세팅하면 된다.<a hidden class=anchor aria-hidden=true href=#명령어-실행-후-질의에-따라-사용자의-입맛에-맞게-환경설정을-세팅하면-된다>#</a></h5>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>mysql_secure_installation
 </code></pre></div></li>
 </ol>
-<h1 id=heading-4><a hidden class=anchor aria-hidden=true href=#heading-4>#</a></h1>
+<h3 id=heading-4><a hidden class=anchor aria-hidden=true href=#heading-4>#</a></h3>
 <ol start=6>
 <li><strong>서비스가 잘 실행되고 있는지 확인</strong>
 <h5 id=mysql-서버-접속>mysql 서버 접속<a hidden class=anchor aria-hidden=true href=#mysql-서버-접속>#</a></h5>
@@ -177,11 +194,256 @@ source ~/.zshrc
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>exit
 </code></pre></div></li>
 </ol>
-<h1 id=heading-5><a hidden class=anchor aria-hidden=true href=#heading-5>#</a></h1>
-<ol start=6>
+<h3 id=heading-5><a hidden class=anchor aria-hidden=true href=#heading-5>#</a></h3>
+<ol start=7>
 <li><strong>완료</strong><br>
 회원 목록 조회 애플리케이션을 만들 준비가 끝났다.</li>
 </ol>
+</li>
+<li>
+<h3 id=회원-테이블-생성>회원 테이블 생성<a hidden class=anchor aria-hidden=true href=#회원-테이블-생성>#</a></h3>
+<ol>
+<li><strong><code>studydb</code> 스키마 생성 후 회원 기본 정보 테이블 생성</strong>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-mysql data-lang=mysql><span style=color:#66d9ef>use</span> studydb;
+
+<span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>TABLE</span> <span style=color:#a6e22e>MEMBERS</span> (
+    MNO <span style=color:#66d9ef>INTEGER</span> <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span> COMMENT <span style=color:#e6db74>&#39;회원일련번호&#39;</span>,
+    EMAIL <span style=color:#66d9ef>VARCHAR</span>(<span style=color:#ae81ff>40</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span> COMMENT <span style=color:#e6db74>&#39;이메일&#39;</span>,
+    PWD <span style=color:#66d9ef>VARCHAR</span>(<span style=color:#ae81ff>100</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span> COMMENT <span style=color:#e6db74>&#39;암호&#39;</span>,
+    MNAME <span style=color:#66d9ef>VARCHAR</span>(<span style=color:#ae81ff>50</span>) <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span> COMMENT <span style=color:#e6db74>&#39;이름&#39;</span>,
+    CRE_DATE <span style=color:#66d9ef>DATETIME</span> <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span> COMMENT <span style=color:#e6db74>&#39;가입일&#39;</span>,
+    MOD_DATE <span style=color:#66d9ef>DATETIME</span> <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span> COMMENT <span style=color:#e6db74>&#39;마지막암호변경일&#39;</span>
+)
+COMMNET <span style=color:#e6db74>&#39;회원기본정보&#39;</span>
+</code></pre></div></li>
+</ol>
+<h3 id=heading-6><a hidden class=anchor aria-hidden=true href=#heading-6>#</a></h3>
+<ol start=2>
+<li><strong><code>MEMBERS</code> 테이블의 기본 키 정의</strong>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-mysql data-lang=mysql><span style=color:#66d9ef>ALTER</span> <span style=color:#66d9ef>TABLE</span> MEMBERS 
+    <span style=color:#66d9ef>ADD</span> <span style=color:#66d9ef>CONSTRAINT</span> PK_MEMBERS 
+        <span style=color:#66d9ef>PRIMARY</span> <span style=color:#66d9ef>KEY</span> (
+            MNO
+        );
+</code></pre></div></li>
+</ol>
+<h3 id=heading-7><a hidden class=anchor aria-hidden=true href=#heading-7>#</a></h3>
+<ol start=3>
+<li><strong><code>MEMBERS</code> 테이블 제약사항 추가</strong>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-mysql data-lang=mysql><span style=color:#75715e># 기본 키(PK) 정의
+</span><span style=color:#75715e></span><span style=color:#66d9ef>ALTER</span> <span style=color:#66d9ef>TABLE</span> MEMBERS 
+    <span style=color:#66d9ef>ADD</span> <span style=color:#66d9ef>CONSTRAINT</span> PK_MEMBERS 
+        <span style=color:#66d9ef>PRIMARY</span> <span style=color:#66d9ef>KEY</span> (
+            MNO
+        );
+
+<span style=color:#75715e># 기본 키(PK) 자동증가
+</span><span style=color:#75715e></span><span style=color:#66d9ef>ALTER</span> <span style=color:#66d9ef>TABLE</span> MEMBERS
+    MODIFY <span style=color:#66d9ef>COLUMN</span> MNO <span style=color:#66d9ef>INTEGER</span> <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>NULL</span> <span style=color:#66d9ef>AUTO_INCREMENT</span>
+    COMMENT <span style=color:#e6db74>&#39;회원일련번호&#39;</span>; 
+
+<span style=color:#75715e># 유니크 지정
+</span><span style=color:#75715e></span><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>UNIQUE</span> <span style=color:#66d9ef>INDEX</span> UIX_MEMBERS 
+    <span style=color:#66d9ef>ON</span> <span style=color:#a6e22e>MEMBERS</span> (
+        EMAIL <span style=color:#66d9ef>ASC</span>
+    );
+</code></pre></div></li>
+</ol>
+<h3 id=heading-8><a hidden class=anchor aria-hidden=true href=#heading-8>#</a></h3>
+<ol start=4>
+<li><strong>데이터 삽입</strong>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-mysql data-lang=mysql><span style=color:#66d9ef>INSERT</span> <span style=color:#66d9ef>INTO</span> <span style=color:#a6e22e>MEMBERS</span> (EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE)
+<span style=color:#66d9ef>VALUES</span> (<span style=color:#e6db74>&#39;s1@test.com&#39;</span>, <span style=color:#e6db74>&#39;1111&#39;</span>, <span style=color:#e6db74>&#39;테스터1&#39;</span>, <span style=color:#a6e22e>NOW</span>(), <span style=color:#a6e22e>NOW</span>());
+
+<span style=color:#66d9ef>INSERT</span> <span style=color:#66d9ef>INTO</span> <span style=color:#a6e22e>MEMBERS</span> (EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE)
+<span style=color:#66d9ef>VALUES</span> (<span style=color:#e6db74>&#39;s2@test.com&#39;</span>, <span style=color:#e6db74>&#39;1111&#39;</span>, <span style=color:#e6db74>&#39;테스터2&#39;</span>, <span style=color:#a6e22e>NOW</span>(), <span style=color:#a6e22e>NOW</span>());
+
+<span style=color:#66d9ef>INSERT</span> <span style=color:#66d9ef>INTO</span> <span style=color:#a6e22e>MEMBERS</span> (EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE)
+<span style=color:#66d9ef>VALUES</span> (<span style=color:#e6db74>&#39;s3@test.com&#39;</span>, <span style=color:#e6db74>&#39;1111&#39;</span>, <span style=color:#e6db74>&#39;테스터3&#39;</span>, <span style=color:#a6e22e>NOW</span>(), <span style=color:#a6e22e>NOW</span>());
+
+<span style=color:#66d9ef>INSERT</span> <span style=color:#66d9ef>INTO</span> <span style=color:#a6e22e>MEMBERS</span> (EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE)
+<span style=color:#66d9ef>VALUES</span> (<span style=color:#e6db74>&#39;s4@test.com&#39;</span>, <span style=color:#e6db74>&#39;1111&#39;</span>, <span style=color:#e6db74>&#39;테스터4&#39;</span>, <span style=color:#a6e22e>NOW</span>(), <span style=color:#a6e22e>NOW</span>());
+
+<span style=color:#66d9ef>INSERT</span> <span style=color:#66d9ef>INTO</span> <span style=color:#a6e22e>MEMBERS</span> (EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE)
+<span style=color:#66d9ef>VALUES</span> (<span style=color:#e6db74>&#39;s5@test.com&#39;</span>, <span style=color:#e6db74>&#39;1111&#39;</span>, <span style=color:#e6db74>&#39;테스터5&#39;</span>, <span style=color:#a6e22e>NOW</span>(), <span style=color:#a6e22e>NOW</span>());
+</code></pre></div></li>
+</ol>
+<h3 id=heading-9><a hidden class=anchor aria-hidden=true href=#heading-9>#</a></h3>
+<ol start=5>
+<li><strong>정상 입력 확인</strong><br>
+<img loading=lazy src=/resources/images/servlet/jdbc-example-1.png alt=jdbc-example-1>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<h3 id=jdbc-드라이버-설치>JDBC 드라이버 설치<a hidden class=anchor aria-hidden=true href=#jdbc-드라이버-설치>#</a></h3>
+<p>자바에서 데이터베이스에 접근하려면 JDBC 드라이버가 필요하다. JRE에 기본적으로 포함된 JDBC 드라이버도 있지만 ODBC 드라이버를 사용하기 때문에 개발 PC에 MySQL ODBC 드라이버를 따로 설치해야 한다. 따라서 <strong>우리는 MySQL에서 제공하는 별도의 드라이버를 사용하기로 한다. MySQL에서 제공하는 드라이버는 본인들만의 DMBS 통신 프로토콜에 맞추어 직접 통신하기 때문에 ODBC 드라이버가 따로 필요 없기 때문이다.</strong></p>
+<h5 id=heading-10><a hidden class=anchor aria-hidden=true href=#heading-10>#</a></h5>
+<p>MySQL JDBC 드라이버는 <a href=https://dev.mysql.com/downloads/connector/j/>링크</a>를 통해 설치할 수 있다.<br>
+<strong>(IntelliJ를 사용한다면 IDE를 통해 다운로드 받을 수 있으니 그대로 패스하자.)</strong></p>
+</li>
+<li>
+<h3 id=회원-목록-조회-서블릿-생성>회원 목록 조회 서블릿 생성<a hidden class=anchor aria-hidden=true href=#회원-목록-조회-서블릿-생성>#</a></h3>
+<ol>
+<li><strong>[Project Structure] -> [Libraries] -> [From Maven&mldr;] 에서 JDBC 라이브러리 추가</strong>
+<h5 id=다운로드-받은-mysql-jdbc-폴더의-mysql-connector-java-8026-파일을-프로젝트-라이브러리에-추가>다운로드 받은 MySQL JDBC 폴더의 <code>mysql-connector-java-8.0.26</code> 파일을 프로젝트 라이브러리에 추가<a hidden class=anchor aria-hidden=true href=#다운로드-받은-mysql-jdbc-폴더의-mysql-connector-java-8026-파일을-프로젝트-라이브러리에-추가>#</a></h5>
+<p><img loading=lazy src=/resources/images/servlet/jdbc-example-2.png alt=jdbc-example-2>
+</p>
+</li>
+</ol>
+<h3 id=heading-11><a hidden class=anchor aria-hidden=true href=#heading-11>#</a></h3>
+<ol start=2>
+<li>
+<p><code>spms.servlets</code> 패키지에 <code>MemberListServlet</code> 클래스 생성</p>
+<h5 id=web04srcspmsservletsmemberlistservletjava>web04/src/spms/servlets/MemberListServlet.java<a hidden class=anchor aria-hidden=true href=#web04srcspmsservletsmemberlistservletjava>#</a></h5>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#f92672>package</span> spms.servlets<span style=color:#f92672>;</span>
+
+<span style=color:#f92672>import</span> java.io.IOException<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.io.PrintWriter<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.sql.Connection<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.sql.DriverManager<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.sql.ResultSet<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.sql.Statement<span style=color:#f92672>;</span>
+
+<span style=color:#f92672>import</span> javax.servlet.GenericServlet<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> javax.servlet.ServletException<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> javax.servlet.ServletRequest<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> javax.servlet.ServletResponse<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> javax.servlet.annotation.WebServlet<span style=color:#f92672>;</span>
+
+<span style=color:#a6e22e>@WebServlet</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/member/list&#34;</span><span style=color:#f92672>)</span>
+<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MemberListServlet</span> <span style=color:#66d9ef>extends</span> GenericServlet <span style=color:#f92672>{</span>
+    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>long</span> serialVersionUID <span style=color:#f92672>=</span> 1L<span style=color:#f92672>;</span>
+
+    <span style=color:#a6e22e>@Override</span>
+    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>service</span><span style=color:#f92672>(</span>ServletRequest request<span style=color:#f92672>,</span> ServletResponse response<span style=color:#f92672>)</span>
+            <span style=color:#66d9ef>throws</span> ServletException<span style=color:#f92672>,</span> IOException <span style=color:#f92672>{</span>
+        Connection conn <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
+        Statement stmt <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
+        ResultSet rs <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
+
+        <span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
+            DriverManager<span style=color:#f92672>.</span><span style=color:#a6e22e>registerDriver</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> com<span style=color:#f92672>.</span><span style=color:#a6e22e>mysql</span><span style=color:#f92672>.</span><span style=color:#a6e22e>jdbc</span><span style=color:#f92672>.</span><span style=color:#a6e22e>Driver</span><span style=color:#f92672>());</span>
+            conn <span style=color:#f92672>=</span> DriverManager<span style=color:#f92672>.</span><span style=color:#a6e22e>getConnection</span><span style=color:#f92672>(</span>
+                    <span style=color:#e6db74>&#34;jdbc:mysql://localhost/studydb&#34;</span><span style=color:#f92672>,</span> <span style=color:#75715e>// JDBC URL
+</span><span style=color:#75715e></span>                    <span style=color:#e6db74>&#34;root&#34;</span><span style=color:#f92672>,</span> <span style=color:#75715e>// DBMS 사용자 아이디
+</span><span style=color:#75715e></span>                    <span style=color:#e6db74>&#34;1111&#34;</span><span style=color:#f92672>);</span> <span style=color:#75715e>// DBMS 사용자 암호
+</span><span style=color:#75715e></span>            stmt <span style=color:#f92672>=</span> conn<span style=color:#f92672>.</span><span style=color:#a6e22e>createStatement</span><span style=color:#f92672>();</span>
+            rs <span style=color:#f92672>=</span> stmt<span style=color:#f92672>.</span><span style=color:#a6e22e>executeQuery</span><span style=color:#f92672>(</span>
+                    <span style=color:#e6db74>&#34;SELECT MNO,MNAME,EMAIL,CRE_DATE&#34;</span> <span style=color:#f92672>+</span>
+                            <span style=color:#e6db74>&#34; FROM MEMBERS&#34;</span> <span style=color:#f92672>+</span>
+                            <span style=color:#e6db74>&#34; ORDER BY MNO ASC&#34;</span><span style=color:#f92672>);</span>
+
+            response<span style=color:#f92672>.</span><span style=color:#a6e22e>setContentType</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;text/html; charset=UTF-8&#34;</span><span style=color:#f92672>);</span>
+            PrintWriter out <span style=color:#f92672>=</span> response<span style=color:#f92672>.</span><span style=color:#a6e22e>getWriter</span><span style=color:#f92672>();</span>
+            out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;html&gt;&lt;head&gt;&lt;title&gt;회원목록&lt;/title&gt;&lt;/head&gt;&#34;</span><span style=color:#f92672>);</span>
+            out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;body&gt;&lt;h1&gt;회원목록&lt;/h1&gt;&#34;</span><span style=color:#f92672>);</span>
+            <span style=color:#66d9ef>while</span> <span style=color:#f92672>(</span>rs<span style=color:#f92672>.</span><span style=color:#a6e22e>next</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+                out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>
+                        rs<span style=color:#f92672>.</span><span style=color:#a6e22e>getInt</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;MNO&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;,&#34;</span> <span style=color:#f92672>+</span>
+                                rs<span style=color:#f92672>.</span><span style=color:#a6e22e>getString</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;MNAME&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;,&#34;</span> <span style=color:#f92672>+</span>
+                                rs<span style=color:#f92672>.</span><span style=color:#a6e22e>getString</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;EMAIL&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;,&#34;</span> <span style=color:#f92672>+</span>
+                                rs<span style=color:#f92672>.</span><span style=color:#a6e22e>getDate</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;CRE_DATE&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;&lt;br&gt;&#34;</span>
+                <span style=color:#f92672>);</span>
+            <span style=color:#f92672>}</span>
+            out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;/body&gt;&lt;/html&gt;&#34;</span><span style=color:#f92672>);</span>
+        <span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>Exception e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> ServletException<span style=color:#f92672>(</span>e<span style=color:#f92672>);</span>
+
+        <span style=color:#f92672>}</span> <span style=color:#66d9ef>finally</span> <span style=color:#f92672>{</span> <span style=color:#75715e>// 자원 해제
+</span><span style=color:#75715e></span>            <span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
+                <span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>rs <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>)</span> rs<span style=color:#f92672>.</span><span style=color:#a6e22e>close</span><span style=color:#f92672>();</span>
+            <span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>Exception e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+            <span style=color:#f92672>}</span>
+            <span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
+                <span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>stmt <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>)</span> stmt<span style=color:#f92672>.</span><span style=color:#a6e22e>close</span><span style=color:#f92672>();</span>
+            <span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>Exception e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+            <span style=color:#f92672>}</span>
+            <span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
+                <span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>conn <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>)</span> conn<span style=color:#f92672>.</span><span style=color:#a6e22e>close</span><span style=color:#f92672>();</span>
+            <span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>Exception e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+            <span style=color:#f92672>}</span>
+        <span style=color:#f92672>}</span>
+
+    <span style=color:#f92672>}</span>
+<span style=color:#f92672>}</span>
+</code></pre></div><h3 id=간단해-보여도-간단히-살펴보고-넘어가자>간단해 보여도 간단히 살펴보고 넘어가자.<a hidden class=anchor aria-hidden=true href=#간단해-보여도-간단히-살펴보고-넘어가자>#</a></h3>
+<ul>
+<li><strong>JDBC 객체 주소를 보관할 참조 변수를 선언한다.</strong>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>Connection conn <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
+Statement stmt <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
+ResultSet rs <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
+</code></pre></div></li>
+</ul>
+<h3 id=heading-12><a hidden class=anchor aria-hidden=true href=#heading-12>#</a></h3>
+<ul>
+<li><strong>JDBC API 사용 전 <code>try catch</code> 블록으로 예외처리</strong><br>
+try 블록에서 예외가 발생하면 <code>throw new ServletException(e);</code> 객체에 담아 이 메서드를 호출한 서블릿 컨테이너에 <code>throw</code> 한다. 서블릿 컨테이너는 적절한 화면을 생성하여 클라이언트에게 출력하게 된다.</li>
+</ul>
+<h3 id=heading-13><a hidden class=anchor aria-hidden=true href=#heading-13>#</a></h3>
+<ul>
+<li>
+<p><strong>DriverManager가 사용할 JDBC 드라이버 등록</strong><br>
+JDBC 프로그래밍의 첫 번째 작업은 DriverManager를 이용하여 <code>java.sql.Driver</code> 인터페이스 구현체를 등록하는 것이다.</p>
+<h3 id=heading-14><a hidden class=anchor aria-hidden=true href=#heading-14>#</a></h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>DriverManager<span style=color:#f92672>.</span><span style=color:#a6e22e>registerDriver</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> com<span style=color:#f92672>.</span><span style=color:#a6e22e>mysql</span><span style=color:#f92672>.</span><span style=color:#a6e22e>jdbc</span><span style=color:#f92672>.</span><span style=color:#a6e22e>Driver</span><span style=color:#f92672>());</span>
+</code></pre></div><h3 id=heading-15><a hidden class=anchor aria-hidden=true href=#heading-15>#</a></h3>
+<p>MySQL 드라이버의 경우 <code>com.mysql.jdbc.Driver</code> 클래스가 <code>java.sql.Driver</code> 인터페이스의 구현체이다.</p>
+<h5 id=mysql-jdbc-라이브러리jar를-살펴보면-인터페이스-구현체를-찾을-수-있다>MySQL JDBC 라이브러리(.jar)를 살펴보면 인터페이스 구현체를 찾을 수 있다.<a hidden class=anchor aria-hidden=true href=#mysql-jdbc-라이브러리jar를-살펴보면-인터페이스-구현체를-찾을-수-있다>#</a></h5>
+<p><img loading=lazy src=/resources/images/servlet/jdbc-example-3.png alt=jdbc-example-3>
+</p>
+</li>
+</ul>
+<h3 id=heading-16><a hidden class=anchor aria-hidden=true href=#heading-16>#</a></h3>
+<ul>
+<li>
+<p><strong>데이터베이스에 연결</strong><br>
+다음과 같이 DriverManager의 <code>getConnection()</code>을 호출하여 Mysql 서버에 연결할 수 있다.</p>
+<h3 id=heading-17><a hidden class=anchor aria-hidden=true href=#heading-17>#</a></h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>conn <span style=color:#f92672>=</span> DriverManager<span style=color:#f92672>.</span><span style=color:#a6e22e>getConnection</span><span style=color:#f92672>(</span>
+        <span style=color:#e6db74>&#34;jdbc:mysql://localhost/studydb&#34;</span><span style=color:#f92672>,</span> <span style=color:#75715e>// JDBC URL
+</span><span style=color:#75715e></span>        <span style=color:#e6db74>&#34;root&#34;</span><span style=color:#f92672>,</span> <span style=color:#75715e>// DBMS 사용자 아이디
+</span><span style=color:#75715e></span>        <span style=color:#e6db74>&#34;1111&#34;</span><span style=color:#f92672>);</span> <span style=color:#75715e>// DBMS 사용자 암호
+</span></code></pre></div><h3 id=heading-18><a hidden class=anchor aria-hidden=true href=#heading-18>#</a></h3>
+<p>참고로 <code>getConnection()</code>의 첫 번째 인자값은 MySQL 서버의 접속 정보이다. 보통 이 값을 &lsquo;JDBC URL&rsquo;이라고 부른다. DriverManager는 등록된 JDBC 드라이버 중 첫 번째 인자값에 입력되어 있는 JDBC URL을 승인하는 드라이버를 찾아 <code>java.sql.Driver</code> 구현체를 사용하여 데이터베이스에 연결한다.</p>
+<h5 id=heading-19><a hidden class=anchor aria-hidden=true href=#heading-19>#</a></h5>
+<p><strong>데이터베이스 연결에 성공하면 DB 접속 정보를 다룰 수 있는 객체를 반환한다. 반환된 객체는 <code>java.sql.Connection</code> 인터페이스 구현체</strong>이며, 이 반환 객체를 통하여 SQL문을 실행할 수 있는 <code>Statement</code> 객체를 얻을 수 있다.</p>
+<h5 id=heading-20><a hidden class=anchor aria-hidden=true href=#heading-20>#</a></h5>
+<p>이제 Connection 구현체를 이용하여 SQL 문을 실행할 객체를 준비해야한다.</p>
+<h3 id=heading-21><a hidden class=anchor aria-hidden=true href=#heading-21>#</a></h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>stmt <span style=color:#f92672>=</span> conn<span style=color:#f92672>.</span><span style=color:#a6e22e>createStatement</span><span style=color:#f92672>();</span>
+</code></pre></div><h3 id=heading-22><a hidden class=anchor aria-hidden=true href=#heading-22>#</a></h3>
+<p><code>createStatement()</code>가 반환하는 것은 <code>java.sql.Statement</code> 인터페이스의 구현체인데, <code>Statement</code> 인터페이스에는 데이터베이스에 질의하는데 필요한 메서드가 정의되어 있고, 이 인터페이스를 구현했다는 것은 반환 객체가 이러한 메서드를 가지고 있다는 의미일 것이다. 이제 우리는 <code>executeQuery()</code>, <code>executeUpdate()</code>, <code>executeBatch()</code> 등의 명령어를 통해 SQL 문을 실행할 수 있다.</p>
+<h3 id=heading-23><a hidden class=anchor aria-hidden=true href=#heading-23>#</a></h3>
+</li>
+<li>
+<p><strong>데이터베이스에 연결</strong><br>
+다음은 회원 정보를 조회하는 SQL 문이다.</p>
+<h3 id=heading-24><a hidden class=anchor aria-hidden=true href=#heading-24>#</a></h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>rs <span style=color:#f92672>=</span> stmt<span style=color:#f92672>.</span><span style=color:#a6e22e>executeQuery</span><span style=color:#f92672>(</span>
+        <span style=color:#e6db74>&#34;SELECT MNO,MNAME,EMAIL,CRE_DATE&#34;</span> <span style=color:#f92672>+</span>
+                <span style=color:#e6db74>&#34; FROM MEMBERS&#34;</span> <span style=color:#f92672>+</span>
+                <span style=color:#e6db74>&#34; ORDER BY MNO ASC&#34;</span><span style=color:#f92672>);</span>
+</code></pre></div><h3 id=heading-25><a hidden class=anchor aria-hidden=true href=#heading-25>#</a></h3>
+<p>이번에는 <code>executeQuery()</code>가 <code>java.sql.ResultSet</code> 인터페이스의 구현체를 반환한다. 이 바놘 객체를 통하여 서버에서 질의 결과를 가져올 수 있다. 계속 구현체를 호출하고 할당하는 행위의 연속이다.</p>
+</li>
+</ul>
+<h3 id=heading-26><a hidden class=anchor aria-hidden=true href=#heading-26>#</a></h3>
+<ul>
+<li><strong>화면 출력</strong><br>
+서블릿 컨테이너를 실행하니 정상적으로 화면이 출력됐다.<br>
+<img loading=lazy src=/resources/images/servlet/jdbc-example-4.png alt=jdbc-example-4>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id=회고>회고<a hidden class=anchor aria-hidden=true href=#회고>#</a></h2>
+<p>어려울수록 기본에 미쳐야 한다는 말에 굉장히 공감했던 포스트였다. 간단한 작업임에도 실무에서 무지성으로 복붙할 때와는 다르게 꽤나 버벅거렸다. 구현체 인터페이스에 익숙해지는 것은 당연한 것이겠지만 무엇보다도 선대 개발자들이 구현체를 만들기까지 문제 해결을 위해 무엇을 고민했을지와 같은 문제해결 논리를 이해하고자 노력하고 있다. 조금씩 조금씩 앞으로 나아가자.</p>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>

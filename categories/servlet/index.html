@@ -75,8 +75,11 @@
 <h2>[서블릿과 JDBC] 회원 목록 조회 구현</h2>
 </header>
 <section class=entry-content>
-<p>목표 JDBC를 이용한 데이터베이스 연동 방법 숙지 회원 목록 조회 구현 기능을 구현하기에 앞서 DB 서버 구축과 스키마 생성부터 해야 한다. 간단한 작업이지만 homebrew 사용법도 익힐 겸 겸사 겸사 정리해 두기로 했다.
-hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac) brew 업데이트 후 mysql 관련 프로그램 검색 brew update brew search mysql 원하는 버전의 mysql과 DBMS 클라이언트 프로그램인 mysqlworkbench 설치 brew install mysql@5.7 brew install --cask mysqlworkbench mysql 설치가 완료되면 설치 안내 문구가 출력된다....</p>
+<p>개발환경
+IDE: IntelliJ IDEA 2021.2 (Utimate Edition)
+OS: MAC OS X
+목표 JDBC를 이용한 데이터베이스 연동 방법 숙지 회원 목록 조회 구현 해보기 기능을 구현하기에 앞서 DB 서버 구축과 스키마 생성부터 해야 한다. 간단한 작업이지만 “homebrew 사용법이나 익히자"하며 겸사 겸사 정리해 두기로 했다.
+hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac) brew 업데이트 후 mysql 관련 프로그램 검색 brew update brew search mysql 원하는 버전의 mysql과 DBMS 클라이언트 프로그램인 mysqlworkbench 설치 brew install mysql@5....</p>
 </section>
 <footer class=entry-footer>August 28, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to [서블릿과 JDBC] 회원 목록 조회 구현" href=https://5hdumat.github.io/posts/servlet/servlet-jdbc-retrieve/></a>
@@ -115,9 +118,11 @@ hoebrew를 이용한 MySQL, MySQLWorkbench 설치 (Only Mac) brew 업데이트 �
 <h2>[서블릿 프로그래밍 기본] 서블릿 인터페이스</h2>
 </header>
 <section class=entry-content>
-<p>개발환경: IntelliJ IDEA 2021.2 (Utimate Edition)
+<p>개발환경
+IDE: IntelliJ IDEA 2021.2 (Utimate Edition)
+OS: MAC OS X
 목표 서블릿 프로그래밍을 통해 웹 애플리케이션 만드는 방법을 숙지한다. Servlet 인터페이스를 이해한다. 서블릿 클래스 만들기 다음과 같이 servlets 패키지에 javax.servlet.Servlet 인터페이스를 구현한 HelloWorld 클래스를 만들었다.
-web/src/lesson03.servlets/HelloWorld.java package lesson03.servlets; import java.io.IOException; import javax.servlet.Servlet; import javax.servlet.ServletConfig; import javax.servlet.ServletException; import javax.servlet.ServletRequest; import javax.servlet.ServletResponse; public class HelloWorld implements Servlet { ServletConfig config; @Override public void init(ServletConfig config) throws ServletException { System.out.println("init() 호출됨"); this.config = config; } @Override public void destroy() { System....</p>
+web/src/lesson03.servlets/HelloWorld.java package lesson03.servlets; import java.io.IOException; import javax.servlet.Servlet; import javax.servlet.ServletConfig; import javax.servlet.ServletException; import javax.servlet.ServletRequest; import javax.servlet.ServletResponse; public class HelloWorld implements Servlet { ServletConfig config; @Override public void init(ServletConfig config) throws ServletException { System....</p>
 </section>
 <footer class=entry-footer>August 21, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to [서블릿 프로그래밍 기본] 서블릿 인터페이스" href=https://5hdumat.github.io/posts/servlet/servlet-programing-basic-step2/></a>
@@ -129,12 +134,13 @@ web/src/lesson03.servlets/HelloWorld.java package lesson03.servlets; import java
 <h2>[서블릿 프로그래밍 기본] 프로젝트 준비</h2>
 </header>
 <section class=entry-content>
-<p>개발환경: IntelliJ IDEA 2021.2 (Utimate Edition)
+<p>개발환경
+IDE: IntelliJ IDEA 2021.2 (Utimate Edition)
+OS: MAC OS X
 목표 서블릿 프로그래밍을 통해 웹 애플리케이션 만드는 방법을 숙지한다. Servlet 인터페이스를 이해한다. 웹 프로젝트 준비 책은 이클립스 예제만 있어 IntelliJ Dynamic Web Project 생성 방법을 따로 숙지해야 했다.
 프로젝트 생성 1. [New Project] -> [SDK만 선택] -> [Next]
 2. [프로젝트 명과 경로 지정] -> [Finish]
-3. [생성된 프로젝트 오른쪽 클릭] -> [Add Framework Support…]
-4....</p>
+3. [생성된 프로젝트 오른쪽 클릭] -> [Add Framework Support…]...</p>
 </section>
 <footer class=entry-footer>August 21, 2021&nbsp;·&nbsp;서민규</footer>
 <a class=entry-link aria-label="post link to [서블릿 프로그래밍 기본] 프로젝트 준비" href=https://5hdumat.github.io/posts/servlet/servlet-programing-basic/></a>
